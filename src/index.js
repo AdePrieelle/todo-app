@@ -1,4 +1,11 @@
+import {createTodo} from "./createtodo.js";
 
+const testTodoItem = createTodo(
+  'testTitle', 'testDescription', '10-12-2020', 'high', 'testNotes', 'checked'
+  );
+
+console.log(testTodoItem);
+console.log(testTodoItem.title);
 
 /* 
 npx webpack --watch
