@@ -4,16 +4,90 @@
     <meta charset="UTF-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
     <link rel="stylesheet" href="./resources/css/main.css">
     <script src="main.js" defer></script>
     <title>ToDo App</title>
   </head>
   <body>
     
-    
+    <div class="main">
+
+      <header class="header">
+        <h1 class="header-h1">Todo List</h1>
+      </header>
+  
+      <div class="add-project">
+        <div class="add-project-form">
+          <form>
+            <fieldset>
+                <!-- <label for="add-project" class="add-project-form-label">
+                    Email address                                
+                </label> -->
+                <div class="add-project-form-input-wrapper">
+                    <input class="add-project-form-input" type="name" name="add-project" id="add-project" placeholder="Add Project">
+                </div>
+            </fieldset>
+        </form>
+        </div>
+        <div class="add-project-button">
+          <i class="add-project-button-icon fas fa-plus-circle"></i>
+        </div>
+      </div>
+  
+      <div class="projects-grid">
+        <div class="projects-grid-item">
+          <h2 class="project-grid-item-title">
+            project1
+          </h2>
+          <div class="project-grid-item-todos">
+            <h3 class="project-grid-item-todo">project-grid-item-todo</h3>
+            <h3 class="project-grid-item-todo">project-grid-item-todo</h3>
+          </div>
+        </div>
+        <div class="projects-grid-item">
+          <h2 class="project-grid-item-title">
+            project-grid-item-title1
+          </h2>
+          <div class="project-grid-item-todos">
+            <h3 class="project-grid-item-todo">project-grid-item-todo</h3>
+            <h3 class="project-grid-item-todo">project-grid-item-todo</h3>
+          </div>
+        </div>
+        <div class="projects-grid-item">
+          <h2 class="project-grid-item-title">
+            project-grid-item-title1
+          </h2>
+          <div class="project-grid-item-todos">
+            <h3 class="project-grid-item-todo">project-grid-item-todo</h3>
+            <h3 class="project-grid-item-todo">project-grid-item-todo</h3>
+          </div>
+        </div>
+        <div class="projects-grid-item">
+          <h2 class="project-grid-item-title">
+            project-grid-item-title1
+          </h2>
+          <div class="project-grid-item-todos">
+            <h3 class="project-grid-item-todo">project-grid-item-todo</h3>
+            <h3 class="project-grid-item-todo">project-grid-item-todo</h3>
+          </div>
+        </div>
+        
+      </div>
+
+    </div>
 
   </body>
 </html>
+
+<!-- 
+  - add delete button to project
+  - add checkbox to project-grid-item-todo
+  - add delete button to project-grid-item-todo
+  - add duedate to project-grid-item-todo
+
+
+ -->
 
 <!-- Attribute order
 
