@@ -1,11 +1,52 @@
 import {createTodo} from "./createtodo.js";
+import {createProjectList, createProjectListAll} from "./createprojectlist";
+import {multiply} from "./testmodule.js";
+import {addToArray} from "./testmodule2.js";
 
+
+let a = 5;
+let storeit = multiply(a, 6);
+console.log(storeit);
+console.log(multiply(2, 3));
+
+// let testarray = ["hi1"];
+
+
+// create a todo item object
 const testTodoItem = createTodo(
   'testTitle', 'testDescription', '10-12-2020', 'high', 'testNotes', 'checked'
-  );
+);
 
+const testTodoItem2 = createTodo(
+  'testTitle2', 'testDescription2', '11-12-2020', 'urgent', 'testNotes2', 'unchecked'
+);
+  
 console.log(testTodoItem);
-console.log(testTodoItem.title);
+
+// can only push to arrays
+// let emptyProjectList = createProjectList(); // []
+// let projectList = addToArray(emptyProjectList, multiply(a, 6));
+// projectList = addToArray(projectList, testTodoItem);
+
+let emptyProjectList = createProjectList(); // []
+let projectList = addToArray(emptyProjectList, testTodoItem);
+let projectList2 = addToArray([], testTodoItem2);
+
+
+console.log(projectList);
+
+let emptyProjectListAll = createProjectListAll();
+let projectListAll = addToArray(emptyProjectListAll, projectList);
+projectListAll = addToArray(projectListAll, projectList2);
+
+
+console.log(projectListAll);
+
+
+
+
+// used to check for variables in the console (put in global scope for testing)
+// window.hitest = hitest;
 
 /* 
 npx webpack --watch
