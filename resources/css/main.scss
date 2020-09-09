@@ -10,13 +10,16 @@ html {
 
 body {
 	background-color: #3a86ff;
+	// background: linear-gradient(to top right, white, rgb(78, 190, 255))
 }
 
 .main {
 	// background-color: white;
 	max-width: 400px;
 	margin: 40px auto 0 auto;
-	border: 2px solid red;
+	// border: 2px solid red;
+	// background-color: #3a86ff;
+	background-color: white;
 	border-radius: 20px;
 	padding: 10px;
 }
@@ -24,7 +27,8 @@ body {
 .header {
 	margin-top: 40px;
 	text-align: center;
-	color: white;
+	// color: white;
+	color: black;
 	font-size: 2.5rem;
 }
 
@@ -34,24 +38,36 @@ body {
 	align-items: center;
 	margin-top: 40px;
 	.add-project-form {
-		margin-right: .5rem;
-		.add-project-form-input {
-			// width: 200px;
+		.add-project-form-label {
+			// color: white;
+			color: black;
 		}
-	}
-	.add-project-button {
-		.add-project-button-icon {
-			// color: #3a86ff;
-			color: white;
-			font-size: 30px;
-			cursor: pointer;
+		.add-project-form-input-wrapper-add-project-button-wrapper {
+			display: flex;
+			align-items: center;
+			margin-top: 10px;
+			.add-project-form-input-wrapper {
+				.add-project-form-input {
+					// width: 200px;
+					margin-right: .5rem;
+				}
+			}
+			.add-project-button {
+				.add-project-button-icon {
+					color: #3a86ff;
+					// color: white;
+					// background-color: #3a86ff;
+					font-size: 30px;
+					cursor: pointer;
+				}
+			}
 		}
 	}
 }
 
 .projects-grid {
 	display: grid;
-	grid-template-columns: repeat(2, 1fr);
+	grid-template-columns: repeat(1, 1fr);
 	grid-gap: 20px;
 	margin-top: 40px;
 	.projects-grid-item {
@@ -59,18 +75,114 @@ body {
 		// flex-direction: column;
 		// justify-content: space-between;
 		background-color: white;
+		border: 1px solid black;
+		// background-color: rgb(48, 147, 240);
 		border-radius: 10px;
 		padding: 20px;
-		.project-grid-item-title {
-			font-size: 1.5rem;
+		.project-grid-item-title-add-todo-item-wrapper {
+			display: flex;
+			justify-content: space-between;
+			.project-grid-item-title {
+				font-size: 1.5rem;
+			}
+			.project-grid-item-add-todo-item {
+				font-size: 1.5rem;
+				color: #3a86ff;
+			}
 		}
 		.project-grid-item-todos {
 			margin-top: 30px;
 			.project-grid-item-todo {
+				display: flex;
+				align-items: flex-start;
+				justify-content: space-between;
 				margin-top: 10px;
 				padding: 10px;
 				border: 1px solid grey;
 				border-radius: 4px;
+				.project-grid-item-todo-properties-wrapper {
+					> *:not(:first-child) {
+						margin-top: .5rem;
+						color: rgb(116, 116, 116);
+						font-size: .8rem;
+					}
+					.project-grid-item-todo-title {
+						font-weight: 500;
+						font-size: 1.2rem;
+					}
+					.project-grid-item-todo-description {
+					}
+					.project-grid-item-todo-priority {
+					}
+					.project-grid-item-todo-duedate-expand-wrapper {
+						display: flex;
+						align-items: center;
+						.project-grid-item-todo-duedate {
+							font-weight: 300;
+						}
+						.project-grid-item-todo-expand {
+							margin-left: .5rem;
+							font-size: 1rem;
+							color: rgb(0, 140, 255);
+							.project-grid-item-todo-expand-down {
+								display: none;
+							}
+							.project-grid-item-todo-expand-up {
+								// display: none;
+							}
+						}
+					}
+				}
+				.project-grid-item-todo-buttons-wrapper {
+					display: flex;
+					// flex-direction: column;
+					// background-color: rgb(255, 0, 0);
+					// padding: 6px;
+					> * {
+						margin-left: 8px;
+						width: 30px;
+						height: 30px;
+					}
+					.project-grid-item-todo-buttons-checklist {
+						background-color: rgb(40, 194, 2);
+						background-color: rgb(0, 219, 0);
+
+						color: white;
+						// padding: 5px;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						// margin-left: 20px;
+					}
+					.project-grid-item-todo-buttons-update {
+						background-color: rgb(3, 156, 245);
+						color: white;
+						// padding: 5px;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						// margin-left: 20px;
+					}
+					.project-grid-item-todo-buttons-delete {
+						background-color: rgb(243, 0, 0);
+						color: white;
+						// width: 30px;
+						// height: 30px;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						// margin-left: 20px;
+					}
+				}
+			}
+			.project-grid-item-todo-add-todo-item {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background-color: rgb(0, 219, 0);
+				border: none;
+				// background-color: rgb(40, 194, 2);
+
 			}
 		}
 	}
