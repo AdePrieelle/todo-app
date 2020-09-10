@@ -10,6 +10,7 @@ html {
 
 body {
 	background-color: #3a86ff;
+	font-family: 'Roboto', sans-serif;
 	// background: linear-gradient(to top right, white, rgb(78, 190, 255))
 }
 
@@ -54,7 +55,13 @@ body {
 			}
 			.add-project-button {
 				.add-project-button-icon {
-					color: #3a86ff;
+					// color: #3a86ff;
+					// color: rgb(3, 156, 245);
+					// color: rgb(46, 154, 255);
+					color: rgb(0, 219, 0);
+
+
+
 					// color: white;
 					// background-color: #3a86ff;
 					font-size: 30px;
@@ -84,10 +91,45 @@ body {
 			justify-content: space-between;
 			.project-grid-item-title {
 				font-size: 1.5rem;
+				font-weight: 500;
 			}
-			.project-grid-item-add-todo-item {
-				font-size: 1.5rem;
-				color: #3a86ff;
+			.project-grid-item-add-todo-item-delete-project-wrapper {
+				display: flex;
+				padding-right: 10px;
+				> * {
+						width: 30px;
+						height: 30px;
+						margin-left: 8px;
+						border-radius: 4px;
+				}
+				.project-grid-item-add-todo-item {
+					// font-size: 1.5rem;
+					// background-color: rgb(3, 156, 245);
+					background-color: rgb(0, 219, 0);
+
+					color: white;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+				}
+				.project-grid-item-update-project-title {
+					// background-color: rgb(0, 219, 201);
+					background-color: rgb(3, 156, 245);
+
+					color: white;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+				}
+				.project-grid-item-delete-project {
+					// font-size: 1.5rem;
+					// margin-left: 10px;
+					background-color: red;
+					color: white;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+				}
 			}
 		}
 		.project-grid-item-todos {
@@ -101,14 +143,15 @@ body {
 				border: 1px solid grey;
 				border-radius: 4px;
 				.project-grid-item-todo-properties-wrapper {
+					.project-grid-item-todo-title {
+						font-size: 1.2rem;
+						font-weight: 400;
+					}
 					> *:not(:first-child) {
 						margin-top: .5rem;
 						color: rgb(116, 116, 116);
 						font-size: .8rem;
-					}
-					.project-grid-item-todo-title {
-						font-weight: 500;
-						font-size: 1.2rem;
+						font-weight: 400;
 					}
 					.project-grid-item-todo-description {
 					}
@@ -142,10 +185,12 @@ body {
 						margin-left: 8px;
 						width: 30px;
 						height: 30px;
+						border-radius: 4px;
 					}
 					.project-grid-item-todo-buttons-checklist {
-						background-color: rgb(40, 194, 2);
 						background-color: rgb(0, 219, 0);
+						// background-color: rgb(0, 219, 201);
+
 
 						color: white;
 						// padding: 5px;
@@ -155,7 +200,9 @@ body {
 						// margin-left: 20px;
 					}
 					.project-grid-item-todo-buttons-update {
+						// background-color: rgb(0, 219, 201);
 						background-color: rgb(3, 156, 245);
+
 						color: white;
 						// padding: 5px;
 						display: flex;

@@ -62,6 +62,7 @@ html {
 
 body {
   background-color: #3a86ff;
+  font-family: "Roboto", sans-serif;
 }
 
 .main {
@@ -97,7 +98,7 @@ body {
   margin-right: 0.5rem;
 }
 .add-project .add-project-form .add-project-form-input-wrapper-add-project-button-wrapper .add-project-button .add-project-button-icon {
-  color: #3a86ff;
+  color: #00db00;
   font-size: 30px;
   cursor: pointer;
 }
@@ -120,10 +121,38 @@ body {
 }
 .projects-grid .projects-grid-item .project-grid-item-title-add-todo-item-wrapper .project-grid-item-title {
   font-size: 1.5rem;
+  font-weight: 500;
 }
-.projects-grid .projects-grid-item .project-grid-item-title-add-todo-item-wrapper .project-grid-item-add-todo-item {
-  font-size: 1.5rem;
-  color: #3a86ff;
+.projects-grid .projects-grid-item .project-grid-item-title-add-todo-item-wrapper .project-grid-item-add-todo-item-delete-project-wrapper {
+  display: flex;
+  padding-right: 10px;
+}
+.projects-grid .projects-grid-item .project-grid-item-title-add-todo-item-wrapper .project-grid-item-add-todo-item-delete-project-wrapper > * {
+  width: 30px;
+  height: 30px;
+  margin-left: 8px;
+  border-radius: 4px;
+}
+.projects-grid .projects-grid-item .project-grid-item-title-add-todo-item-wrapper .project-grid-item-add-todo-item-delete-project-wrapper .project-grid-item-add-todo-item {
+  background-color: #00db00;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.projects-grid .projects-grid-item .project-grid-item-title-add-todo-item-wrapper .project-grid-item-add-todo-item-delete-project-wrapper .project-grid-item-update-project-title {
+  background-color: #039cf5;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.projects-grid .projects-grid-item .project-grid-item-title-add-todo-item-wrapper .project-grid-item-add-todo-item-delete-project-wrapper .project-grid-item-delete-project {
+  background-color: red;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .projects-grid .projects-grid-item .project-grid-item-todos {
   margin-top: 30px;
@@ -137,14 +166,15 @@ body {
   border: 1px solid grey;
   border-radius: 4px;
 }
+.projects-grid .projects-grid-item .project-grid-item-todos .project-grid-item-todo .project-grid-item-todo-properties-wrapper .project-grid-item-todo-title {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
 .projects-grid .projects-grid-item .project-grid-item-todos .project-grid-item-todo .project-grid-item-todo-properties-wrapper > *:not(:first-child) {
   margin-top: 0.5rem;
   color: #747474;
   font-size: 0.8rem;
-}
-.projects-grid .projects-grid-item .project-grid-item-todos .project-grid-item-todo .project-grid-item-todo-properties-wrapper .project-grid-item-todo-title {
-  font-weight: 500;
-  font-size: 1.2rem;
+  font-weight: 400;
 }
 .projects-grid .projects-grid-item .project-grid-item-todos .project-grid-item-todo .project-grid-item-todo-properties-wrapper .project-grid-item-todo-duedate-expand-wrapper {
   display: flex;
@@ -168,9 +198,9 @@ body {
   margin-left: 8px;
   width: 30px;
   height: 30px;
+  border-radius: 4px;
 }
 .projects-grid .projects-grid-item .project-grid-item-todos .project-grid-item-todo .project-grid-item-todo-buttons-wrapper .project-grid-item-todo-buttons-checklist {
-  background-color: #28c202;
   background-color: #00db00;
   color: white;
   display: flex;
