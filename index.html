@@ -18,21 +18,34 @@
         <h1 class="header-h1">Todo List</h1>
       </header>
   
-      <div class="add-project">
-        <div class="add-project-form">
+      <div class="add-project-add-todo-item">
+        <div class="add-project-add-todo-item-form">
           <form>
-            <fieldset>
-                <label class="add-project-form-label" for="add-project">
+            <fieldset class="add-project-fieldset">
+                <label class="add-project-add-todo-item-form-label" for="add-project">
                     Project Name                                
                 </label>
-                <div class="add-project-form-input-wrapper-add-project-button-wrapper">
-                  <div class="add-project-form-input-wrapper">
-                      <input class="add-project-form-input" type="name" name="add-project" id="add-project">
+                <div class="add-project-add-todo-item-form-input-wrapper-add-project-add-todo-item-button-wrapper">
+                  <div class="add-project-add-todo-item-form-input-wrapper">
+                      <input class="add-project-add-todo-item-form-input" type="name" name="add-project" id="add-project">
                   </div>
-                  <div class="add-project-button">
-                    <i class="add-project-button-icon fas fa-plus-circle"></i>
+                  <div class="add-project-add-todo-item-button">
+                    <i class="add-project-add-todo-item-button-icon fas fa-plus-circle"></i>
                   </div>
                 </div>
+            </fieldset>
+            <fieldset class="add-todo-item-fieldset">
+              <label class="add-project-add-todo-item-form-label" for="add-todo-item">
+                  Todo Item                                
+              </label>
+              <div class="add-project-add-todo-item-form-input-wrapper-add-project-add-todo-item-button-wrapper">
+                <div class="add-project-add-todo-item-form-input-wrapper">
+                    <input class="add-project-add-todo-item-form-input" type="name" name="add-todo-item" id="add-todo-item">
+                </div>
+                <div class="add-project-add-todo-item-button">
+                  <i class="add-project-add-todo-item-button-icon fas fa-plus-circle"></i>
+                </div>
+              </div>
             </fieldset>
         </form>
         </div>
@@ -84,38 +97,186 @@
                 </div>
               </div>
             </div>
-            <div class="project-grid-item-todo">project-grid-item-todo</div>
+            <div class="project-grid-item-todo">
+              <div class="project-grid-item-todo-properties-wrapper">
+                <div class="project-grid-item-todo-title">project-grid-item-todo-title</div>
+                <div class="project-grid-item-todo-description">project-grid-item-todo-description</div>
+                <div class="project-grid-item-todo-priority">Priotity: high</div>
+                <div class="project-grid-item-todo-notes">notes</div>
+                <div class="project-grid-item-todo-finished">Finished: no</div>          
+                <div class="project-grid-item-todo-duedate-expand-wrapper">
+                  <div class="project-grid-item-todo-duedate">01/01/2020</div>
+                  <div class="project-grid-item-todo-expand">
+                    <i class="project-grid-item-todo-expand-down fas fa-angle-double-down"></i>
+                    <i class="project-grid-item-todo-expand-up fas fa-angle-double-up"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="project-grid-item-todo-buttons-wrapper">
+                <div class="project-grid-item-todo-buttons-checklist">
+                  <i class="fas fa-check"></i>
+                </div>
+                <div class="project-grid-item-todo-buttons-update">
+                  <i class="fas fa-edit"></i>
+                </div>
+                <div class="project-grid-item-todo-buttons-delete">
+                  <i class="fas fa-trash-alt"></i>
+                </div>
+              </div>
+            </div>
             <div class="project-grid-item-todo project-grid-item-todo-add-todo-item">ADD TODO ITEM</div>
           </div>
         </div>
         <div class="projects-grid-item">
-          <h2 class="project-grid-item-title">
-            project-grid-item-title1
-          </h2>
+          <div class="project-grid-item-title-add-todo-item-wrapper">
+            <h2 class="project-grid-item-title">
+              project1
+            </h2>
+            <div class="project-grid-item-add-todo-item-delete-project-wrapper">
+              <div class="project-grid-item-add-todo-item">
+                <i class="fas fa-plus"></i>
+              </div>
+              <div class="project-grid-item-update-project-title">
+                <i class="fas fa-edit"></i>
+              </div>
+              <div class="project-grid-item-delete-project">
+                <i class="fas fa-trash-alt"></i>
+              </div>
+            </div>
+          </div>
           <div class="project-grid-item-todos">
-            <div class="project-grid-item-todo">project-grid-item-todo</div>
-            <div class="project-grid-item-todo">project-grid-item-todo</div>
+            <div class="project-grid-item-todo">
+              <div class="project-grid-item-todo-properties-wrapper">
+                <div class="project-grid-item-todo-title">project-grid-item-todo-title</div>
+                <div class="project-grid-item-todo-description">project-grid-item-todo-description</div>
+                <div class="project-grid-item-todo-priority">Priotity: high</div>
+                <div class="project-grid-item-todo-notes">notes</div>
+                <div class="project-grid-item-todo-finished">Finished: no</div>          
+                <div class="project-grid-item-todo-duedate-expand-wrapper">
+                  <div class="project-grid-item-todo-duedate">01/01/2020</div>
+                  <div class="project-grid-item-todo-expand">
+                    <i class="project-grid-item-todo-expand-down fas fa-angle-double-down"></i>
+                    <i class="project-grid-item-todo-expand-up fas fa-angle-double-up"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="project-grid-item-todo-buttons-wrapper">
+                <div class="project-grid-item-todo-buttons-checklist">
+                  <i class="fas fa-check"></i>
+                </div>
+                <div class="project-grid-item-todo-buttons-update">
+                  <i class="fas fa-edit"></i>
+                </div>
+                <div class="project-grid-item-todo-buttons-delete">
+                  <i class="fas fa-trash-alt"></i>
+                </div>
+              </div>
+            </div>
+            <div class="project-grid-item-todo">
+              <div class="project-grid-item-todo-properties-wrapper">
+                <div class="project-grid-item-todo-title">project-grid-item-todo-title</div>
+                <div class="project-grid-item-todo-description">project-grid-item-todo-description</div>
+                <div class="project-grid-item-todo-priority">Priotity: high</div>
+                <div class="project-grid-item-todo-notes">notes</div>
+                <div class="project-grid-item-todo-finished">Finished: no</div>          
+                <div class="project-grid-item-todo-duedate-expand-wrapper">
+                  <div class="project-grid-item-todo-duedate">01/01/2020</div>
+                  <div class="project-grid-item-todo-expand">
+                    <i class="project-grid-item-todo-expand-down fas fa-angle-double-down"></i>
+                    <i class="project-grid-item-todo-expand-up fas fa-angle-double-up"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="project-grid-item-todo-buttons-wrapper">
+                <div class="project-grid-item-todo-buttons-checklist">
+                  <i class="fas fa-check"></i>
+                </div>
+                <div class="project-grid-item-todo-buttons-update">
+                  <i class="fas fa-edit"></i>
+                </div>
+                <div class="project-grid-item-todo-buttons-delete">
+                  <i class="fas fa-trash-alt"></i>
+                </div>
+              </div>
+            </div>
+            <div class="project-grid-item-todo project-grid-item-todo-add-todo-item">ADD TODO ITEM</div>
           </div>
         </div>
         <div class="projects-grid-item">
-          <h2 class="project-grid-item-title">
-            project-grid-item-title1
-          </h2>
+          <div class="project-grid-item-title-add-todo-item-wrapper">
+            <h2 class="project-grid-item-title">
+              project1
+            </h2>
+            <div class="project-grid-item-add-todo-item-delete-project-wrapper">
+              <div class="project-grid-item-add-todo-item">
+                <i class="fas fa-plus"></i>
+              </div>
+              <div class="project-grid-item-update-project-title">
+                <i class="fas fa-edit"></i>
+              </div>
+              <div class="project-grid-item-delete-project">
+                <i class="fas fa-trash-alt"></i>
+              </div>
+            </div>
+          </div>
           <div class="project-grid-item-todos">
-            <div class="project-grid-item-todo">project-grid-item-todo</div>
-            <div class="project-grid-item-todo">project-grid-item-todo</div>
+            <div class="project-grid-item-todo">
+              <div class="project-grid-item-todo-properties-wrapper">
+                <div class="project-grid-item-todo-title">project-grid-item-todo-title</div>
+                <div class="project-grid-item-todo-description">project-grid-item-todo-description</div>
+                <div class="project-grid-item-todo-priority">Priotity: high</div>
+                <div class="project-grid-item-todo-notes">notes</div>
+                <div class="project-grid-item-todo-finished">Finished: no</div>          
+                <div class="project-grid-item-todo-duedate-expand-wrapper">
+                  <div class="project-grid-item-todo-duedate">01/01/2020</div>
+                  <div class="project-grid-item-todo-expand">
+                    <i class="project-grid-item-todo-expand-down fas fa-angle-double-down"></i>
+                    <i class="project-grid-item-todo-expand-up fas fa-angle-double-up"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="project-grid-item-todo-buttons-wrapper">
+                <div class="project-grid-item-todo-buttons-checklist">
+                  <i class="fas fa-check"></i>
+                </div>
+                <div class="project-grid-item-todo-buttons-update">
+                  <i class="fas fa-edit"></i>
+                </div>
+                <div class="project-grid-item-todo-buttons-delete">
+                  <i class="fas fa-trash-alt"></i>
+                </div>
+              </div>
+            </div>
+            <div class="project-grid-item-todo">
+              <div class="project-grid-item-todo-properties-wrapper">
+                <div class="project-grid-item-todo-title">project-grid-item-todo-title</div>
+                <div class="project-grid-item-todo-description">project-grid-item-todo-description</div>
+                <div class="project-grid-item-todo-priority">Priotity: high</div>
+                <div class="project-grid-item-todo-notes">notes</div>
+                <div class="project-grid-item-todo-finished">Finished: no</div>          
+                <div class="project-grid-item-todo-duedate-expand-wrapper">
+                  <div class="project-grid-item-todo-duedate">01/01/2020</div>
+                  <div class="project-grid-item-todo-expand">
+                    <i class="project-grid-item-todo-expand-down fas fa-angle-double-down"></i>
+                    <i class="project-grid-item-todo-expand-up fas fa-angle-double-up"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="project-grid-item-todo-buttons-wrapper">
+                <div class="project-grid-item-todo-buttons-checklist">
+                  <i class="fas fa-check"></i>
+                </div>
+                <div class="project-grid-item-todo-buttons-update">
+                  <i class="fas fa-edit"></i>
+                </div>
+                <div class="project-grid-item-todo-buttons-delete">
+                  <i class="fas fa-trash-alt"></i>
+                </div>
+              </div>
+            </div>
+            <div class="project-grid-item-todo project-grid-item-todo-add-todo-item">ADD TODO ITEM</div>
           </div>
         </div>
-        <div class="projects-grid-item">
-          <h2 class="project-grid-item-title">
-            project-grid-item-title1
-          </h2>
-          <div class="project-grid-item-todos">
-            <div class="project-grid-item-todo">project-grid-item-todo</div>
-            <div class="project-grid-item-todo">project-grid-item-todo</div>
-          </div>
-        </div>
-        
       </div>
 
     </div>

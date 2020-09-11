@@ -61,14 +61,19 @@ html {
 }
 
 body {
-  background-color: #3a86ff;
+  background-image: url("../images/img3.jpg");
+  background-size: 100% auto;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-size: cover;
+  background-attachment: fixed;
   font-family: "Roboto", sans-serif;
 }
 
 .main {
   max-width: 400px;
-  margin: 40px auto 0 auto;
-  background-color: white;
+  margin: 40px auto 40px auto;
   border-radius: 20px;
   padding: 10px;
 }
@@ -80,24 +85,27 @@ body {
   font-size: 2.5rem;
 }
 
-.add-project {
+.add-project-add-todo-item {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 40px;
 }
-.add-project .add-project-form .add-project-form-label {
+.add-project-add-todo-item .add-project-add-todo-item-form fieldset:not(:first-child) {
+  margin-top: 20px;
+}
+.add-project-add-todo-item .add-project-add-todo-item-form .add-project-add-todo-item-form-label {
   color: black;
 }
-.add-project .add-project-form .add-project-form-input-wrapper-add-project-button-wrapper {
+.add-project-add-todo-item .add-project-add-todo-item-form .add-project-add-todo-item-form-input-wrapper-add-project-add-todo-item-button-wrapper {
   display: flex;
   align-items: center;
   margin-top: 10px;
 }
-.add-project .add-project-form .add-project-form-input-wrapper-add-project-button-wrapper .add-project-form-input-wrapper .add-project-form-input {
+.add-project-add-todo-item .add-project-add-todo-item-form .add-project-add-todo-item-form-input-wrapper-add-project-add-todo-item-button-wrapper .add-project-add-todo-item-form-input-wrapper .add-project-add-todo-item-form-input {
   margin-right: 0.5rem;
 }
-.add-project .add-project-form .add-project-form-input-wrapper-add-project-button-wrapper .add-project-button .add-project-button-icon {
+.add-project-add-todo-item .add-project-add-todo-item-form .add-project-add-todo-item-form-input-wrapper-add-project-add-todo-item-button-wrapper .add-project-add-todo-item-button .add-project-add-todo-item-button-icon {
   color: #00db00;
   font-size: 30px;
   cursor: pointer;
@@ -110,8 +118,7 @@ body {
   margin-top: 40px;
 }
 .projects-grid .projects-grid-item {
-  background-color: white;
-  border: 1px solid black;
+  background-color: rgba(255, 255, 255, 0.3);
   border-radius: 10px;
   padding: 20px;
 }
@@ -148,7 +155,7 @@ body {
   align-items: center;
 }
 .projects-grid .projects-grid-item .project-grid-item-title-add-todo-item-wrapper .project-grid-item-add-todo-item-delete-project-wrapper .project-grid-item-delete-project {
-  background-color: red;
+  background-color: #f30000;
   color: white;
   display: flex;
   justify-content: center;
@@ -163,7 +170,7 @@ body {
   justify-content: space-between;
   margin-top: 10px;
   padding: 10px;
-  border: 1px solid grey;
+  background-color: rgba(255, 255, 255, 0.6);
   border-radius: 4px;
 }
 .projects-grid .projects-grid-item .project-grid-item-todos .project-grid-item-todo .project-grid-item-todo-properties-wrapper .project-grid-item-todo-title {
