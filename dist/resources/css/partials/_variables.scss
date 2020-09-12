@@ -4,19 +4,54 @@ $primary-bg-color: #f7f9fb;
 $secondary-bg-color: #222629;
 
 
-$blue: rgb(3, 156, 245);
+$blue: #fb8b24;
+// $blue: rgb(3, 156, 245);
+$blue: #ffab00;
+$blue: #ffd166;
+// $blue: #ffab00;
+
+
 // $blue: rgb(75, 194, 241);
 // $blue: rgb(64, 165, 206);
 
 
 $red: rgb(243, 0, 0);
+$red: #f77976;
+$red: #ef476f;
+// $red: #f77976;
+
+
 // $red: rgb(0, 134, 243);
 // $red: rgb(0, 116, 211);
 
 
-$green: rgb(0, 219, 0);
+$checklist-button-color: rgb(0, 219, 0);
+$checklist-button-color: #a0e426;
+$checklist-button-color: #06d6a0;
+// $checklist-button-color: #a0e426;
+
+
+// $green: rgb(0, 219, 0);
+// $green: #06d6a0;
+
 // $green: rgb(113, 220, 255);
 // $green: rgba(0,0,0, 0.2);
 
-$project-color: rgba(255, 255, 255, 0.3);
+$project-todo-item-add-color: #00b4d8;
+$project-todo-item-add-color: #33a8c7;
+$project-todo-item-add-color: #118ab2;
+// $project-todo-item-add-color: #33a8c7;
+
+$expand-icon-color: rgb(0, 140, 255);
+$expand-icon-color: $project-todo-item-add-color;
+
+
+
+// $project-todo-item-add-color: rgb(0, 68, 255);
+
+
+$color-add-todo-item-button: white;
+
+
+$project-color: rgba(255, 255, 255, 0.6);
 $todo-item-color: rgba(255,255,255, 0.6);
