@@ -49,6 +49,7 @@ body {
 	justify-content: center;
 	align-items: center;
 	margin-top: 40px;
+	// margin-right: 104px;
 	.add-project-add-todo-item-form {
 		fieldset:not(:first-child) {
 			margin-top: 20px;
@@ -64,15 +65,34 @@ body {
 			.add-project-add-todo-item-form-input-wrapper {
 				.add-project-add-todo-item-form-input {
 					// width: 200px;
-					margin-right: .5rem;
+					// margin-right: .5rem;
+
+					// New style
+					border: none;
+					height: 30px;
+					padding: 10px;
+					border-radius: 4px;
+					// border-radius: 4px 0 0 4px;
+					box-shadow: 0 0px 5px #d8ddec;
 				}
 			}
 			.add-project-add-todo-item-button {
+				// width: 30px;
+				// height: 30px;
+				// border-radius: 4px;
+				// // border-radius: 0 4px 4px 0;
+				// background-color: $project-todo-item-add-color;
+				margin-left: .5rem;
+				// // font-size: .5rem;
+				// display: flex;
+				// justify-content: center;
+				// align-items: center;
 				.add-project-add-todo-item-button-icon {
 					// color: #3a86ff;
 					// color: rgb(3, 156, 245);
 					// color: rgb(46, 154, 255);
 					color: $project-todo-item-add-color;
+					// color: white;
 
 
 
@@ -126,6 +146,7 @@ body {
 			.project-grid-item-title {
 				font-size: 1.5rem;
 				font-weight: 500;
+				cursor: pointer;
 			}
 			.project-grid-item-add-todo-item-delete-project-wrapper {
 				display: flex;
@@ -135,6 +156,7 @@ body {
 						height: 30px;
 						margin-left: 8px;
 						border-radius: 4px;
+						cursor: pointer;
 				}
 				.project-grid-item-add-todo-item {
 					// font-size: 1.5rem;
@@ -194,6 +216,7 @@ body {
 					.project-grid-item-todo-title {
 						font-size: 1.2rem;
 						font-weight: 400;
+						cursor: pointer;
 					}
 					> *:not(:first-child) {
 						margin-top: .5rem;
@@ -216,6 +239,7 @@ body {
 							font-size: 1rem;
 							// color: rgb(0, 140, 255);
 							color: $expand-icon-color;
+							cursor: pointer;
 							.project-grid-item-todo-expand-down {
 								display: none;
 							}
@@ -235,6 +259,7 @@ body {
 						width: 30px;
 						height: 30px;
 						border-radius: 4px;
+						cursor: pointer;
 					}
 					.project-grid-item-todo-buttons-checklist {
 						background-color: $checklist-button-color;
@@ -278,12 +303,32 @@ body {
 				background-color: $project-todo-item-add-color;
 				color: $color-add-todo-item-button;
 				border: none;
+				cursor: pointer;
 				// background-color: rgb(40, 194, 2);
 
 			}
 		}
 	}
 }
+
+// Alternative adding project buttons
+
+// .add-project-add-todo-item-buttons-wrapper {
+// 	display: flex;
+// 	justify-content: center;
+// 	margin-top: 60px;
+// 	> * {
+// 		padding: 12px;
+// 		background-color: $project-todo-item-add-color;
+// 		color: white;
+// 		border-radius: 4px;
+// 		min-width: 130px;
+// 		text-align: center;
+// 	}
+// 	.project-todo-item-add-button:not(:first-child) {
+// 		margin-left: 20px;
+// 	}
+// }
 
 /*
 Start watching for compiling scss to css
