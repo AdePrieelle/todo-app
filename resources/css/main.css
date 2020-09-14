@@ -250,6 +250,52 @@ body {
   cursor: pointer;
 }
 
+.bg-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.7);
+}
+.bg-modal .bg-modal-content {
+  position: relative;
+  padding: 20px 40px;
+  border-radius: 4px;
+  width: 300px;
+  height: auto;
+  max-height: 80vh;
+  min-width: 380px;
+  border-radius: 5px;
+  background-color: #cadce2;
+  overflow-y: auto;
+}
+.bg-modal .bg-modal-content .bg-model-content-close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #646464;
+}
+.bg-modal .bg-modal-content .bg-modal-content-title {
+  font-size: 22px;
+}
+.bg-modal .bg-modal-content .bg-modal-content-hr-line-form {
+  margin-bottom: 30px;
+  color: #1a8d96;
+}
+.bg-modal .bg-modal-content .bg-modal-content-form .bg-modal-content-form-fieldset .bg-modal-content-form-label .bg-modal-content-form-input-wrapper .bg-modal-content-form-input-textarea {
+  resize: none;
+  padding: 10px;
+  width: 100%;
+  height: 120px;
+}
+
 /*
 Start watching for compiling scss to css
 sass --watch main.scss:main.css
