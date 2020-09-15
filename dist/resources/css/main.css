@@ -289,11 +289,60 @@ body {
   margin-bottom: 30px;
   color: #1a8d96;
 }
-.bg-modal .bg-modal-content .bg-modal-content-form .bg-modal-content-form-fieldset .bg-modal-content-form-label .bg-modal-content-form-input-wrapper .bg-modal-content-form-input-textarea {
-  resize: none;
-  padding: 10px;
+.bg-modal .bg-modal-content .bg-modal-content-form .bg-modal-content-form-fieldset {
+  margin-bottom: 1rem;
+}
+.bg-modal .bg-modal-content .bg-modal-content-form .bg-modal-content-form-fieldset .bg-modal-content-form-label {
+  display: inline-block;
+  margin-bottom: 0.3rem;
+}
+.bg-modal .bg-modal-content .bg-modal-content-form .bg-modal-content-form-fieldset .bg-modal-content-form-input-wrapper .bg-modal-content-form-input-text {
   width: 100%;
-  height: 120px;
+  padding-left: 0.5rem;
+}
+.bg-modal .bg-modal-content .bg-modal-content-form .bg-modal-content-form-fieldset .bg-modal-content-form-input-wrapper .bg-modal-content-form-input-textarea {
+  resize: none;
+  padding: 0.5rem;
+  width: 100%;
+  height: 90px;
+}
+.bg-modal .bg-modal-content .bg-modal-content-form .bg-modal-content-form-fieldset .bg-modal-content-form-input-wrapper .bg-modal-content-form-input-textarea-notes {
+  height: 70px;
+}
+.bg-modal .bg-modal-content .bg-modal-content-form .bg-modal-content-form-fieldset .bg-modal-content-form-input-wrapper .bg-modal-content-form-input-date {
+  padding: 0.4rem 0 0.4rem 0.4rem;
+}
+.bg-modal .bg-modal-content .bg-modal-content-form .bg-modal-content-form-fieldset .bg-modal-content-form-input-wrapper-submit {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+.bg-modal .bg-modal-content .bg-modal-content-form .bg-modal-content-form-fieldset .bg-modal-content-form-input-wrapper-submit .bg-modal-content-form-input-submit {
+  padding: 8px 15px;
+  color: white;
+  background-color: #118ab2;
+  border: none;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+.bg-modal .bg-modal-content .bg-modal-content-form .bg-modal-content-form-fieldset .bg-modal-content-form-input-wrapper-submit .bg-modal-content-form-input-submit:hover {
+  background-color: #15a1cf;
+}
+.bg-modal .bg-modal-content .bg-modal-content-form .bg-modal-content-form-fieldset-priority {
+  display: flex;
+}
+.bg-modal .bg-modal-content .bg-modal-content-form .bg-modal-content-form-fieldset-priority .bg-modal-content-form-label-priority {
+  margin-right: 19px;
+}
+.bg-modal .bg-modal-content .bg-modal-content-form .bg-modal-content-form-fieldset-finished {
+  display: flex;
+  align-items: center;
+}
+.bg-modal .bg-modal-content .bg-modal-content-form .bg-modal-content-form-fieldset-finished :first-child {
+  margin-right: 10px;
 }
 
 /*
