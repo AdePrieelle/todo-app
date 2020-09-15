@@ -334,7 +334,7 @@
         <form class="bg-modal-content-form" action="">
           <fieldset class="bg-modal-content-form-fieldset">
             <label for="bg-modal-content-form-title" class="bg-modal-content-form-label">
-              Title                                
+              Title:                             
             </label>
             <div class="bg-modal-content-form-input-wrapper">
               <input type="text" class="bg-modal-content-form-input-text" name="bg-modal-content-form-title" id="bg-modal-content-form-title">
@@ -342,57 +342,66 @@
           </fieldset>
           <fieldset class="bg-modal-content-form-fieldset">
             <label for="bg-modal-content-form-description" class="bg-modal-content-form-label">
-              Description                              
+              Description:                           
             </label>
             <div class="bg-modal-content-form-input-wrapper">
               <textarea class="bg-modal-content-form-input-textarea" name="bg-modal-content-form-description" id="bg-modal-content-form-description" maxlength="140"></textarea>
             </div>
           </fieldset>
 
-          <fieldset>
-            <label for="priority" class="label-priority">
+          <fieldset class="bg-modal-content-form-fieldset bg-modal-content-form-fieldset-priority">
+            <label for="bg-modal-content-form-priority" class="bg-modal-content-form-label bg-modal-content-form-label-priority">
               Priority:
             </label>
-            <div class="inputradiopriority">
-              <input type="radio" class="input-priority-radio-low" id="low" name="priority" value="low">
-              <label for="low">Low</label><br>
-              <input type="radio" class="input-priority-radio-medium" id="medium" name="priority" value="medium">
-              <label for="medium">Medium</label><br>
-              <input type="radio" class="input-priority-radio-high" id="high" name="priority" value="high">
-              <label for="high">High</label><br>
-              <input type="radio" class="input-priority-radio-urgent" id="urgent" name="priority" value="urgent">
-              <label for="urgent">Urgent</label>
+            <div class="bg-modal-content-form-input-wrapper bg-modal-content-form-input-wrapper-priority">
+              <input type="radio" class="bg-modal-content-form-input-radio" id="bg-modal-content-form-priority-low" name="bg-modal-content-form-priority" value="low">
+              <label for="bg-modal-content-form-priority-low">Low</label><br>
+              <input type="radio" class="bg-modal-content-form-input-radio" id="bg-modal-content-form-priority-medium" name="bg-modal-content-form-priority" value="medium">
+              <label for="bg-modal-content-form-priority-medium">Medium</label><br>
+              <input type="radio" class="bg-modal-content-form-input-radio" id="bg-modal-content-form-priority-high" name="bg-modal-content-form-priority" value="high">
+              <label for="bg-modal-content-form-priority-high">High</label><br>
+              <input type="radio" class="bg-modal-content-form-input-radio" id="bg-modal-content-form-priority-urgent" name="bg-modal-content-form-priority" value="urgent">
+              <label for="bg-modal-content-form-priority-urgent">Urgent</label><br>
             </div>
           </fieldset>
 
-          <fieldset>
-            <label for="author" class="label-notes">
-              Notes                              
+          <fieldset class="bg-modal-content-form-fieldset">
+            <label for="bg-modal-content-form-notes" class="bg-modal-content-form-label">
+              Notes:                            
             </label>
-            <div class="inputdescription">
-              <input type="text" class="input-description-text" name="description" id="description">
+            <div class="bg-modal-content-form-input-wrapper">
+              <!-- <input type="text" class="input-description-text" name="description" id="description"> -->
+              <textarea class="bg-modal-content-form-input-textarea bg-modal-content-form-input-textarea-notes" name="bg-modal-content-form-notes" id="bg-modal-content-form-notes" maxlength="80"></textarea>
             </div>
           </fieldset>
 
-          <fieldset class="fieldset-pages">
-            <label for="pages" class="label-pages">
-              Pages                                
+          <fieldset class="bg-modal-content-form-fieldset bg-modal-content-form-fieldset-finished">
+            <label for="bg-modal-content-form-finished" class="bg-modal-content-form-label">
+              Finished:                               
             </label>
-            <div class="inputpages">
-              <input type="number" class="input-pages-number input-small-padding" name="pages" id="pages" min="1">
+            <div class="bg-modal-content-form-input-wrapper">
+              <input type="checkbox" class="bg-modal-content-form-input-checkbox" name="bg-modal-content-form-finished" id="bg-modal-content-form-finished">
             </div>
           </fieldset>
-          <fieldset class="fieldset-read">
-            <label for="read" class="label-read">
-              Read:                                
+
+          <fieldset class="bg-modal-content-form-fieldset">
+            <label for="bg-modal-content-form-duedate" class="bg-modal-content-form-label">
+              Due date:                               
             </label>
-            <div class="inputread">
-              <input type="checkbox" class="input-read-text" name="read" id="read">
+            <div class="bg-modal-content-form-input-wrapper">
+              <input type="date" class="bg-modal-content-form-input-date" name="bg-modal-content-form-duedate" id="bg-modal-content-form-duedate">
             </div>
           </fieldset>
-          <div class="add-new-book-submit">
-            <button type="button" class="add-new-book-submit-link">SUBMIT</button>
-          </div>
+
+          <fieldset class="bg-modal-content-form-fieldset">
+            <div class="bg-modal-content-form-input-wrapper bg-modal-content-form-input-wrapper-submit">
+              <button type="button" class="bg-modal-content-form-input-submit">SUBMIT</button>
+            </div>
+          </fieldset>
+
+          <!-- <div class="add-new-todo-item-submit">
+            <button type="button" class="add-new-todo-item-submit-link">SUBMIT</button>
+          </div> -->
         </form>
       </div>
     </div>
