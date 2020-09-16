@@ -76,7 +76,12 @@ body {
   max-width: 400px;
   margin: 20px auto 40px auto;
   border-radius: 20px;
-  padding: 10px;
+  padding: 10px 20px;
+}
+@media screen and (min-width: 768px) {
+  .main {
+    max-width: 600px;
+  }
 }
 
 .header {
@@ -123,6 +128,11 @@ body {
   grid-template-columns: repeat(1, 1fr);
   grid-gap: 20px;
   margin-top: 50px;
+}
+@media screen and (min-width: 768px) {
+  .projects-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 .projects-grid .projects-grid-item {
   background-color: rgba(255, 255, 255, 0.6);
@@ -257,7 +267,6 @@ body {
   right: 0;
   bottom: 0;
   display: none;
-  display: flex;
   justify-content: center;
   align-items: center;
   background: rgba(0, 0, 0, 0.7);
@@ -269,10 +278,15 @@ body {
   width: 300px;
   height: auto;
   max-height: 80vh;
-  min-width: 380px;
+  min-width: 300px;
   border-radius: 5px;
-  background-color: #cadce2;
+  background-color: #d7f4ff;
   overflow-y: auto;
+}
+@media screen and (min-width: 480px) {
+  .bg-modal .bg-modal-content {
+    min-width: 360px;
+  }
 }
 .bg-modal .bg-modal-content .bg-model-content-close {
   position: absolute;
@@ -336,6 +350,12 @@ body {
 }
 .bg-modal .bg-modal-content .bg-modal-content-form .bg-modal-content-form-fieldset-priority .bg-modal-content-form-label-priority {
   margin-right: 19px;
+}
+.bg-modal .bg-modal-content .bg-modal-content-form .bg-modal-content-form-fieldset-select-project {
+  display: flex;
+}
+.bg-modal .bg-modal-content .bg-modal-content-form .bg-modal-content-form-fieldset-select-project .bg-modal-content-form-label-select-project {
+  margin-right: 20px;
 }
 .bg-modal .bg-modal-content .bg-modal-content-form .bg-modal-content-form-fieldset-finished {
   display: flex;
