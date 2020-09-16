@@ -345,7 +345,7 @@
               Description:                           
             </label>
             <div class="bg-modal-content-form-input-wrapper">
-              <textarea class="bg-modal-content-form-input-textarea" name="bg-modal-content-form-description" id="bg-modal-content-form-description" maxlength="140"></textarea>
+              <textarea class="bg-modal-content-form-input-textarea" name="bg-modal-content-form-description" id="bg-modal-content-form-description" maxlength="100"></textarea>
             </div>
           </fieldset>
 
@@ -362,6 +362,20 @@
               <label for="bg-modal-content-form-priority-high">High</label><br>
               <input type="radio" class="bg-modal-content-form-input-radio" id="bg-modal-content-form-priority-urgent" name="bg-modal-content-form-priority" value="urgent">
               <label for="bg-modal-content-form-priority-urgent">Urgent</label><br>
+            </div>
+          </fieldset>
+
+          <fieldset class="bg-modal-content-form-fieldset bg-modal-content-form-fieldset-select-project">
+            <label for="bg-modal-content-form-select-project" class="bg-modal-content-form-label bg-modal-content-form-label-select-project">
+              Add to project:
+            </label>
+            <div class="bg-modal-content-form-input-wrapper">
+              <select name="bg-modal-content-form-input-select-project" id="bg-modal-content-form-select-project">
+                <optgroup class="bg-modal-content-form-input-select-project-optgroup" label="Projects">
+                  <option class="bg-modal-content-form-input-select-project-optgroup-option" value="project1">Project1</option>
+                  <option class="bg-modal-content-form-input-select-project-optgroup-option" value="project2">Project2</option>
+                </optgroup>
+              </select>
             </div>
           </fieldset>
 
