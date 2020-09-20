@@ -1,4 +1,5 @@
 import {createTodo} from "./createtodo.js";
+import {createProject} from "./createproject.js";
 import {createProjectList, createProjectListAll} from "./createprojectlist";
 import {multiply} from "./testmodule.js";
 import {addToArray} from "./testmodule2.js";
@@ -14,14 +15,84 @@ console.log(multiply(2, 3));
 
 // create a todo item object
 const testTodoItem = createTodo(
-  'testTitle', 'testDescription', '10-12-2020', 'high', 'testNotes', 'checked'
+  'testTitle', 'testDescription', 'high', 'project1', 'testNotes', 'checked', '10-12-2020'
 );
 
 const testTodoItem2 = createTodo(
-  'testTitle2', 'testDescription2', '11-12-2020', 'urgent', 'testNotes2', 'unchecked'
+  'testTitle2', 'testDescription2', 'urgent', 'project2', 'testNotes2', 'unchecked', '11-12-2020'
+);
+
+// old
+console.log(testTodoItem);
+
+// new
+const testProject1 = createProject(
+  'project1', testTodoItem
 );
   
-console.log(testTodoItem);
+console.log(testProject1);
+console.log(testProject1.todos.priority);
+console.log(testProject1.projectTodoList[0].priority);
+
+
+// Implement this setup from pseudocode below to store all projects
+let allprojects = [ 
+  {projectName: "project1", projecttodos: [{title: "testTitle1", description: "testDescription1"}, {title: "testTitle2", description: "testDescription2"}]},
+  {projectName: "project2", projecttodos: [{title: "testTitle3", description: "testDescription3"}, {title: "testTitle4", description: "testDescription4"}]},
+];
+
+console.log("allprojects below");
+console.log(allprojects);
+console.log("allprojects above");
+
+allprojects[0].projecttodos.push({title: "testTitlepushed", description: "testdescriptionpushed"});
+console.log(allprojects);
+
+
+console.log("allprojects changed above");
+
+
+// pseudo code
+/*
+createtodo with or without projectname?
+createproject?
+
+
+- createproject with projectname and projecttodos as properties
+
+- when createTodo add the todolist to the projects projecttodos property
+
+- store all projects in an array
+
+allprojects = [ 
+  {projectName: project1, projecttodos: [{testTitle1, testDescription1}, {testTitle2, testDescription2}]},
+  {projectName: project2, projecttodos: [{testTitle3, testDescription3}, {testTitle4, testDescription4}]},
+];
+
+or 
+
+the projects = [[{project1todo1}, {project1tod2}], [{project2todo1}, {project2todo2}]]
+
+how to change project???
+
+
+
+old:
+
+a project should contain all todos and be able to add a new todo to a project.todos property
+
+// old
+the projects = [[{project1todo1}, {project1tod2}], [{project2todo1}, {project2todo2}]]
+
+when adding a new project: push to projects array.
+when adding a new todo in a project: push to project[indexOfProject]
+
+when adding a new todo to a project
+
+end pseudocode
+
+*/
+
 
 // can only push to arrays
 // let emptyProjectList = createProjectList(); // []
