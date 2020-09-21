@@ -3,22 +3,68 @@
 // Create 
 
 // Create Project
-const createProject = (projectTitle, todos) => {
+// new
+const createProject = (projectTitle) => {
   
   // test
-  let projectTodoList = [];
-  projectTodoList.push(todos);
+  // let projectTodoList = [];
+  // projectTodoList.push(todos);
 
   return { 
     projectTitle,
-    todos,
+    todos: [],
+    // todos,
+
 
     // test
-    projectTodoList,
+    // projectTodoList,
   };
 };
 
-export {createProject};
+const addCreateTodoToProjectTodos = (allprojects, indexOfProject, todoItem) => {
+  allprojects[indexOfProject].todos.push(todoItem);
+}
+
+const deleteCreateTodoFromProjectTodos = (allprojects, indexOfProject, indexOfTodoItem) => {
+  allprojects[indexOfProject].todos.splice(indexOfTodoItem, 1);
+}
+
+const editCreateTodoFromProjectTodos = (allprojects, indexOfProject, indexOfTodoItem, todoItemKey, todoItemNewValue) => {
+  allprojects[indexOfProject].todos[indexOfTodoItem][todoItemKey] = todoItemNewValue;
+};
+
+export {
+  createProject, 
+  addCreateTodoToProjectTodos,
+  deleteCreateTodoFromProjectTodos,
+  editCreateTodoFromProjectTodos, 
+};
+
+// allprojects = [ 
+//   {projectTitle: project1, todos: [{testTitle1, testDescription1}, {testTitle2, testDescription2}]},
+//   {projectTitle: project2, todos: [{testTitle3, testDescription3}, {testTitle4, testDescription4}]},
+// ];
+
+
+
+
+// old
+// const createProject = (projectTitle, todos) => {
+  
+//   // test
+//   let projectTodoList = [];
+//   projectTodoList.push(todos);
+
+//   return { 
+//     projectTitle,
+//     todos,
+
+//     // test
+//     projectTodoList,
+//   };
+// };
+
+// export {createProject};
 
 
 

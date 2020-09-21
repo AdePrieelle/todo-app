@@ -1,5 +1,18 @@
 import {createTodo} from "./createtodo.js";
-import {createProject, addCreateTodoToProjectTodos, deleteCreateTodoFromProjectTodos, editCreateTodoFromProjectTodos} from "./createproject.js";
+import {createProject} from "./createproject.js";
+// import {createProjectList, createProjectListAll} from "./createprojectlist";
+// import {multiply} from "./testmodule.js";
+// import {addToArray} from "./testmodule2.js";
+
+
+// testcode for modules
+// let a = 5;
+// let storeit = multiply(a, 6);
+// console.log(storeit);
+// console.log(multiply(2, 3));
+
+// let testarray = ["hi1"];
+
 
 // create a todo item object
 const testTodoItem = createTodo(
@@ -13,17 +26,27 @@ const testTodoItem2 = createTodo(
 // old
 console.log(testTodoItem);
 
+// new
+// const testProject1 = createProject(
+//   'project1', testTodoItem
+// );
+  
+// console.log(testProject1);
+// console.log(testProject1.todos.priority);
+// console.log(testProject1.projectTodoList[0].priority);
+
+
 // Implement this setup from pseudocode below to store all projects
 let allprojects = [ 
-  {projectTitle: "project1", todos: [{title: "testTitle1", description: "testDescription1"}, {title: "testTitle2", description: "testDescription2"}]},
-  {projectTitle: "project2", todos: [{title: "testTitle3", description: "testDescription3"}, {title: "testTitle4", description: "testDescription4"}]},
+  {projectName: "project1", projecttodos: [{title: "testTitle1", description: "testDescription1"}, {title: "testTitle2", description: "testDescription2"}]},
+  {projectName: "project2", projecttodos: [{title: "testTitle3", description: "testDescription3"}, {title: "testTitle4", description: "testDescription4"}]},
 ];
 
 console.log("allprojects below");
 console.log(allprojects);
 console.log("allprojects above");
 
-allprojects[0].todos.push({title: "testTitlepushed", description: "testdescriptionpushed"});
+allprojects[0].projecttodos.push({title: "testTitlepushed", description: "testdescriptionpushed"});
 console.log(allprojects);
 
 
@@ -39,51 +62,7 @@ console.log("allprojetsNew above");
 allprojectsNew[0].todos.push(testTodoItem);
 console.log(allprojectsNew);
 console.log("addedtodos allprojectsNew above");
-addCreateTodoToProjectTodos(allprojectsNew, 0, createTodo(
-  'testTitle3', 'testDescription3', 'urgent', 'project1', 'testNotes3', 'unchecked', '12-12-2020'
-));
-console.log(allprojectsNew);
-console.log("addCreateTodoToProjectTodos above")
-addCreateTodoToProjectTodos(allprojectsNew, 0, createTodo(
-  'testTitle3ToDeleteAbove', 'testDescription3ToDelete', 'urgent', 'project1', 'testNotes3', 'unchecked', '12-12-2020'
-));
-addCreateTodoToProjectTodos(allprojectsNew, 0, createTodo(
-  'testTitle3ToDeleteItem', 'testDescription3', 'urgent', 'project1', 'testNotes3', 'unchecked', '12-12-2020'
-));
-addCreateTodoToProjectTodos(allprojectsNew, 0, createTodo(
-  'testTitle3ToDeleteBelow', 'testDescription3', 'urgent', 'project1', 'testNotes3', 'unchecked', '12-12-2020'
-));
-console.log(allprojectsNew);
-console.log("Add 3 more addCreateTodoToProjectTodos above to allprojectsNew");
-deleteCreateTodoFromProjectTodos(allprojectsNew, 0, 3);
-console.log(allprojectsNew);
-console.log("deleteCreateTodoFromProjectTodos above");
-editCreateTodoFromProjectTodos(allprojectsNew, 0, 1, "title", "testTitleEdited");
-console.log(allprojectsNew);
-console.log("editCreateTodoFromProjectTodos above")
 
-
-
-
-/*
-functionality to add:
-
-- add function to add createtodo to createproject (based on index? or projecttitle?)
-  done
-- add function to delete createtodo from createproject (based on index? or projecttitle?)
-  done
-- add function to edit createtodo from createproject (based on index? or projecttitle?)
-  done
-
-- add function to add project to allprojectslist
-- add function to delete project and todos from allprojectslist
-- add function to edit projectTitle from allprojectslist
-
-- add function to set createtodo status to finished or unfinished
-
-- add function to render projects and todo items
-
-*/
 
 // pseudo code
 /*
@@ -98,8 +77,8 @@ createproject?
 - store all projects in an array
 
 allprojects = [ 
-  {projectTitle: project1, todos: [{testTitle1, testDescription1}, {testTitle2, testDescription2}]},
-  {projectTitle: project2, todos: [{testTitle3, testDescription3}, {testTitle4, testDescription4}]},
+  {projectName: project1, projecttodos: [{testTitle1, testDescription1}, {testTitle2, testDescription2}]},
+  {projectName: project2, projecttodos: [{testTitle3, testDescription3}, {testTitle4, testDescription4}]},
 ];
 
 or 
@@ -125,6 +104,31 @@ when adding a new todo to a project
 end pseudocode
 
 */
+
+// old code
+
+// can only push to arrays
+// let emptyProjectList = createProjectList(); // []
+// let projectList = addToArray(emptyProjectList, multiply(a, 6));
+// projectList = addToArray(projectList, testTodoItem);
+
+// old code new
+// let emptyProjectList = createProjectList(); // []
+// let projectList = addToArray(emptyProjectList, testTodoItem);
+// let projectList2 = addToArray([], testTodoItem2);
+
+
+// console.log(projectList);
+
+// let emptyProjectListAll = createProjectListAll();
+// let projectListAll = addToArray(emptyProjectListAll, projectList);
+// projectListAll = addToArray(projectListAll, projectList2);
+
+
+// console.log(projectListAll);
+
+
+
 
 // used to check for variables in the console (put in global scope for testing)
 // window.hitest = hitest;
