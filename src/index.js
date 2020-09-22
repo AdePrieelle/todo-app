@@ -1,5 +1,13 @@
 import {createTodo} from "./createtodo.js";
-import {createProject, addCreateTodoToProjectTodos, deleteCreateTodoFromProjectTodos, editCreateTodoFromProjectTodos} from "./createproject.js";
+import {
+  createProject, 
+  addCreateTodoToProjectTodos, 
+  deleteCreateTodoFromProjectTodos, 
+  editCreateTodoFromProjectTodos, 
+  addProjectToProjectList, 
+  deleteProjectFromProjectList, 
+  editProjectFromProjectList, 
+} from "./createproject.js";
 
 // create a todo item object
 const testTodoItem = createTodo(
@@ -60,7 +68,21 @@ console.log(allprojectsNew);
 console.log("deleteCreateTodoFromProjectTodos above");
 editCreateTodoFromProjectTodos(allprojectsNew, 0, 1, "title", "testTitleEdited");
 console.log(allprojectsNew);
-console.log("editCreateTodoFromProjectTodos above")
+console.log("editCreateTodoFromProjectTodos above");
+addProjectToProjectList(allprojectsNew, createProject("test1 addProjectToProjectList"));
+addProjectToProjectList(allprojectsNew, createProject("test2 addProjectToProjectList"));
+addProjectToProjectList(allprojectsNew, createProject("test3 addProjectToProjectList"));
+console.log(allprojectsNew);
+console.log("addProjectToProjectList above");
+deleteProjectFromProjectList(allprojectsNew, 2);
+console.log(allprojectsNew);
+console.log("deleteProjectFromProjectList above");
+editProjectFromProjectList(allprojectsNew, 1, "projectTitle", "test1 addProjectToProjectList edited");
+console.log(allprojectsNew);
+console.log("editProjectFromProjectList above");
+editCreateTodoFromProjectTodos(allprojectsNew, 0, 1, "checklist", "uncheck edited");
+console.log(allprojectsNew);
+console.log("change cheklist finished status above with editCreateTodoFromProjectTodos")
 
 
 
@@ -76,10 +98,14 @@ functionality to add:
   done
 
 - add function to add project to allprojectslist
+  done
 - add function to delete project and todos from allprojectslist
-- add function to edit projectTitle from allprojectslist
+  done
+- add function to edit project (projectTitle) from allprojectslist
+  done
 
 - add function to set createtodo status to finished or unfinished
+  done with editCreateTodoFromProjectTodos already
 
 - add function to render projects and todo items
 

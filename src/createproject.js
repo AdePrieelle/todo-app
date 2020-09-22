@@ -33,11 +33,26 @@ const editCreateTodoFromProjectTodos = (allprojects, indexOfProject, indexOfTodo
   allprojects[indexOfProject].todos[indexOfTodoItem][todoItemKey] = todoItemNewValue;
 };
 
+const addProjectToProjectList = (projectList, project) => {
+  projectList.push(project);
+}
+
+const deleteProjectFromProjectList = (projectList, indexOfProject) => {
+  projectList.splice(indexOfProject, 1);
+}
+
+const editProjectFromProjectList = (projectList, indexOfProject, projectItemKey, projectItemNewValue) => {
+  projectList[indexOfProject][projectItemKey] = projectItemNewValue;
+}
+
 export {
   createProject, 
   addCreateTodoToProjectTodos,
   deleteCreateTodoFromProjectTodos,
   editCreateTodoFromProjectTodos, 
+  addProjectToProjectList, 
+  deleteProjectFromProjectList, 
+  editProjectFromProjectList, 
 };
 
 // allprojects = [ 
