@@ -8,6 +8,7 @@ import {
   deleteProjectFromProjectList, 
   editProjectFromProjectList, 
 } from "./createproject.js";
+import {renderProjectsTodos} from "./renderprojectstodos.js";
 
 // create a todo item object
 const testTodoItem = createTodo(
@@ -82,8 +83,19 @@ console.log(allprojectsNew);
 console.log("editProjectFromProjectList above");
 editCreateTodoFromProjectTodos(allprojectsNew, 0, 1, "checklist", "uncheck edited");
 console.log(allprojectsNew);
-console.log("change cheklist finished status above with editCreateTodoFromProjectTodos")
+console.log("change checklist finished status above with editCreateTodoFromProjectTodos")
 
+
+// add projects to render
+addCreateTodoToProjectTodos(allprojectsNew, 1, createTodo(
+  'testTitle3ToDeleteBelow', 'testDescription3', 'urgent', 'project1', 'testNotes3', 'unchecked', '12-12-2020'
+));
+addCreateTodoToProjectTodos(allprojectsNew, 1, createTodo(
+  'testTitle3ToDeleteBelow', 'testDescription3', 'urgent', 'project1', 'testNotes3', 'unchecked', '12-12-2020'
+));
+
+// renderProjectsTodos(allprojectsNew);
+renderProjectsTodos(allprojectsNew);
 
 
 
@@ -107,7 +119,8 @@ functionality to add:
 - add function to set createtodo status to finished or unfinished
   done with editCreateTodoFromProjectTodos already
 
-- add function to render projects and todo items
+- add function to render projects and todo items (add data-attribute = i from loop for updating or deleting projects or todos)
+  done
 
 */
 
