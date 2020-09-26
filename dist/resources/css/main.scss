@@ -231,8 +231,16 @@ body {
 						font-weight: 400;
 					}
 					.project-grid-item-todo-description {
+						display: none;
 					}
 					.project-grid-item-todo-priority {
+						display: none;
+					}
+					.project-grid-item-todo-notes {
+						display: none;
+					}
+					.project-grid-item-todo-finished {
+						display: none;
 					}
 					.project-grid-item-todo-duedate-expand-wrapper {
 						display: flex;
@@ -247,10 +255,10 @@ body {
 							color: $expand-icon-color;
 							cursor: pointer;
 							.project-grid-item-todo-expand-down {
-								display: none;
+								// display: none;
 							}
 							.project-grid-item-todo-expand-up {
-								// display: none;
+								display: none;
 							}
 						}
 					}

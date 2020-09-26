@@ -9,6 +9,7 @@ import {
   editProjectFromProjectList, 
 } from "./createproject.js";
 import {renderProjectsTodos} from "./renderprojectstodos.js";
+import {maximizeTodoItem, minimizeTodoItem} from "./eventController.js";
 
 // create a todo item object
 const testTodoItem = createTodo(
@@ -97,6 +98,10 @@ addCreateTodoToProjectTodos(allprojectsNew, 1, createTodo(
 // renderProjectsTodos(allprojectsNew);
 renderProjectsTodos(allprojectsNew);
 
+// maximize TodoItem and minimize TodoItem (unfinished)
+maximizeTodoItem();
+minimizeTodoItem();
+
 
 
 /*
@@ -121,6 +126,25 @@ functionality to add:
 
 - add function to render projects and todo items (add data-attribute = i from loop for updating or deleting projects or todos)
   done
+
+- add minimize and expand functionality on button arrows up and down click to display none properties
+  done (but delete the double down and up buttons and add the event to the grid todo item area);
+
+- add function to add project on button
+
+- add function to clear input fields homepage
+
+- add function to display modal form on button
+
+- add function to addCreateTodoToProjectTodos from inputs
+
+- add function to decide to which project to add from modal form
+
+- add function to clear input fields modal form
+
+- add function to button to change checklist property value
+
+aaand add functionality for updating and deleting projects and todos
 
 */
 
