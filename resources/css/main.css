@@ -228,6 +228,9 @@ body {
   color: #118ab2;
   cursor: pointer;
 }
+.projects-grid .projects-grid-item .project-grid-item-todos .project-grid-item-todo .project-grid-item-todo-properties-wrapper .project-grid-item-todo-duedate-expand-wrapper .project-grid-item-todo-expand .project-grid-item-todo-expand-down {
+  display: none;
+}
 .projects-grid .projects-grid-item .project-grid-item-todos .project-grid-item-todo .project-grid-item-todo-properties-wrapper .project-grid-item-todo-duedate-expand-wrapper .project-grid-item-todo-expand .project-grid-item-todo-expand-up {
   display: none;
 }
