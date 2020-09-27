@@ -18,8 +18,8 @@ const maximizeTodoItem = () => {
     }); 
   */
 
- projectGridItemTodoExpandDown.forEach((expandDownButton) => {
-   expandDownButton.addEventListener("click", function(e) {
+  projectGridItemTodoExpandDown.forEach((expandDownButton) => {
+    expandDownButton.addEventListener("click", function(e) {
     expandDownButton.setAttribute("style", "display: none");
 
     // show expandUpButton
@@ -37,13 +37,15 @@ const maximizeTodoItem = () => {
 
     // projectGridItemTodoExpandUp.setAttribute("style", "display: block");
    });
- });
+  });
 
   // projectGridItemTodoExpandDown.addEventListener("click", function() {
   //   projectGridItemTodoExpandDown.setAttribute("style", "display: none");
   //   projectGridItemTodoExpandUp.setAttribute("style", "display: block");
 
   // });
+
+
   
 };
 
@@ -76,7 +78,79 @@ const minimizeTodoItem = () => {
 
 };
 
+const collapseGridItemTodo = () => {
+
+  const projectGridItemTodoTitle = document.querySelectorAll(".project-grid-item-todo-title");
+  projectGridItemTodoTitle.forEach((gridItemTodoTitle) => {
+    gridItemTodoTitle.addEventListener("click", function(e) {
+      let propertiesNodes = e.target.parentNode.childNodes;
+      propertiesNodes.forEach((property) => {
+        // if minimized
+        if (!property.classList.contains("maximized-grid-todo-item")) {
+          property.classList += " maximized-grid-todo-item";
+          property.setAttribute("style", "display: block");
+        }
+        // if maximized
+        else {
+          property.classList.remove("maximized-grid-todo-item");
+          property.setAttribute("style", "display: none");
+          propertiesNodes[0].setAttribute("style", "display: block");
+          propertiesNodes[5].setAttribute("style", "display: block");
+        }
+      });
+      // propertiesNodes.forEach((childnode) => {
+      //   childnode.setAttribute("style", "display: block");
+      // });
+    });
+  });
+
+};
+
+  /* 
+
+  const projectGridItemTodoTitle = document.querySelectorAll(".project-grid-item-todo-title");
+
+  const projectGridItemTodoDescription = document.querySelectorAll(".project-grid-item-todo-description");
+
+  projectGridItemTodoTitle.forEach((gridItemTodoTitle) => {
+    gridItemTodoTitle.addEventListener("click", function(e) {
+      let propertiesNodes = e.target.parentNode.childNodes;
+      propertiesNodes.forEach((property) => {
+
+
+        // doesnt work below
+        projectGridItemTodoDescription.forEach((description) => {
+
+          if (description.style.display == "none") {
+            description.parentNode.childNodes.forEach((property) => {
+              property.setAttribute("style", "display: block");
+            });
+          };
+          
+          // else if (description.style.display !== "none") {
+          //   description.parentNode.childNodes.forEach((property) => {
+          //     property.setAttribute("style", "display: none");
+          //   });
+            
+          // };
+
+        });
+
+        // doesnt work above
+
+      });
+      propertiesNodes[0].setAttribute("style", "display: block");
+      propertiesNodes[5].setAttribute("style", "display: block");
+      // propertiesNodes.forEach((childnode) => {
+      //   childnode.setAttribute("style", "display: block");
+      // });
+    });
+  });
+
+  */
+
 export { 
   maximizeTodoItem,
-  minimizeTodoItem
+  minimizeTodoItem,
+  collapseGridItemTodo,
 };

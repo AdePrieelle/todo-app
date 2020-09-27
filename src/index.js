@@ -9,7 +9,7 @@ import {
   editProjectFromProjectList, 
 } from "./createproject.js";
 import {renderProjectsTodos} from "./renderprojectstodos.js";
-import {maximizeTodoItem, minimizeTodoItem} from "./eventController.js";
+import {maximizeTodoItem, minimizeTodoItem, collapseGridItemTodo, maximizeGridItemTodo, minimizeGridItemTodo} from "./eventController.js";
 
 // create a todo item object
 const testTodoItem = createTodo(
@@ -98,9 +98,18 @@ addCreateTodoToProjectTodos(allprojectsNew, 1, createTodo(
 // renderProjectsTodos(allprojectsNew);
 renderProjectsTodos(allprojectsNew);
 
-// maximize TodoItem and minimize TodoItem (unfinished)
+// maximize TodoItem and minimize TodoItem (with arrow down and up buttons)
 maximizeTodoItem();
 minimizeTodoItem();
+
+// new old
+// maximizeGridItemTodo();
+// minimizeGridItemTodo();
+
+// new (with maximize and minimize on the title click);
+collapseGridItemTodo();
+
+
 
 
 
