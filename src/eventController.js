@@ -107,7 +107,7 @@ const collapseGridItemTodo = () => {
 
   const projectGridItemTodo = document.querySelectorAll(".project-grid-item-todo");
   projectGridItemTodo.forEach((gridItemTodo) => {
-    gridItemTodo.addEventListener("click", function() {
+    gridItemTodo.addEventListener("click", function(e) {
       let propertiesNodes = gridItemTodo.childNodes[0].childNodes;
       propertiesNodes.forEach((property) => {
         // if minimized
@@ -127,6 +127,11 @@ const collapseGridItemTodo = () => {
   });
 
 };
+
+const clearInputs = (formClassToClear) => {
+  let formToClear = document.querySelector(formClassToClear);
+  formToClear.reset();
+}
 
   /* 
 
@@ -176,4 +181,5 @@ export {
   minimizeTodoItem,
   collapseGridItemTodoTitle,
   collapseGridItemTodo,
+  clearInputs, 
 };

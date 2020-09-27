@@ -7,9 +7,18 @@ import {
   addProjectToProjectList, 
   deleteProjectFromProjectList, 
   editProjectFromProjectList, 
+  addProjectToProjectListButton,
 } from "./createproject.js";
 import {renderProjectsTodos} from "./renderprojectstodos.js";
-import {maximizeTodoItem, minimizeTodoItem, collapseGridItemTodoTitle, collapseGridItemTodo, maximizeGridItemTodo, minimizeGridItemTodo} from "./eventController.js";
+import {
+  maximizeTodoItem, 
+  minimizeTodoItem, 
+  collapseGridItemTodoTitle, 
+  collapseGridItemTodo, 
+  maximizeGridItemTodo, 
+  minimizeGridItemTodo,
+  clearInputs,
+} from "./eventController.js";
 
 // create a todo item object
 const testTodoItem = createTodo(
@@ -109,7 +118,12 @@ minimizeTodoItem();
 // new (with maximize and minimize on the title click);
 // collapseGridItemTodoTitle();
 // new (with maximize and minimize on the gridItemTodo area)
-collapseGridItemTodo();
+// collapseGridItemTodo();
+
+// Project Name button to add project to projectList
+addProjectToProjectListButton(allprojectsNew);
+// collapseGridItemTodo();
+
 
 
 
@@ -139,12 +153,16 @@ functionality to add:
   done
 
 - add minimize and expand functionality on button arrows up and down click to display none properties
-  done (but delete the double down and up buttons and add the event to the grid todo item title area);
-  done
+  done (but deleted the double down and up buttons and added the event to the grid todo item title area);
+  done (but deleted the double down and up buttons and added the event to the grid todo item area);
+  
 
 - add function to add project on button
+  done
+
 
 - add function to clear input fields homepage
+  done
 
 - add function to display modal form on button
 

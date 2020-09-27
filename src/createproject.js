@@ -1,3 +1,6 @@
+import { renderProjectsTodos } from "./renderprojectstodos";
+import { clearInputs } from "./eventController";
+
 // contains all functionality (Create, Read, Update, Remove) for Project list items
 
 // Create 
@@ -45,6 +48,17 @@ const editProjectFromProjectList = (projectList, indexOfProject, projectItemKey,
   projectList[indexOfProject][projectItemKey] = projectItemNewValue;
 }
 
+const addProjectToProjectListButton = (projectList) => {
+  const addProjectAddTodoItemButton = document.querySelector(".add-project-add-todo-item-button");
+  addProjectAddTodoItemButton.addEventListener("click", function() {
+    const addProjectFormInput = document.querySelector(".add-project-form-input");
+    let addProjectFormInputValue = addProjectFormInput.value;
+    addProjectToProjectList(projectList, createProject(addProjectFormInputValue));
+    clearInputs(".add-project-add-todo-item-form-form");
+    renderProjectsTodos(projectList);
+  });
+}
+
 export {
   createProject, 
   addCreateTodoToProjectTodos,
@@ -53,6 +67,7 @@ export {
   addProjectToProjectList, 
   deleteProjectFromProjectList, 
   editProjectFromProjectList, 
+  addProjectToProjectListButton,
 };
 
 // allprojects = [ 

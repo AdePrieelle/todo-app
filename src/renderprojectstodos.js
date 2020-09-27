@@ -1,3 +1,5 @@
+import {collapseGridItemTodo} from "./eventController";
+
 const renderProjectsTodos = ((projectlist) => {
 
   // projects-grid
@@ -188,6 +190,9 @@ const renderProjectsTodos = ((projectlist) => {
     projectGridItemTodoAddTodoItem.appendChild(projectGridItemTodoAddTodoItemText);
 
   }
+  // add minimize and maximize functionality when clicking on gridItemTodo
+  collapseGridItemTodo();
+
 
 });
 
