@@ -78,12 +78,12 @@ const minimizeTodoItem = () => {
 
 };
 
-const collapseGridItemTodo = () => {
+const collapseGridItemTodoTitle = () => {
 
   const projectGridItemTodoTitle = document.querySelectorAll(".project-grid-item-todo-title");
   projectGridItemTodoTitle.forEach((gridItemTodoTitle) => {
-    gridItemTodoTitle.addEventListener("click", function(e) {
-      let propertiesNodes = e.target.parentNode.childNodes;
+    gridItemTodoTitle.addEventListener("click", function() {
+      let propertiesNodes = gridItemTodoTitle.parentNode.childNodes;
       propertiesNodes.forEach((property) => {
         // if minimized
         if (!property.classList.contains("maximized-grid-todo-item")) {
@@ -98,9 +98,31 @@ const collapseGridItemTodo = () => {
           propertiesNodes[5].setAttribute("style", "display: block");
         }
       });
-      // propertiesNodes.forEach((childnode) => {
-      //   childnode.setAttribute("style", "display: block");
-      // });
+    });
+  });
+
+};
+
+const collapseGridItemTodo = () => {
+
+  const projectGridItemTodo = document.querySelectorAll(".project-grid-item-todo");
+  projectGridItemTodo.forEach((gridItemTodo) => {
+    gridItemTodo.addEventListener("click", function() {
+      let propertiesNodes = gridItemTodo.childNodes[0].childNodes;
+      propertiesNodes.forEach((property) => {
+        // if minimized
+        if (!property.classList.contains("maximized-grid-todo-item")) {
+          property.classList += " maximized-grid-todo-item";
+          property.setAttribute("style", "display: block");
+        }
+        // if maximized
+        else {
+          property.classList.remove("maximized-grid-todo-item");
+          property.setAttribute("style", "display: none");
+          propertiesNodes[0].setAttribute("style", "display: block");
+          propertiesNodes[5].setAttribute("style", "display: block");
+        }
+      });
     });
   });
 
@@ -152,5 +174,6 @@ const collapseGridItemTodo = () => {
 export { 
   maximizeTodoItem,
   minimizeTodoItem,
+  collapseGridItemTodoTitle,
   collapseGridItemTodo,
 };
