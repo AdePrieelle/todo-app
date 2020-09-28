@@ -397,6 +397,18 @@ body {
 						// border-radius: 4px;
 						// border: none;
 					}
+					.bg-modal-content-form-select-project {
+						max-width: 130px;
+						@media screen and (min-width: 768px) {
+							max-width: 180px;
+						}
+						.bg-modal-content-form-select-project-optgroup {
+							// max-width: 50px;
+							.bg-modal-content-form-select-project-optgroup-option {
+								// max-width: 50px;
+							}
+						}
+					}
 					.bg-modal-content-form-input-textarea-notes {
 						height: 70px;
 					}

@@ -335,6 +335,14 @@ body {
   width: 100%;
   height: 90px;
 }
+.bg-modal .bg-modal-content .bg-modal-content-form .bg-modal-content-form-fieldset .bg-modal-content-form-input-wrapper .bg-modal-content-form-select-project {
+  max-width: 130px;
+}
+@media screen and (min-width: 768px) {
+  .bg-modal .bg-modal-content .bg-modal-content-form .bg-modal-content-form-fieldset .bg-modal-content-form-input-wrapper .bg-modal-content-form-select-project {
+    max-width: 180px;
+  }
+}
 .bg-modal .bg-modal-content .bg-modal-content-form .bg-modal-content-form-fieldset .bg-modal-content-form-input-wrapper .bg-modal-content-form-input-textarea-notes {
   height: 70px;
 }
