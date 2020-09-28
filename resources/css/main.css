@@ -303,7 +303,7 @@ body {
     min-width: 360px;
   }
 }
-.bg-modal .bg-modal-content .bg-model-content-close {
+.bg-modal .bg-modal-content .bg-modal-content-close {
   position: absolute;
   top: 10px;
   right: 12px;
