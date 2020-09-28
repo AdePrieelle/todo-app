@@ -159,7 +159,7 @@ const addProjectToProjectListButton = (projectList) => {
   });
 }
 
-const displayCreateTodoItemForm = () => {
+const displayCreateTodoItemFormInputButton = (projectlist) => {
   const addTodoItemInputButton = document.querySelector(".add-todo-item-input-button");
   addTodoItemInputButton.addEventListener("click", function() {
     const addTodoItemInputButton = document.querySelector(".add-todo-item-form-input");
@@ -170,7 +170,30 @@ const displayCreateTodoItemForm = () => {
     } else {
       const bgModal = document.querySelector(".bg-modal");
       bgModal.setAttribute("style", "display: flex");
-    };
+      renderBgModalContentFormInputSelectProjectOptgroup(projectlist);
+    }
+  });
+};
+
+const displayCreateTodoItemFormAddTodoItemButton = (projectlist) => {
+  const projectGridItemTodoAddTodoItem = document.querySelectorAll(".project-grid-item-todo-add-todo-item");
+  projectGridItemTodoAddTodoItem.forEach((addTodoItemButton) => {
+    addTodoItemButton.addEventListener("click", function() {
+      const bgModal = document.querySelector(".bg-modal");
+      bgModal.setAttribute("style", "display: flex");
+      renderBgModalContentFormInputSelectProjectOptgroup(projectlist);
+    });
+  });
+};
+
+const displayCreateTodoItemFormProjectGridItemAddTodoItem = (projectlist) => {
+  const projectGridItemAddTodoItem = document.querySelectorAll(".project-grid-item-add-todo-item");
+  projectGridItemAddTodoItem.forEach((projectGridItemAddTodoItemButton) => {
+    projectGridItemAddTodoItemButton.addEventListener("click", function() {
+      const bgModal = document.querySelector(".bg-modal");
+      bgModal.setAttribute("style", "display: flex");
+      renderBgModalContentFormInputSelectProjectOptgroup(projectlist);
+    });
   });
 };
 
@@ -181,8 +204,8 @@ const closeCreateTodoItemForm = () => {
     bgModal.setAttribute("style", "display: none");
     // clear inputs from the todo item form
     clearInputsForm(".bg-modal-content-form");
-  })
-}
+  });
+};
 
 const copyTodoItemNameToBgModalFormTitle = () => {
   const addTodoItemFormInput = document.querySelector(".add-todo-item-form-input");
@@ -192,8 +215,22 @@ const copyTodoItemNameToBgModalFormTitle = () => {
     const bgModalContentFormInputText = document.querySelector(".bg-modal-content-form-input-text");
     bgModalContentFormInputText.value = addTodoItemFormInputTitle;
   });
-
 };
+
+const renderBgModalContentFormInputSelectProjectOptgroup = (projectlist) => {
+  const bgModalContentFormInputSelectProjectOptgroup = document.querySelector(".bg-modal-content-form-input-select-project-optgroup");
+  bgModalContentFormInputSelectProjectOptgroup.innerHTML = "";
+  for (let i = 0; i < projectlist.length; i++) {
+    let bgModalContentFormInputSelectProjectOptgroupOption = document.createElement("option");
+    bgModalContentFormInputSelectProjectOptgroupOption.classList += ".bg-modal-content-form-input-select-project-optgroup-option"
+    bgModalContentFormInputSelectProjectOptgroupOption.value = i;
+    bgModalContentFormInputSelectProjectOptgroup.appendChild(bgModalContentFormInputSelectProjectOptgroupOption);
+    let bgModalContentFormInputSelectProjectOptgroupText = document.createTextNode(`${projectlist[i].projectTitle}`);
+    bgModalContentFormInputSelectProjectOptgroupOption.appendChild(bgModalContentFormInputSelectProjectOptgroupText);
+  }
+};
+
+
 
   /* 
 
@@ -245,7 +282,10 @@ export {
   collapseGridItemTodo,
   addProjectToProjectListButton,
   clearInputsForm, 
-  displayCreateTodoItemForm,
+  displayCreateTodoItemFormInputButton,
+  displayCreateTodoItemFormAddTodoItemButton,
+  displayCreateTodoItemFormProjectGridItemAddTodoItem,
   closeCreateTodoItemForm,
   copyTodoItemNameToBgModalFormTitle,
+  renderBgModalContentFormInputSelectProjectOptgroup, 
 };

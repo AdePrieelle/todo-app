@@ -18,9 +18,12 @@ import {
   minimizeGridItemTodo,
   addProjectToProjectListButton,
   clearInputsForm,
-  displayCreateTodoItemForm,
+  displayCreateTodoItemFormInputButton,
+  displayCreateTodoItemFormAddTodoItemButton,
+  displayCreateTodoItemFormProjectGridItemAddTodoItem,
   closeCreateTodoItemForm,
   copyTodoItemNameToBgModalFormTitle,
+  renderBgModalContentFormInputSelectProjectOptgroup,
 } from "./eventController.js";
 
 // create a todo item object
@@ -127,8 +130,11 @@ minimizeTodoItem();
 addProjectToProjectListButton(allprojectsNew);
 // collapseGridItemTodo();
 
-// display bg-modal form on button click
-displayCreateTodoItemForm();
+// display bg-modal form on input button click
+displayCreateTodoItemFormInputButton(allprojectsNew);
+
+// display bg-modal form on add todo item button
+// displayCreateTodoItemFormAddTodoItemButton(allprojectsNew);
 
 // close bg-modal form on close button click
 closeCreateTodoItemForm();
@@ -136,6 +142,8 @@ closeCreateTodoItemForm();
 // copy todoItemInputValue to bgModal title
 copyTodoItemNameToBgModalFormTitle();
 
+// render projects to bgModalContentFormInputSelectProjectOptgroup
+// renderBgModalContentFormInputSelectProjectOptgroup(allprojectsNew);
 
 
 
@@ -180,9 +188,13 @@ functionality to add:
   done
 
 - add function to render the projects from the projectlist to the modal form select option tag
-  and decide which project to add the createTodo inputs to.
+  done
+
+- add function to decide which project the select option tag will use to add the projects inputs to 
+  (use select option value as indexOfProject?)
+  done
   
-- add function to addCreateTodoToProjectTodos from inputs
+- add function to addCreateTodoToProjectTodos from inputs on submit button
 
 - add function to clear input fields modal form
 

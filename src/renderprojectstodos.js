@@ -1,4 +1,8 @@
-import {collapseGridItemTodo} from "./eventController";
+import {
+  collapseGridItemTodo, 
+  displayCreateTodoItemFormAddTodoItemButton,
+  displayCreateTodoItemFormProjectGridItemAddTodoItem,
+} from "./eventController";
 
 const renderProjectsTodos = ((projectlist) => {
 
@@ -192,6 +196,12 @@ const renderProjectsTodos = ((projectlist) => {
   }
   // add minimize and maximize functionality when clicking on gridItemTodo
   collapseGridItemTodo();
+
+  // display createTodoItemForm when clicked on the add todo item wide button at the bottom
+  displayCreateTodoItemFormAddTodoItemButton(projectlist);
+
+  // display createTodoItemForm when click on the plus icon next to the project title
+  displayCreateTodoItemFormProjectGridItemAddTodoItem(projectlist);
 
 
 });
