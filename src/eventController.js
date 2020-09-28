@@ -1,3 +1,7 @@
+import {addProjectToProjectList} from "./createproject.js";
+import {createProject} from "./createproject.js";
+import {renderProjectsTodos} from "./renderprojectstodos.js";
+
 // Written for expand buttons
 
 const maximizeTodoItem = () => {
@@ -128,10 +132,68 @@ const collapseGridItemTodo = () => {
 
 };
 
-const clearInputs = (formClassToClear) => {
+const clearInputsForm = (formClassToClear) => {
   let formToClear = document.querySelector(formClassToClear);
   formToClear.reset();
 }
+
+const addProjectToProjectListButton = (projectList) => {
+  const addProjectAddTodoItemButton = document.querySelector(".add-project-input-button");
+  addProjectAddTodoItemButton.addEventListener("click", function() {
+    const addProjectFormInput = document.querySelector(".add-project-form-input");
+    let addProjectFormInputValue = addProjectFormInput.value;
+    if (addProjectFormInputValue == "") {
+      alert("Please name your project");
+      return;
+    }
+    for (let i = 0; i < projectList.length; i++ ) {
+      if (projectList[i].projectTitle == addProjectFormInputValue) {
+        alert("This project name already exists");
+        clearInputsForm(".add-project-add-todo-item-form-form");
+        return;
+      }
+    }
+    addProjectToProjectList(projectList, createProject(addProjectFormInputValue));
+    clearInputsForm(".add-project-add-todo-item-form-form");
+    renderProjectsTodos(projectList);
+  });
+}
+
+const displayCreateTodoItemForm = () => {
+  const addTodoItemInputButton = document.querySelector(".add-todo-item-input-button");
+  addTodoItemInputButton.addEventListener("click", function() {
+    const addTodoItemInputButton = document.querySelector(".add-todo-item-form-input");
+    let addTodoItemFormInputTitle = addTodoItemInputButton.value;
+    if (addTodoItemFormInputTitle == "") {
+      alert("Please name your todo item");
+      return;
+    } else {
+      const bgModal = document.querySelector(".bg-modal");
+      bgModal.setAttribute("style", "display: flex");
+    };
+  });
+};
+
+const closeCreateTodoItemForm = () => {
+  const bgModalContentClose = document.querySelector(".bg-modal-content-close");
+  bgModalContentClose.addEventListener("click", function() {
+    const bgModal = document.querySelector(".bg-modal");
+    bgModal.setAttribute("style", "display: none");
+    // clear inputs from the todo item form
+    clearInputsForm(".bg-modal-content-form");
+  })
+}
+
+const copyTodoItemNameToBgModalFormTitle = () => {
+  const addTodoItemFormInput = document.querySelector(".add-todo-item-form-input");
+  const addTodoItemInputButton = document.querySelector(".add-todo-item-input-button");
+  addTodoItemInputButton.addEventListener("click", function() {
+    let addTodoItemFormInputTitle = addTodoItemFormInput.value;
+    const bgModalContentFormInputText = document.querySelector(".bg-modal-content-form-input-text");
+    bgModalContentFormInputText.value = addTodoItemFormInputTitle;
+  });
+
+};
 
   /* 
 
@@ -181,5 +243,9 @@ export {
   minimizeTodoItem,
   collapseGridItemTodoTitle,
   collapseGridItemTodo,
-  clearInputs, 
+  addProjectToProjectListButton,
+  clearInputsForm, 
+  displayCreateTodoItemForm,
+  closeCreateTodoItemForm,
+  copyTodoItemNameToBgModalFormTitle,
 };
