@@ -94,7 +94,7 @@ console.log("addProjectToProjectList above");
 deleteProjectFromProjectList(allprojectsNew, 2);
 console.log(allprojectsNew);
 console.log("deleteProjectFromProjectList above");
-editProjectFromProjectList(allprojectsNew, 1, "projectTitle", "test1 addProjectToProjectList edited");
+editProjectFromProjectList(allprojectsNew, 1, "projectTitle", "test1 addProjectToProjectListtttttttttttttttttttttttt edited");
 console.log(allprojectsNew);
 console.log("editProjectFromProjectList above");
 editCreateTodoFromProjectTodos(allprojectsNew, 0, 1, "checklist", "uncheck edited");
@@ -104,7 +104,7 @@ console.log("change checklist finished status above with editCreateTodoFromProje
 
 // add projects to render
 addCreateTodoToProjectTodos(allprojectsNew, 1, createTodo(
-  'testTitle3ToDeleteBelow', 'testDescription3', 'urgent', 'project1', 'testNotes3', 'unchecked', '12-12-2020'
+  'testTitle3ToDeleteBelowwwwwwwwwwwwwwwwwwwwwwww', 'testDescription3', 'urgent', 'project1', 'testNotes3', 'unchecked', '12-12-2020'
 ));
 addCreateTodoToProjectTodos(allprojectsNew, 1, createTodo(
   'testTitle3ToDeleteBelow', 'testDescription3', 'urgent', 'project1', 'testNotes3', 'unchecked', '12-12-2020'
@@ -189,11 +189,14 @@ functionality to add:
 
 - add function to render the projects from the projectlist to the modal form select option tag
   done
+  
+- add css media queries for responsive mobile design
+  done
 
 - add function to decide which project the select option tag will use to add the projects inputs to 
   (use select option value as indexOfProject?)
   done
-  
+
 - add function to addCreateTodoToProjectTodos from inputs on submit button
 
 - add function to clear input fields modal form

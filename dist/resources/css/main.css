@@ -73,10 +73,24 @@ body {
 }
 
 .main {
-  max-width: 400px;
+  max-width: 300px;
   margin: 20px auto 40px auto;
   border-radius: 20px;
-  padding: 10px 20px;
+}
+@media screen and (min-width: 380px) {
+  .main {
+    max-width: 340px;
+  }
+}
+@media screen and (min-width: 480px) {
+  .main {
+    max-width: 400px;
+  }
+}
+@media screen and (min-width: 600px) {
+  .main {
+    max-width: 500px;
+  }
 }
 @media screen and (min-width: 768px) {
   .main {
@@ -144,20 +158,46 @@ body {
   justify-content: space-between;
 }
 .projects-grid .projects-grid-item .project-grid-item-title-add-todo-item-wrapper .project-grid-item-title {
+  margin-right: 40px;
   font-size: 1.5rem;
   font-weight: 500;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  -ms-word-break: break-all;
+  hyphens: auto;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
   cursor: pointer;
+}
+@media screen and (min-width: 480px) {
+  .projects-grid .projects-grid-item .project-grid-item-title-add-todo-item-wrapper .project-grid-item-title {
+    margin-right: 50px;
+  }
 }
 .projects-grid .projects-grid-item .project-grid-item-title-add-todo-item-wrapper .project-grid-item-add-todo-item-delete-project-wrapper {
   display: flex;
+  flex-direction: column;
   padding-right: 10px;
+}
+@media screen and (min-width: 768px) {
+  .projects-grid .projects-grid-item .project-grid-item-title-add-todo-item-wrapper .project-grid-item-add-todo-item-delete-project-wrapper {
+    flex-direction: row;
+  }
 }
 .projects-grid .projects-grid-item .project-grid-item-title-add-todo-item-wrapper .project-grid-item-add-todo-item-delete-project-wrapper > * {
   width: 30px;
   height: 30px;
-  margin-left: 8px;
+  margin-bottom: 8px;
   border-radius: 4px;
   cursor: pointer;
+}
+@media screen and (min-width: 768px) {
+  .projects-grid .projects-grid-item .project-grid-item-title-add-todo-item-wrapper .project-grid-item-add-todo-item-delete-project-wrapper > * {
+    margin-left: 8px;
+    margin-bottom: 0px;
+  }
 }
 .projects-grid .projects-grid-item .project-grid-item-title-add-todo-item-wrapper .project-grid-item-add-todo-item-delete-project-wrapper .project-grid-item-add-todo-item {
   background-color: #118ab2;
@@ -192,10 +232,26 @@ body {
   background-color: rgba(255, 255, 255, 0.6);
   border-radius: 4px;
 }
+.projects-grid .projects-grid-item .project-grid-item-todos .project-grid-item-todo .project-grid-item-todo-properties-wrapper {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  -ms-word-break: break-all;
+  hyphens: auto;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+}
 .projects-grid .projects-grid-item .project-grid-item-todos .project-grid-item-todo .project-grid-item-todo-properties-wrapper .project-grid-item-todo-title {
+  margin-right: 40px;
   font-size: 1.2rem;
   font-weight: 400;
   cursor: pointer;
+}
+@media screen and (min-width: 480px) {
+  .projects-grid .projects-grid-item .project-grid-item-todos .project-grid-item-todo .project-grid-item-todo-properties-wrapper .project-grid-item-todo-title {
+    margin-right: 50px;
+  }
 }
 .projects-grid .projects-grid-item .project-grid-item-todos .project-grid-item-todo .project-grid-item-todo-properties-wrapper > *:not(:first-child) {
   margin-top: 0.5rem;
@@ -236,13 +292,25 @@ body {
 }
 .projects-grid .projects-grid-item .project-grid-item-todos .project-grid-item-todo .project-grid-item-todo-buttons-wrapper {
   display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 768px) {
+  .projects-grid .projects-grid-item .project-grid-item-todos .project-grid-item-todo .project-grid-item-todo-buttons-wrapper {
+    flex-direction: row;
+  }
 }
 .projects-grid .projects-grid-item .project-grid-item-todos .project-grid-item-todo .project-grid-item-todo-buttons-wrapper > * {
-  margin-left: 8px;
+  margin-bottom: 8px;
   width: 30px;
   height: 30px;
   border-radius: 4px;
   cursor: pointer;
+}
+@media screen and (min-width: 768px) {
+  .projects-grid .projects-grid-item .project-grid-item-todos .project-grid-item-todo .project-grid-item-todo-buttons-wrapper > * {
+    margin-left: 8px;
+    margin-bottom: 0px;
+  }
 }
 .projects-grid .projects-grid-item .project-grid-item-todos .project-grid-item-todo .project-grid-item-todo-buttons-wrapper .project-grid-item-todo-buttons-checklist {
   background-color: #06d6a0;
