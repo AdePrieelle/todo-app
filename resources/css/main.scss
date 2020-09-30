@@ -272,13 +272,13 @@ body {
 					// 	max-width: 380px;
 					// }
 					overflow-wrap: break-word;
-				word-wrap: break-word;
-				word-break: break-word;
-				-ms-word-break: break-all;
-				hyphens: auto;
-				-ms-hyphens: auto;
-				-moz-hyphens: auto;
-				-webkit-hyphens: auto;
+					word-wrap: break-word;
+					word-break: break-word;
+					-ms-word-break: break-all;
+					hyphens: auto;
+					-ms-hyphens: auto;
+					-moz-hyphens: auto;
+					-webkit-hyphens: auto;
 					.project-grid-item-todo-title {
 						margin-right: 40px;
 						@media screen and (min-width: 480px) {
@@ -295,12 +295,20 @@ body {
 						font-weight: 400;
 					}
 					.project-grid-item-todo-description {
+						margin-right: 40px;
+						@media screen and (min-width: 480px) {
+							margin-right: 50px;
+						};
 						display: none;
 					}
 					.project-grid-item-todo-priority {
 						display: none;
 					}
 					.project-grid-item-todo-notes {
+						margin-right: 40px;
+						@media screen and (min-width: 480px) {
+							margin-right: 50px;
+						};
 						display: none;
 					}
 					.project-grid-item-todo-finished {
