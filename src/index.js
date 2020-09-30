@@ -24,6 +24,7 @@ import {
   closeCreateTodoItemForm,
   copyTodoItemNameToBgModalFormTitle,
   renderBgModalContentFormInputSelectProjectOptgroup,
+  addTodoItemToProject, 
 } from "./eventController.js";
 
 // create a todo item object
@@ -145,6 +146,9 @@ copyTodoItemNameToBgModalFormTitle();
 // render projects to bgModalContentFormInputSelectProjectOptgroup
 // renderBgModalContentFormInputSelectProjectOptgroup(allprojectsNew);
 
+// add todoItem to Project
+addTodoItemToProject(allprojectsNew);
+
 
 
 
@@ -175,11 +179,9 @@ functionality to add:
 - add minimize and expand functionality on button arrows up and down click to display none properties
   done (but deleted the double down and up buttons and added the event to the grid todo item title area);
   done (but deleted the double down and up buttons and added the event to the grid todo item area);
-  
 
 - add function to add project on button
   done
-
 
 - add function to clear input fields homepage
   done
@@ -198,8 +200,13 @@ functionality to add:
   done
 
 - add function to addCreateTodoToProjectTodos from inputs on submit button
+  done
 
 - add function to clear input fields modal form
+  done
+
+- add function to select project name in bg modal form when clicking on add todo item within a project item
+  (add data-attribute? to project grid item and select the project in the form based on the data attribute when rendering)
 
 - add function to button to change checklist property value
 

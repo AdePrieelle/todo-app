@@ -1,5 +1,5 @@
-import {addProjectToProjectList} from "./createproject.js";
-import {createProject} from "./createproject.js";
+import {createTodo} from "./createtodo.js";
+import {createProject, addCreateTodoToProjectTodos, addProjectToProjectList} from "./createproject.js";
 import {renderProjectsTodos} from "./renderprojectstodos.js";
 
 // Written for expand buttons
@@ -200,12 +200,16 @@ const displayCreateTodoItemFormProjectGridItemAddTodoItem = (projectlist) => {
 const closeCreateTodoItemForm = () => {
   const bgModalContentClose = document.querySelector(".bg-modal-content-close");
   bgModalContentClose.addEventListener("click", function() {
+    closeCreateTodoItemFormDefault();
+  });
+};
+
+const closeCreateTodoItemFormDefault = () => {
     const bgModal = document.querySelector(".bg-modal");
     bgModal.setAttribute("style", "display: none");
     // clear inputs from the todo item form
     clearInputsForm(".bg-modal-content-form");
-  });
-};
+}
 
 const copyTodoItemNameToBgModalFormTitle = () => {
   const addTodoItemFormInput = document.querySelector(".add-todo-item-form-input");
@@ -229,6 +233,55 @@ const renderBgModalContentFormInputSelectProjectOptgroup = (projectlist) => {
     bgModalContentFormInputSelectProjectOptgroupOption.appendChild(bgModalContentFormInputSelectProjectOptgroupText);
   }
 };
+
+const addTodoItemToProject = (projectlist) => {
+  const bgModalContentFormInputSubmit = document.querySelector(".bg-modal-content-form-input-submit");
+  bgModalContentFormInputSubmit.addEventListener("click", function() {
+    const bgModalContentFormInputTextTitle = document.querySelector(".bg-modal-content-form-input-text-title");
+    let addTodoItemCreateTitle = bgModalContentFormInputTextTitle.value;
+    if (addTodoItemCreateTitle == "") {
+      alert("Please enter a title");
+      return;
+    }
+    const bgModalContentFormInputTextareaDescription = document.querySelector(".bg-modal-content-form-input-textarea-description");
+    let addTodoItemCreateDescription = bgModalContentFormInputTextareaDescription.value;
+    const bgModalContentFormInputRadioLow = document.querySelector(`input[name = "bg-modal-content-form-priority"]:checked`);
+    let addTodoItemCreatePriority = bgModalContentFormInputRadioLow.value;
+    const bgModalContentFormSelectProject = document.querySelector(".bg-modal-content-form-select-project");
+    let addTodoItemCreateProjectname = +bgModalContentFormSelectProject.value;
+    const bgModalContentFormInputTextareaNotes = document.querySelector(".bg-modal-content-form-input-textarea-notes");
+    let addTodoItemCreateNotes = bgModalContentFormInputTextareaNotes.value;
+    const bgModalContentFormInputCheckboxFinished = document.querySelector(".bg-modal-content-form-input-checkbox-finished");
+    let addTodoItemCreateFinished = "";
+    if (bgModalContentFormInputCheckboxFinished.checked) {
+      addTodoItemCreateFinished = "yes";
+    } else {
+      addTodoItemCreateFinished = "no";
+    }
+    const bgModalContentFormInputDate = document.querySelector(".bg-modal-content-form-input-date");
+    let addTodoItemCreateDuedate = bgModalContentFormInputDate.value;
+    if (addTodoItemCreateDuedate == "") {
+      addTodoItemCreateDuedate = "No due date";
+    }
+
+    // add todo to project
+    addCreateTodoToProjectTodos(
+      projectlist, 
+      addTodoItemCreateProjectname, 
+      createTodo(
+        addTodoItemCreateTitle,
+        addTodoItemCreateDescription,
+        addTodoItemCreatePriority,
+        addTodoItemCreateProjectname,
+        addTodoItemCreateNotes,
+        addTodoItemCreateFinished,
+        addTodoItemCreateDuedate,        
+      )
+    );
+    closeCreateTodoItemFormDefault();
+    renderProjectsTodos(projectlist);
+  });
+}
 
 
 
@@ -288,4 +341,5 @@ export {
   closeCreateTodoItemForm,
   copyTodoItemNameToBgModalFormTitle,
   renderBgModalContentFormInputSelectProjectOptgroup, 
+  addTodoItemToProject,
 };

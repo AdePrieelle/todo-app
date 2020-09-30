@@ -93,7 +93,7 @@ const renderProjectsTodos = ((projectlist) => {
       projectGridItemTodoDescription.classList = "project-grid-item-todo-description";
       projectGridItemTodoPropertiesWrapper.appendChild(projectGridItemTodoDescription);
 
-      let projectGridItemTodoDescriptionText = document.createTextNode(`${projectlist[i].todos[j].description}`);
+      let projectGridItemTodoDescriptionText = document.createTextNode(`Description: ${projectlist[i].todos[j].description}`);
       projectGridItemTodoDescription.appendChild(projectGridItemTodoDescriptionText);
 
       // project-grid-item-todo-priority
@@ -109,7 +109,7 @@ const renderProjectsTodos = ((projectlist) => {
       projectGridItemTodoNotes.classList = "project-grid-item-todo-notes";
       projectGridItemTodoPropertiesWrapper.appendChild(projectGridItemTodoNotes);
 
-      let projectGridItemTodoNotesText = document.createTextNode(`${projectlist[i].todos[j].notes}`);
+      let projectGridItemTodoNotesText = document.createTextNode(`Notes: ${projectlist[i].todos[j].notes}`);
       projectGridItemTodoNotes.appendChild(projectGridItemTodoNotesText);
 
       // project-grid-item-todo-finished
