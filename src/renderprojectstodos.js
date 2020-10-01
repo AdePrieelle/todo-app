@@ -14,6 +14,7 @@ const renderProjectsTodos = ((projectlist) => {
     // projects-grid-item
     let projectsGridItem = document.createElement("div");
     projectsGridItem.classList = "projects-grid-item";
+    projectsGridItem.setAttribute('data-project-index', i);
     projectsGrid.appendChild(projectsGridItem);
   
     // project-grid-item-title-add-todo-item-wrapper

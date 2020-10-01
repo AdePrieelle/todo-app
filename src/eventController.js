@@ -182,6 +182,7 @@ const displayCreateTodoItemFormAddTodoItemButton = (projectlist) => {
       const bgModal = document.querySelector(".bg-modal");
       bgModal.setAttribute("style", "display: flex");
       renderBgModalContentFormInputSelectProjectOptgroup(projectlist);
+      selectProjectOptgroupOptionOnFormAddTodoItemButton(addTodoItemButton);
     });
   });
 };
@@ -193,9 +194,30 @@ const displayCreateTodoItemFormProjectGridItemAddTodoItem = (projectlist) => {
       const bgModal = document.querySelector(".bg-modal");
       bgModal.setAttribute("style", "display: flex");
       renderBgModalContentFormInputSelectProjectOptgroup(projectlist);
+      selectProjectOptgroupOptionOnFormProjectGridItemAddTodoItem(projectGridItemAddTodoItemButton);
     });
   });
 };
+
+const selectProjectOptgroupOptionOnFormDefault = (dataProjectIndexValue) => {
+  let bgModalContentFormInputSelectProjectOptgroup = document.querySelector(".bg-modal-content-form-input-select-project-optgroup");
+  let bgModalContentFormInputSelectProjectOptgroupChildNodes = bgModalContentFormInputSelectProjectOptgroup.childNodes;
+  for (let project of bgModalContentFormInputSelectProjectOptgroupChildNodes) {
+    if (dataProjectIndexValue == project.value) {
+      project.selected = "selected";
+    }
+  }
+}
+
+const selectProjectOptgroupOptionOnFormAddTodoItemButton = (addTodoItemButton) => {
+  let dataProjectIndexValue = addTodoItemButton.parentNode.parentNode.getAttribute("data-project-index");
+  selectProjectOptgroupOptionOnFormDefault(dataProjectIndexValue);
+}
+
+const selectProjectOptgroupOptionOnFormProjectGridItemAddTodoItem = (projectGridItemAddTodoItemButton) => {
+  let dataProjectIndexValue = projectGridItemAddTodoItemButton.parentNode.parentNode.parentNode.getAttribute("data-project-index");
+  selectProjectOptgroupOptionOnFormDefault(dataProjectIndexValue);
+}
 
 const closeCreateTodoItemForm = () => {
   const bgModalContentClose = document.querySelector(".bg-modal-content-close");

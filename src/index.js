@@ -207,6 +207,7 @@ functionality to add:
 
 - add function to select project name in bg modal form when clicking on add todo item within a project item
   (add data-attribute? to project grid item and select the project in the form based on the data attribute when rendering)
+  done
 
 - add function to button to change checklist property value
 
