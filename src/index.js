@@ -25,11 +25,12 @@ import {
   copyTodoItemNameToBgModalFormTitle,
   renderBgModalContentFormInputSelectProjectOptgroup,
   addTodoItemToProject, 
+  updateChecklistStatusButton, 
 } from "./eventController.js";
 
 // create a todo item object
 const testTodoItem = createTodo(
-  'testTitle', 'testDescription', 'high', 'project1', 'testNotes', 'checked', '10-12-2020'
+  'testTitle', 'testDescription', 'high', 'project1', 'testNotes', 'yes', '10-12-2020'
 );
 
 const testTodoItem2 = createTodo(
@@ -66,18 +67,18 @@ allprojectsNew[0].todos.push(testTodoItem);
 console.log(allprojectsNew);
 console.log("addedtodos allprojectsNew above");
 addCreateTodoToProjectTodos(allprojectsNew, 0, createTodo(
-  'testTitle3', 'testDescription3', 'urgent', 'project1', 'testNotes3', 'unchecked', '12-12-2020'
+  'testTitle3', 'testDescription3', 'urgent', 'project1', 'testNotes3', 'yes', '12-12-2020'
 ));
 console.log(allprojectsNew);
 console.log("addCreateTodoToProjectTodos above")
 addCreateTodoToProjectTodos(allprojectsNew, 0, createTodo(
-  'testTitle3ToDeleteAbove', 'testDescription3ToDelete', 'urgent', 'project1', 'testNotes3', 'unchecked', '12-12-2020'
+  'testTitle3ToDeleteAbove', 'testDescription3ToDelete', 'urgent', 'project1', 'testNotes3', 'no', '12-12-2020'
 ));
 addCreateTodoToProjectTodos(allprojectsNew, 0, createTodo(
-  'testTitle3ToDeleteItem', 'testDescription3', 'urgent', 'project1', 'testNotes3', 'unchecked', '12-12-2020'
+  'testTitle3ToDeleteItem', 'testDescription3', 'urgent', 'project1', 'testNotes3', 'no', '12-12-2020'
 ));
 addCreateTodoToProjectTodos(allprojectsNew, 0, createTodo(
-  'testTitle3ToDeleteBelow', 'testDescription3', 'urgent', 'project1', 'testNotes3', 'unchecked', '12-12-2020'
+  'testTitle3ToDeleteBelow', 'testDescription3', 'urgent', 'project1', 'testNotes3', 'yes', '12-12-2020'
 ));
 console.log(allprojectsNew);
 console.log("Add 3 more addCreateTodoToProjectTodos above to allprojectsNew");
@@ -98,17 +99,17 @@ console.log("deleteProjectFromProjectList above");
 editProjectFromProjectList(allprojectsNew, 1, "projectTitle", "test1 addProjectToProjectListtttttttttttttttttttttttt edited");
 console.log(allprojectsNew);
 console.log("editProjectFromProjectList above");
-editCreateTodoFromProjectTodos(allprojectsNew, 0, 1, "checklist", "uncheck edited");
+editCreateTodoFromProjectTodos(allprojectsNew, 0, 1, "checklist", "no");
 console.log(allprojectsNew);
 console.log("change checklist finished status above with editCreateTodoFromProjectTodos")
 
 
 // add projects to render
 addCreateTodoToProjectTodos(allprojectsNew, 1, createTodo(
-  'testTitle3ToDeleteBelowwwwwwwwwwwwwwwwwwwwwwww', 'testDescription3', 'urgent', 'project1', 'testNotes3', 'unchecked', '12-12-2020'
+  'testTitle3ToDeleteBelowwwwwwwwwwwwwwwwwwwwwwww', 'testDescription3', 'urgent', 'project1', 'testNotes3', 'yes', '12-12-2020'
 ));
 addCreateTodoToProjectTodos(allprojectsNew, 1, createTodo(
-  'testTitle3ToDeleteBelow', 'testDescription3', 'urgent', 'project1', 'testNotes3', 'unchecked', '12-12-2020'
+  'testTitle3ToDeleteBelow', 'testDescription3', 'urgent', 'project1', 'testNotes3', 'no', '12-12-2020'
 ));
 
 // renderProjectsTodos(allprojectsNew);
@@ -148,6 +149,9 @@ copyTodoItemNameToBgModalFormTitle();
 
 // add todoItem to Project
 addTodoItemToProject(allprojectsNew);
+
+// // add change checklist value on cheklist button click
+// updateChecklistStatusButton(allprojectsNew);
 
 
 
@@ -210,6 +214,9 @@ functionality to add:
   done
 
 - add function to button to change checklist property value
+  done
+
+- add colour change of project-grid-item-todo background based on priority value
 
 aaand add functionality for updating and deleting projects and todos
 

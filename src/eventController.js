@@ -1,5 +1,5 @@
 import {createTodo} from "./createtodo.js";
-import {createProject, addCreateTodoToProjectTodos, addProjectToProjectList} from "./createproject.js";
+import {createProject, addCreateTodoToProjectTodos, editCreateTodoFromProjectTodos, addProjectToProjectList} from "./createproject.js";
 import {renderProjectsTodos} from "./renderprojectstodos.js";
 
 // Written for expand buttons
@@ -305,7 +305,52 @@ const addTodoItemToProject = (projectlist) => {
   });
 }
 
+const updateChecklistStatusButton = (projectlist) => {
+  const projectGridItemTodoButtonsChecklist = document.querySelectorAll(".project-grid-item-todo-buttons-checklist");
+  projectGridItemTodoButtonsChecklist.forEach((checklistButton) => {
+    checklistButton.addEventListener("click", function() {
+      let indexOfProject = +checklistButton.parentNode.parentNode.parentNode.parentNode.getAttribute("data-project-index");
+      let indexOfProjectTodoItem = +checklistButton.parentNode.parentNode.getAttribute("data-project-todo-item-index");
+      let newChecklistvalue;
+      if (projectlist[indexOfProject].todos[indexOfProjectTodoItem]["checklist"] == "yes") {
+        newChecklistvalue = "no";
+      } else {
+        newChecklistvalue = "yes";
+      }
+      editCreateTodoFromProjectTodos(projectlist, indexOfProject, indexOfProjectTodoItem, "checklist", newChecklistvalue);
+      renderProjectsTodos(projectlist);
+    });
+  });
+}
 
+const addChecklistFinishedLineThrough = (projectlist) => {
+  for (let i = 0; i < projectlist.length; i++) {
+    for (let j = 0; j < projectlist[i].todos.length; j++) {
+      const projectGridItemTodoPropertiesWrapper = document.querySelectorAll(".project-grid-item-todo-properties-wrapper");
+      projectGridItemTodoPropertiesWrapper.forEach((todoproperties) => {
+        if (
+          todoproperties.parentNode.getAttribute("data-project-todo-item-index") == j 
+          && todoproperties.parentNode.parentNode.parentNode.getAttribute("data-project-index") == i
+          && projectlist[i].todos[j]["checklist"] == "yes"
+        ) {
+          todoproperties.style.textDecoration = "line-through";
+          todoproperties.style.color = "rgba(140, 140, 140)";
+          todoproperties.nextSibling.childNodes[0].style.backgroundColor = "#8cecd4";
+        };
+      });
+    };
+  };
+};
+
+
+/*
+
+  let allprojects = [ 
+    {projectTitle: "project1", todos: [{title: "testTitle1", description: "testDescription1", priority: "normal", projectName: "project1", notes: "notes example", checklist: "yes", dueDate: "11/12/2020"}, {title: "testTitle2", description: "testDescription2", priority: "normal", projectName: "project1", notes: "notes example", checklist: "yes", dueDate: "11/12/2020"}]},
+    {projectTitle: "project2", todos: [{title: "testTitle3", description: "testDescription3", priority: "normal", projectName: "project1", notes: "notes example", checklist: "yes", dueDate: "11/12/2020"}, {title: "testTitle4", description: "testDescription4", priority: "normal", projectName: "project1", notes: "notes example", checklist: "yes", dueDate: "11/12/2020"}]},
+  ];
+
+*/
 
   /* 
 
@@ -364,4 +409,6 @@ export {
   copyTodoItemNameToBgModalFormTitle,
   renderBgModalContentFormInputSelectProjectOptgroup, 
   addTodoItemToProject,
+  updateChecklistStatusButton, 
+  addChecklistFinishedLineThrough, 
 };

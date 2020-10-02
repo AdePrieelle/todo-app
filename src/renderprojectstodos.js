@@ -2,6 +2,8 @@ import {
   collapseGridItemTodo, 
   displayCreateTodoItemFormAddTodoItemButton,
   displayCreateTodoItemFormProjectGridItemAddTodoItem,
+  updateChecklistStatusButton, 
+  addChecklistFinishedLineThrough, 
 } from "./eventController";
 
 const renderProjectsTodos = ((projectlist) => {
@@ -74,6 +76,8 @@ const renderProjectsTodos = ((projectlist) => {
       // project-grid-item-todo
       let projectGridItemTodo = document.createElement("div");
       projectGridItemTodo.classList = "project-grid-item-todo";
+      projectGridItemTodo.setAttribute('data-project-todo-item-index', j);
+
       projectGridItemTodos.appendChild(projectGridItemTodo);
 
       // project-grid-item-todo-properties-wrapper
@@ -203,6 +207,12 @@ const renderProjectsTodos = ((projectlist) => {
 
   // display createTodoItemForm when click on the plus icon next to the project title
   displayCreateTodoItemFormProjectGridItemAddTodoItem(projectlist);
+
+  // update checklist status when clicked on checklist icon
+  updateChecklistStatusButton(projectlist);
+
+  // add linethrough project-grid-item-todo-properties-wrapper if checklist status is yes
+  addChecklistFinishedLineThrough(projectlist);
 
 
 });
