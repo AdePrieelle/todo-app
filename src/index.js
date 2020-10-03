@@ -67,7 +67,7 @@ allprojectsNew[0].todos.push(testTodoItem);
 console.log(allprojectsNew);
 console.log("addedtodos allprojectsNew above");
 addCreateTodoToProjectTodos(allprojectsNew, 0, createTodo(
-  'testTitle3', 'testDescription3', 'normal', 'project1', 'testNotes3', 'yes', '12-12-2020'
+  'testTitle3', 'testDescription3', 'medium', 'project1', 'testNotes3', 'yes', '12-12-2020'
 ));
 console.log(allprojectsNew);
 console.log("addCreateTodoToProjectTodos above")
@@ -106,7 +106,7 @@ console.log("change checklist finished status above with editCreateTodoFromProje
 
 // add projects to render
 addCreateTodoToProjectTodos(allprojectsNew, 1, createTodo(
-  'testTitle3ToDeleteBelowwwwwwwwwwwwwwwwwwwwwwww', 'testDescription3', 'normal', 'project1', 'testNotes3', 'yes', '12-12-2020'
+  'testTitle3ToDeleteBelowwwwwwwwwwwwwwwwwwwwwwww', 'testDescription3', 'medium', 'project1', 'testNotes3', 'yes', '12-12-2020'
 ));
 addCreateTodoToProjectTodos(allprojectsNew, 1, createTodo(
   'testTitle3ToDeleteBelow', 'testDescription3', 'high', 'project1', 'testNotes3', 'no', '12-12-2020'

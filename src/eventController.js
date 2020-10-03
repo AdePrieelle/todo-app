@@ -354,7 +354,7 @@ const addProjectGridItemTodoPriorityBgColor = (projectlist) => {
         ) {
           if (projectlist[i].todos[j]["priority"] == "low") {
             todoItem.style.backgroundColor = "#b1ffa3";
-          } else if (projectlist[i].todos[j]["priority"] == "normal") {
+          } else if (projectlist[i].todos[j]["priority"] == "medium") {
             todoItem.style.backgroundColor = "#fffca3";
           } else if (projectlist[i].todos[j]["priority"] == "high") {
             todoItem.style.backgroundColor = "#ffd6a3";
