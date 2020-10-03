@@ -335,7 +335,32 @@ const addChecklistFinishedLineThrough = (projectlist) => {
         ) {
           todoproperties.style.textDecoration = "line-through";
           todoproperties.style.color = "rgba(140, 140, 140)";
-          todoproperties.nextSibling.childNodes[0].style.backgroundColor = "#8cecd4";
+          // todoproperties.nextSibling.childNodes[0].style.backgroundColor = "#49de7b";
+          todoproperties.parentNode.style.opacity = ".6";
+        };
+      });
+    };
+  };
+};
+
+const addProjectGridItemTodoPriorityBgColor = (projectlist) => {
+  for (let i = 0; i < projectlist.length; i++) {
+    for (let j = 0; j < projectlist[i].todos.length; j++) {
+      const projectGridItemTodo = document.querySelectorAll(".project-grid-item-todo");
+      projectGridItemTodo.forEach((todoItem) => {
+        if (
+          todoItem.getAttribute("data-project-todo-item-index") == j 
+          && todoItem.parentNode.parentNode.getAttribute("data-project-index") == i
+        ) {
+          if (projectlist[i].todos[j]["priority"] == "low") {
+            todoItem.style.backgroundColor = "#b1ffa3";
+          } else if (projectlist[i].todos[j]["priority"] == "normal") {
+            todoItem.style.backgroundColor = "#fffca3";
+          } else if (projectlist[i].todos[j]["priority"] == "high") {
+            todoItem.style.backgroundColor = "#ffd6a3";
+          } else if (projectlist[i].todos[j]["priority"] == "urgent") {
+            todoItem.style.backgroundColor = "#ffa3a3";
+          }
         };
       });
     };
@@ -411,4 +436,5 @@ export {
   addTodoItemToProject,
   updateChecklistStatusButton, 
   addChecklistFinishedLineThrough, 
+  addProjectGridItemTodoPriorityBgColor, 
 };

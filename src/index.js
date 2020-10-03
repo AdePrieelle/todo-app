@@ -30,7 +30,7 @@ import {
 
 // create a todo item object
 const testTodoItem = createTodo(
-  'testTitle', 'testDescription', 'high', 'project1', 'testNotes', 'yes', '10-12-2020'
+  'testTitle', 'testDescription', 'low', 'project1', 'testNotes', 'yes', '10-12-2020'
 );
 
 const testTodoItem2 = createTodo(
@@ -67,12 +67,12 @@ allprojectsNew[0].todos.push(testTodoItem);
 console.log(allprojectsNew);
 console.log("addedtodos allprojectsNew above");
 addCreateTodoToProjectTodos(allprojectsNew, 0, createTodo(
-  'testTitle3', 'testDescription3', 'urgent', 'project1', 'testNotes3', 'yes', '12-12-2020'
+  'testTitle3', 'testDescription3', 'normal', 'project1', 'testNotes3', 'yes', '12-12-2020'
 ));
 console.log(allprojectsNew);
 console.log("addCreateTodoToProjectTodos above")
 addCreateTodoToProjectTodos(allprojectsNew, 0, createTodo(
-  'testTitle3ToDeleteAbove', 'testDescription3ToDelete', 'urgent', 'project1', 'testNotes3', 'no', '12-12-2020'
+  'testTitle3ToDeleteAbove', 'testDescription3ToDelete', 'high', 'project1', 'testNotes3', 'no', '12-12-2020'
 ));
 addCreateTodoToProjectTodos(allprojectsNew, 0, createTodo(
   'testTitle3ToDeleteItem', 'testDescription3', 'urgent', 'project1', 'testNotes3', 'no', '12-12-2020'
@@ -106,10 +106,10 @@ console.log("change checklist finished status above with editCreateTodoFromProje
 
 // add projects to render
 addCreateTodoToProjectTodos(allprojectsNew, 1, createTodo(
-  'testTitle3ToDeleteBelowwwwwwwwwwwwwwwwwwwwwwww', 'testDescription3', 'urgent', 'project1', 'testNotes3', 'yes', '12-12-2020'
+  'testTitle3ToDeleteBelowwwwwwwwwwwwwwwwwwwwwwww', 'testDescription3', 'normal', 'project1', 'testNotes3', 'yes', '12-12-2020'
 ));
 addCreateTodoToProjectTodos(allprojectsNew, 1, createTodo(
-  'testTitle3ToDeleteBelow', 'testDescription3', 'urgent', 'project1', 'testNotes3', 'no', '12-12-2020'
+  'testTitle3ToDeleteBelow', 'testDescription3', 'high', 'project1', 'testNotes3', 'no', '12-12-2020'
 ));
 
 // renderProjectsTodos(allprojectsNew);
@@ -217,6 +217,15 @@ functionality to add:
   done
 
 - add colour change of project-grid-item-todo background based on priority value
+  done
+
+- add function to delete projects
+
+- add function to delete todo items
+
+- add function to update projects
+
+- add function to update todo items
 
 aaand add functionality for updating and deleting projects and todos
 

@@ -4,6 +4,7 @@ import {
   displayCreateTodoItemFormProjectGridItemAddTodoItem,
   updateChecklistStatusButton, 
   addChecklistFinishedLineThrough, 
+  addProjectGridItemTodoPriorityBgColor, 
 } from "./eventController";
 
 const renderProjectsTodos = ((projectlist) => {
@@ -213,6 +214,9 @@ const renderProjectsTodos = ((projectlist) => {
 
   // add linethrough project-grid-item-todo-properties-wrapper if checklist status is yes
   addChecklistFinishedLineThrough(projectlist);
+
+  // add a background-color based on the priority status for project-grid-item-todo
+  addProjectGridItemTodoPriorityBgColor(projectlist);
 
 
 });
