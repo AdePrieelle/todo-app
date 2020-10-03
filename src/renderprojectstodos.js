@@ -5,6 +5,8 @@ import {
   updateChecklistStatusButton, 
   addChecklistFinishedLineThrough, 
   addProjectGridItemTodoPriorityBgColor, 
+  deleteProjectButton, 
+  deleteTodoItemFromProjectButton, 
 } from "./eventController";
 
 const renderProjectsTodos = ((projectlist) => {
@@ -217,6 +219,12 @@ const renderProjectsTodos = ((projectlist) => {
 
   // add a background-color based on the priority status for project-grid-item-todo
   addProjectGridItemTodoPriorityBgColor(projectlist);
+
+  // add delete project function when clicking on the project's delete icon
+  deleteProjectButton(projectlist);
+
+  // add delete todo item from project function when clicking on the todo item's delete icon
+  deleteTodoItemFromProjectButton(projectlist);
 
 
 });

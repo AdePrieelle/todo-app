@@ -200,7 +200,7 @@ body {
 				@media screen and (min-width: 768px) {
 					flex-direction: row;
 				};
-				padding-right: 10px;
+				margin-right: 10px;
 				> * {
 						width: 30px;
 						height: 30px;
@@ -211,6 +211,12 @@ body {
 						};
 						border-radius: 4px;
 						cursor: pointer;
+				}
+				:first-child {
+					margin-left: 0;
+				}
+				:last-child {
+					margin-bottom: 0;
 				}
 				.project-grid-item-add-todo-item {
 					// font-size: 1.5rem;
@@ -356,6 +362,14 @@ body {
 						height: 30px;
 						border-radius: 4px;
 						cursor: pointer;
+					}
+					:first-child {
+						@media screen and (min-width: 768px) {
+							margin-left: 0;
+						};
+					}
+					:last-child {
+						margin-bottom: 0;
 					}
 					.project-grid-item-todo-buttons-checklist {
 						background-color: $checklist-button-color;

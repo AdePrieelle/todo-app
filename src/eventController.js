@@ -1,5 +1,12 @@
 import {createTodo} from "./createtodo.js";
-import {createProject, addCreateTodoToProjectTodos, editCreateTodoFromProjectTodos, addProjectToProjectList} from "./createproject.js";
+import {
+  createProject, 
+  addCreateTodoToProjectTodos, 
+  deleteCreateTodoFromProjectTodos, 
+  editCreateTodoFromProjectTodos, 
+  addProjectToProjectList, 
+  deleteProjectFromProjectList
+} from "./createproject.js";
 import {renderProjectsTodos} from "./renderprojectstodos.js";
 
 // Written for expand buttons
@@ -367,6 +374,35 @@ const addProjectGridItemTodoPriorityBgColor = (projectlist) => {
   };
 };
 
+const deleteProjectButton = (projectlist) => {
+  const projectGridItemDeleteProject = document.querySelectorAll(".project-grid-item-delete-project");
+  projectGridItemDeleteProject.forEach((deleteTheProjectButton) => {
+    deleteTheProjectButton.addEventListener("click", function() {
+      let confirmToDeleteProject = confirm("Are you sure you want to delete this project and it's todo items?");
+      if (confirmToDeleteProject) {
+        let indexOfProject = +deleteTheProjectButton.parentNode.parentNode.parentNode.getAttribute("data-project-index");
+        deleteProjectFromProjectList(projectlist, indexOfProject);
+        renderProjectsTodos(projectlist);
+      };
+    });
+  });
+};
+
+const deleteTodoItemFromProjectButton = (projectlist) => {
+  const projectGridItemTodoButtonsDelete = document.querySelectorAll(".project-grid-item-todo-buttons-delete");
+  projectGridItemTodoButtonsDelete.forEach((deleteTheTodoItem) => {
+    deleteTheTodoItem.addEventListener("click", function() {
+      let confirmToDeleteTodoItemFromProject = confirm("Are you sure that you want to delete this todo item?");
+      if (confirmToDeleteTodoItemFromProject) {
+        let indexOfProject = +deleteTheTodoItem.parentNode.parentNode.parentNode.parentNode.getAttribute("data-project-index");
+        let indexOfTodoItem = +deleteTheTodoItem.parentNode.parentNode.getAttribute("data-project-todo-item-index");
+        deleteCreateTodoFromProjectTodos(projectlist, indexOfProject, indexOfTodoItem);
+        renderProjectsTodos(projectlist);
+      };
+    });
+  });
+};
+
 
 /*
 
@@ -376,49 +412,6 @@ const addProjectGridItemTodoPriorityBgColor = (projectlist) => {
   ];
 
 */
-
-  /* 
-
-  const projectGridItemTodoTitle = document.querySelectorAll(".project-grid-item-todo-title");
-
-  const projectGridItemTodoDescription = document.querySelectorAll(".project-grid-item-todo-description");
-
-  projectGridItemTodoTitle.forEach((gridItemTodoTitle) => {
-    gridItemTodoTitle.addEventListener("click", function(e) {
-      let propertiesNodes = e.target.parentNode.childNodes;
-      propertiesNodes.forEach((property) => {
-
-
-        // doesnt work below
-        projectGridItemTodoDescription.forEach((description) => {
-
-          if (description.style.display == "none") {
-            description.parentNode.childNodes.forEach((property) => {
-              property.setAttribute("style", "display: block");
-            });
-          };
-          
-          // else if (description.style.display !== "none") {
-          //   description.parentNode.childNodes.forEach((property) => {
-          //     property.setAttribute("style", "display: none");
-          //   });
-            
-          // };
-
-        });
-
-        // doesnt work above
-
-      });
-      propertiesNodes[0].setAttribute("style", "display: block");
-      propertiesNodes[5].setAttribute("style", "display: block");
-      // propertiesNodes.forEach((childnode) => {
-      //   childnode.setAttribute("style", "display: block");
-      // });
-    });
-  });
-
-  */
 
 export { 
   maximizeTodoItem,
@@ -437,4 +430,6 @@ export {
   updateChecklistStatusButton, 
   addChecklistFinishedLineThrough, 
   addProjectGridItemTodoPriorityBgColor, 
+  deleteProjectButton, 
+  deleteTodoItemFromProjectButton, 
 };

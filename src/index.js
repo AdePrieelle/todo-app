@@ -220,8 +220,10 @@ functionality to add:
   done
 
 - add function to delete projects
+  done
 
 - add function to delete todo items
+  done
 
 - add function to update projects
 
