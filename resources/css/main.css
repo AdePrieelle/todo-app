@@ -179,7 +179,7 @@ body {
 .projects-grid .projects-grid-item .project-grid-item-title-add-todo-item-wrapper .project-grid-item-add-todo-item-delete-project-wrapper {
   display: flex;
   flex-direction: column;
-  padding-right: 10px;
+  margin-right: 10px;
 }
 @media screen and (min-width: 768px) {
   .projects-grid .projects-grid-item .project-grid-item-title-add-todo-item-wrapper .project-grid-item-add-todo-item-delete-project-wrapper {
@@ -198,6 +198,12 @@ body {
     margin-left: 8px;
     margin-bottom: 0px;
   }
+}
+.projects-grid .projects-grid-item .project-grid-item-title-add-todo-item-wrapper .project-grid-item-add-todo-item-delete-project-wrapper :first-child {
+  margin-left: 0;
+}
+.projects-grid .projects-grid-item .project-grid-item-title-add-todo-item-wrapper .project-grid-item-add-todo-item-delete-project-wrapper :last-child {
+  margin-bottom: 0;
 }
 .projects-grid .projects-grid-item .project-grid-item-title-add-todo-item-wrapper .project-grid-item-add-todo-item-delete-project-wrapper .project-grid-item-add-todo-item {
   background-color: #118ab2;
@@ -323,6 +329,14 @@ body {
     margin-left: 8px;
     margin-bottom: 0px;
   }
+}
+@media screen and (min-width: 768px) {
+  .projects-grid .projects-grid-item .project-grid-item-todos .project-grid-item-todo .project-grid-item-todo-buttons-wrapper :first-child {
+    margin-left: 0;
+  }
+}
+.projects-grid .projects-grid-item .project-grid-item-todos .project-grid-item-todo .project-grid-item-todo-buttons-wrapper :last-child {
+  margin-bottom: 0;
 }
 .projects-grid .projects-grid-item .project-grid-item-todos .project-grid-item-todo .project-grid-item-todo-buttons-wrapper .project-grid-item-todo-buttons-checklist {
   background-color: #06d6a0;
