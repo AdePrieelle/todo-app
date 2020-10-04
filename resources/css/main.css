@@ -176,6 +176,40 @@ body {
     margin-right: 50px;
   }
 }
+.projects-grid .projects-grid-item .project-grid-item-title-add-todo-item-wrapper .project-grid-item-title .project-grid-item-title-form {
+  display: flex;
+}
+.projects-grid .projects-grid-item .project-grid-item-title-add-todo-item-wrapper .project-grid-item-title .project-grid-item-title-form .project-grid-item-title-form-input {
+  max-width: 120px;
+  padding: 10px;
+  height: 30px;
+  border: 1px solid #118ab2;
+  border-radius: 4px 0 0 4px;
+}
+@media screen and (min-width: 380px) {
+  .projects-grid .projects-grid-item .project-grid-item-title-add-todo-item-wrapper .project-grid-item-title .project-grid-item-title-form .project-grid-item-title-form-input {
+    max-width: 160px;
+  }
+}
+@media screen and (min-width: 480px) {
+  .projects-grid .projects-grid-item .project-grid-item-title-add-todo-item-wrapper .project-grid-item-title .project-grid-item-title-form .project-grid-item-title-form-input {
+    max-width: 200px;
+  }
+}
+.projects-grid .projects-grid-item .project-grid-item-title-add-todo-item-wrapper .project-grid-item-title .project-grid-item-title-form .project-grid-item-title-form-save-edited-project-title-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+  height: 30px;
+  font-size: 0.8rem;
+  color: white;
+  background-color: #118ab2;
+  border-radius: 0 4px 4px 0;
+  text-transform: uppercase;
+  cursor: pointer;
+}
 .projects-grid .projects-grid-item .project-grid-item-title-add-todo-item-wrapper .project-grid-item-add-todo-item-delete-project-wrapper {
   display: flex;
   flex-direction: column;
