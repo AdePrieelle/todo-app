@@ -226,6 +226,7 @@ functionality to add:
   done
 
 - add function to update projects
+  done
 
 - add function to update todo items
 

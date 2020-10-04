@@ -5,7 +5,8 @@ import {
   deleteCreateTodoFromProjectTodos, 
   editCreateTodoFromProjectTodos, 
   addProjectToProjectList, 
-  deleteProjectFromProjectList
+  deleteProjectFromProjectList,
+  editProjectFromProjectList, 
 } from "./createproject.js";
 import {renderProjectsTodos} from "./renderprojectstodos.js";
 
@@ -403,6 +404,45 @@ const deleteTodoItemFromProjectButton = (projectlist) => {
   });
 };
 
+const editProjectGridItemTitleButton = (projectlist) => {
+  const projectGridItemUpdateProjectTitle = document.querySelectorAll(".project-grid-item-update-project-title");
+  projectGridItemUpdateProjectTitle.forEach((editProjectTitleButton) => {
+    editProjectTitleButton.addEventListener("click", function() {
+      let projectTitleToEdit = editProjectTitleButton.parentNode.previousSibling;
+
+      // Replace the project-grid-item-title with an input to edit the project-grid-item-title
+      projectTitleToEdit.innerHTML = "";
+
+      let projectGridItemTitleForm = document.createElement("form");
+      projectGridItemTitleForm.classList += "project-grid-item-title-form"
+      projectTitleToEdit.appendChild(projectGridItemTitleForm);
+
+      let projectGridItemTitleFormInput = document.createElement("input");
+      projectGridItemTitleFormInput.classList += "project-grid-item-title-form-input";
+      projectGridItemTitleFormInput.type = "text";
+      projectGridItemTitleFormInput.name = "project-grid-item-title-form-input-edit";
+
+      let indexOfProject = +editProjectTitleButton.parentNode.parentNode.parentNode.getAttribute("data-project-index");
+      projectGridItemTitleFormInput.value = projectlist[indexOfProject]["projectTitle"];
+
+      projectGridItemTitleForm.appendChild(projectGridItemTitleFormInput);
+
+      let projectGridItemTitleFormSaveEditedProjectTitleButton = document.createElement("div");
+      projectGridItemTitleFormSaveEditedProjectTitleButton.classList = "project-grid-item-title-form-save-edited-project-title-button";
+      projectGridItemTitleForm.appendChild(projectGridItemTitleFormSaveEditedProjectTitleButton);
+
+      let projectGridItemTitleFormSaveEditedProjectTitleButtonText = document.createTextNode("SAVE");
+      projectGridItemTitleFormSaveEditedProjectTitleButton.appendChild(projectGridItemTitleFormSaveEditedProjectTitleButtonText);
+
+      // add eventlistener to save the project-grid-item-title from the input and edit the project-grid-item-title and render it
+      projectGridItemTitleFormSaveEditedProjectTitleButton.addEventListener("click", function() {
+        editProjectFromProjectList(projectlist, indexOfProject, "projectTitle", projectGridItemTitleFormInput.value);
+        renderProjectsTodos(projectlist);
+      });
+    });
+  });
+};
+
 
 /*
 
@@ -432,4 +472,5 @@ export {
   addProjectGridItemTodoPriorityBgColor, 
   deleteProjectButton, 
   deleteTodoItemFromProjectButton, 
+  editProjectGridItemTitleButton
 };

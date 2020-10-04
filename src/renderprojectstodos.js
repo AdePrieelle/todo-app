@@ -7,6 +7,7 @@ import {
   addProjectGridItemTodoPriorityBgColor, 
   deleteProjectButton, 
   deleteTodoItemFromProjectButton, 
+  editProjectGridItemTitleButton, 
 } from "./eventController";
 
 const renderProjectsTodos = ((projectlist) => {
@@ -225,6 +226,9 @@ const renderProjectsTodos = ((projectlist) => {
 
   // add delete todo item from project function when clicking on the todo item's delete icon
   deleteTodoItemFromProjectButton(projectlist);
+
+  // add function to edit the projectTitle when clicked on the project-grid-item-update-project-title button
+  editProjectGridItemTitleButton(projectlist);
 
 
 });

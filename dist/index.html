@@ -27,7 +27,7 @@
                 </label>
                 <div class="add-project-add-todo-item-form-input-wrapper-add-project-add-todo-item-button-wrapper">
                   <div class="add-project-add-todo-item-form-input-wrapper">
-                      <input class="add-project-add-todo-item-form-input add-project-form-input" type="name" name="add-project" id="add-project">
+                      <input class="add-project-add-todo-item-form-input add-project-form-input" type="text" name="add-project" id="add-project">
                   </div>
                   <div class="add-project-add-todo-item-button add-project-input-button">
                     <i class="add-project-add-todo-item-button-icon fas fa-plus-circle"></i>
@@ -40,7 +40,7 @@
               </label>
               <div class="add-project-add-todo-item-form-input-wrapper-add-project-add-todo-item-button-wrapper">
                 <div class="add-project-add-todo-item-form-input-wrapper">
-                    <input class="add-project-add-todo-item-form-input add-todo-item-form-input" type="name" name="add-todo-item" id="add-todo-item">
+                    <input class="add-project-add-todo-item-form-input add-todo-item-form-input" type="text" name="add-todo-item" id="add-todo-item">
                 </div>
                 <div class="add-project-add-todo-item-button add-todo-item-input-button">
                   <i class="add-project-add-todo-item-button-icon fas fa-plus-circle"></i>
@@ -60,7 +60,10 @@
         <div class="projects-grid-item">
           <div class="project-grid-item-title-add-todo-item-wrapper">
             <h2 class="project-grid-item-title">
-              project1
+              <form class="project-grid-item-title-form" action="">
+                <input class="project-grid-item-title-form-input" type="text" name="project-grid-item-title-form-input-edit" value="projectTitleValue">
+                <div class="project-grid-item-title-form-save-edited-project-title-button">save</div>
+              </form>
             </h2>
             <div class="project-grid-item-add-todo-item-delete-project-wrapper">
               <div class="project-grid-item-add-todo-item">
