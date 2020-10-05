@@ -8,6 +8,7 @@ import {
   deleteProjectButton, 
   deleteTodoItemFromProjectButton, 
   editProjectGridItemTitleButton, 
+  editProjectGridItemTodoButton, 
 } from "./eventController";
 
 const renderProjectsTodos = ((projectlist) => {
@@ -229,6 +230,9 @@ const renderProjectsTodos = ((projectlist) => {
 
   // add function to edit the projectTitle when clicked on the project-grid-item-update-project-title button
   editProjectGridItemTitleButton(projectlist);
+
+  // add function to edit the project-grid-item-todo-properties when clicking on the project-grid-item-todo-buttons-update button
+  editProjectGridItemTodoButton(projectlist);
 
 
 });

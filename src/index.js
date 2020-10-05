@@ -67,18 +67,18 @@ allprojectsNew[0].todos.push(testTodoItem);
 console.log(allprojectsNew);
 console.log("addedtodos allprojectsNew above");
 addCreateTodoToProjectTodos(allprojectsNew, 0, createTodo(
-  'testTitle3', 'testDescription3', 'medium', 'project1', 'testNotes3', 'yes', '12-12-2020'
+  'testTitle3', 'testDescription3', 'medium', 'project1', 'testNotes3', 'yes', '19-12-2020'
 ));
 console.log(allprojectsNew);
 console.log("addCreateTodoToProjectTodos above")
 addCreateTodoToProjectTodos(allprojectsNew, 0, createTodo(
-  'testTitle3ToDeleteAbove', 'testDescription3ToDelete', 'high', 'project1', 'testNotes3', 'no', '12-12-2020'
+  'testTitle3ToDeleteAbove', 'testDescription3ToDelete', 'high', 'project1', 'testNotes3', 'no', '20-12-2020'
 ));
 addCreateTodoToProjectTodos(allprojectsNew, 0, createTodo(
-  'testTitle3ToDeleteItem', 'testDescription3', 'urgent', 'project1', 'testNotes3', 'no', '12-12-2020'
+  'testTitle3ToDeleteItem', 'testDescription3', 'urgent', 'project1', 'testNotes3', 'no', '21-12-2020'
 ));
 addCreateTodoToProjectTodos(allprojectsNew, 0, createTodo(
-  'testTitle3ToDeleteBelow', 'testDescription3', 'urgent', 'project1', 'testNotes3', 'yes', '12-12-2020'
+  'testTitle3ToDeleteBelow', 'testDescription3', 'urgent', 'project1', 'testNotes3', 'yes', '14-12-2020'
 ));
 console.log(allprojectsNew);
 console.log("Add 3 more addCreateTodoToProjectTodos above to allprojectsNew");
@@ -109,7 +109,7 @@ addCreateTodoToProjectTodos(allprojectsNew, 1, createTodo(
   'testTitle3ToDeleteBelowwwwwwwwwwwwwwwwwwwwwwww', 'testDescription3', 'medium', 'project1', 'testNotes3', 'yes', '12-12-2020'
 ));
 addCreateTodoToProjectTodos(allprojectsNew, 1, createTodo(
-  'testTitle3ToDeleteBelow', 'testDescription3', 'high', 'project1', 'testNotes3', 'no', '12-12-2020'
+  'testTitle3ToDeleteBelow', 'testDescription3', 'high', 'project1', 'testNotes3', 'no', '28-12-2020'
 ));
 
 // renderProjectsTodos(allprojectsNew);
@@ -229,6 +229,17 @@ functionality to add:
   done
 
 - add function to update todo items
+  done
+
+- add function to save todo item to other project
+  done
+
+- fix duedate render
+  done
+
+- add function to save localStorage
+
+- clear up index.js
 
 aaand add functionality for updating and deleting projects and todos
 

@@ -560,6 +560,13 @@ body {
 							background-color: $project-todo-item-add-color-hover;
 						}
 					}
+					.bg-modal-content-form-input-submit-submit {
+						// display: none;
+					}
+					.bg-modal-content-form-input-submit-save-changes {
+						// display: flex;
+						display: none;
+					}
 				}
 			}
 			.bg-modal-content-form-fieldset-priority {

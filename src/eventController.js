@@ -178,6 +178,11 @@ const displayCreateTodoItemFormInputButton = (projectlist) => {
     } else {
       const bgModal = document.querySelector(".bg-modal");
       bgModal.setAttribute("style", "display: flex");
+      // Show submit button
+      let bgModalContentFormInputSubmitSubmit = document.querySelector(".bg-modal-content-form-input-submit-submit");
+      let bgModalContentFormInputSubmitSaveChanges= document.querySelector(".bg-modal-content-form-input-submit-save-changes");
+      bgModalContentFormInputSubmitSubmit.setAttribute("style", "display: flex");
+      bgModalContentFormInputSubmitSaveChanges.setAttribute("style", "display: none");
       renderBgModalContentFormInputSelectProjectOptgroup(projectlist);
     }
   });
@@ -189,6 +194,11 @@ const displayCreateTodoItemFormAddTodoItemButton = (projectlist) => {
     addTodoItemButton.addEventListener("click", function() {
       const bgModal = document.querySelector(".bg-modal");
       bgModal.setAttribute("style", "display: flex");
+      // Show submit button
+      let bgModalContentFormInputSubmitSubmit = document.querySelector(".bg-modal-content-form-input-submit-submit");
+      let bgModalContentFormInputSubmitSaveChanges= document.querySelector(".bg-modal-content-form-input-submit-save-changes");
+      bgModalContentFormInputSubmitSubmit.setAttribute("style", "display: flex");
+      bgModalContentFormInputSubmitSaveChanges.setAttribute("style", "display: none");
       renderBgModalContentFormInputSelectProjectOptgroup(projectlist);
       selectProjectOptgroupOptionOnFormAddTodoItemButton(addTodoItemButton);
     });
@@ -201,6 +211,11 @@ const displayCreateTodoItemFormProjectGridItemAddTodoItem = (projectlist) => {
     projectGridItemAddTodoItemButton.addEventListener("click", function() {
       const bgModal = document.querySelector(".bg-modal");
       bgModal.setAttribute("style", "display: flex");
+      // Show submit button
+      let bgModalContentFormInputSubmitSubmit = document.querySelector(".bg-modal-content-form-input-submit-submit");
+      let bgModalContentFormInputSubmitSaveChanges= document.querySelector(".bg-modal-content-form-input-submit-save-changes");
+      bgModalContentFormInputSubmitSubmit.setAttribute("style", "display: flex");
+      bgModalContentFormInputSubmitSaveChanges.setAttribute("style", "display: none");
       renderBgModalContentFormInputSelectProjectOptgroup(projectlist);
       selectProjectOptgroupOptionOnFormProjectGridItemAddTodoItem(projectGridItemAddTodoItemButton);
     });
@@ -224,6 +239,11 @@ const selectProjectOptgroupOptionOnFormAddTodoItemButton = (addTodoItemButton) =
 
 const selectProjectOptgroupOptionOnFormProjectGridItemAddTodoItem = (projectGridItemAddTodoItemButton) => {
   let dataProjectIndexValue = projectGridItemAddTodoItemButton.parentNode.parentNode.parentNode.getAttribute("data-project-index");
+  selectProjectOptgroupOptionOnFormDefault(dataProjectIndexValue);
+}
+
+const selectProjectOptgroupOptionOnFormProjectGridItemAddTodoItemEdit = (projectGridItemTodoButtonsUpdateBtn) => {
+  let dataProjectIndexValue = projectGridItemTodoButtonsUpdateBtn.parentNode.parentNode.parentNode.parentNode.getAttribute("data-project-index");
   selectProjectOptgroupOptionOnFormDefault(dataProjectIndexValue);
 }
 
@@ -275,8 +295,8 @@ const addTodoItemToProject = (projectlist) => {
     }
     const bgModalContentFormInputTextareaDescription = document.querySelector(".bg-modal-content-form-input-textarea-description");
     let addTodoItemCreateDescription = bgModalContentFormInputTextareaDescription.value;
-    const bgModalContentFormInputRadioLow = document.querySelector(`input[name = "bg-modal-content-form-priority"]:checked`);
-    let addTodoItemCreatePriority = bgModalContentFormInputRadioLow.value;
+    const bgModalContentFormPriority = document.querySelector(`input[name = "bg-modal-content-form-priority"]:checked`);
+    let addTodoItemCreatePriority = bgModalContentFormPriority.value;
     const bgModalContentFormSelectProject = document.querySelector(".bg-modal-content-form-select-project");
     let addTodoItemCreateProjectname = +bgModalContentFormSelectProject.value;
     const bgModalContentFormInputTextareaNotes = document.querySelector(".bg-modal-content-form-input-textarea-notes");
@@ -289,7 +309,8 @@ const addTodoItemToProject = (projectlist) => {
       addTodoItemCreateFinished = "no";
     }
     const bgModalContentFormInputDate = document.querySelector(".bg-modal-content-form-input-date");
-    let addTodoItemCreateDuedate = bgModalContentFormInputDate.value;
+    let addTodoItemCreateDuedateToConvert = bgModalContentFormInputDate.value;
+    let addTodoItemCreateDuedate = addTodoItemCreateDuedateToConvert.split("-").reverse().join("-");
     if (addTodoItemCreateDuedate == "") {
       addTodoItemCreateDuedate = "No due date";
     }
@@ -443,6 +464,149 @@ const editProjectGridItemTitleButton = (projectlist) => {
   });
 };
 
+const editProjectGridItemTodoButton = (projectlist) => {
+  const projectGridItemTodoButtonsUpdate = document.querySelectorAll(".project-grid-item-todo-buttons-update");
+  projectGridItemTodoButtonsUpdate.forEach((editProjectItemTodoButton) => {
+    editProjectItemTodoButton.addEventListener("click", function() {
+      let indexOfProject = editProjectItemTodoButton.parentNode.parentNode.parentNode.parentNode.getAttribute("data-project-index");
+      let indexOfTodoItem = editProjectItemTodoButton.parentNode.parentNode.getAttribute("data-project-todo-item-index");
+      // render bg modal form
+      const bgModal = document.querySelector(".bg-modal");
+      bgModal.setAttribute("style", "display: flex");
+      renderBgModalContentFormInputSelectProjectOptgroup(projectlist);
+      // selectProjectOptgroupOptionOnFormAddTodoItemButton(addTodoItemButton);
+      selectProjectOptgroupOptionOnFormProjectGridItemAddTodoItemEdit(editProjectItemTodoButton);
+
+      // copy current todo item properties value to input fields
+
+      // display title value of todo item in form
+      let bgModalContentFormInputTextTitle = document.querySelector(".bg-modal-content-form-input-text-title");
+      bgModalContentFormInputTextTitle.value = projectlist[indexOfProject].todos[indexOfTodoItem]["title"];
+
+      // display description value of todo item in form
+      let bgModalContentFormInputTextareaDescription = document.querySelector(".bg-modal-content-form-input-textarea-description");
+      bgModalContentFormInputTextareaDescription.value = projectlist[indexOfProject].todos[indexOfTodoItem]["description"];
+
+      // display priority value of todo item in form
+      let bgModalContentFormPriority = document.querySelector(`input[name = "bg-modal-content-form-priority"]:checked`);
+      bgModalContentFormPriority.value = projectlist[indexOfProject].todos[indexOfTodoItem]["priority"];
+      let bgModalContentFormInputRadioLow = document.querySelector(".bg-modal-content-form-input-radio-low");
+      if (bgModalContentFormPriority.value == "low") {
+        bgModalContentFormInputRadioLow.checked = true;
+      }
+      let bgModalContentFormInputRadioMedium = document.querySelector(".bg-modal-content-form-input-radio-medium");
+      if (bgModalContentFormPriority.value == "medium") {
+        bgModalContentFormInputRadioMedium.checked = true;
+      }
+      let bgModalContentFormInputRadioHigh = document.querySelector(".bg-modal-content-form-input-radio-high");
+      if (bgModalContentFormPriority.value == "high") {
+        bgModalContentFormInputRadioHigh.checked = true;
+      }
+      let bgModalContentFormInputRadioUrgent = document.querySelector(".bg-modal-content-form-input-radio-urgent");
+      if (bgModalContentFormPriority.value == "urgent") {
+        bgModalContentFormInputRadioUrgent.checked = true;
+      }
+
+      // display notes value of todo item in form
+      let bgModalContentFormInputTextareaNotes = document.querySelector(".bg-modal-content-form-input-textarea-notes");
+      bgModalContentFormInputTextareaNotes.value = projectlist[indexOfProject].todos[indexOfTodoItem]["notes"];
+
+      // display checkbox checklist finished status in form
+      let bgModalContentFormInputCheckboxFinished = document.querySelector(".bg-modal-content-form-input-checkbox-finished");
+      bgModalContentFormInputCheckboxFinished.value = projectlist[indexOfProject].todos[indexOfTodoItem]["checklist"];
+      if (bgModalContentFormInputCheckboxFinished.value == "yes") {
+        bgModalContentFormInputCheckboxFinished.checked = true;
+      } else {
+        bgModalContentFormInputCheckboxFinished.checked = false;
+      }
+
+      // display dueDate value of todo item in form
+      let bgModalContentFormInputDate = document.querySelector(".bg-modal-content-form-input-date");
+      let dateToBeReversed = projectlist[indexOfProject].todos[indexOfTodoItem]["dueDate"];
+      let dateReversed = dateToBeReversed.split("-").reverse().join("-");
+      bgModalContentFormInputDate.value = dateReversed;
+
+      // add save changes button for Todo Item form
+      let bgModalContentFormInputSubmitSubmit = document.querySelector(".bg-modal-content-form-input-submit-submit");
+      let bgModalContentFormInputSubmitSaveChanges= document.querySelector(".bg-modal-content-form-input-submit-save-changes");
+      bgModalContentFormInputSubmitSubmit.setAttribute("style", "display: none");
+      bgModalContentFormInputSubmitSaveChanges.setAttribute("style", "display: flex");
+
+      // add event to save edited todo item from inputs
+      bgModalContentFormInputSubmitSaveChanges.addEventListener("click", function editTheTodoItemChanges() {
+        // get inputs values
+        const bgModalContentFormInputTextTitle = document.querySelector(".bg-modal-content-form-input-text-title");
+        let addTodoItemCreateTitle = bgModalContentFormInputTextTitle.value;
+        console.log(addTodoItemCreateTitle);
+        if (addTodoItemCreateTitle == "") {
+          alert("Please enter a title");
+          return;
+        }
+        const bgModalContentFormInputTextareaDescription = document.querySelector(".bg-modal-content-form-input-textarea-description");
+        let addTodoItemCreateDescription = bgModalContentFormInputTextareaDescription.value;
+        const bgModalContentFormPriority = document.querySelector(`input[name = "bg-modal-content-form-priority"]:checked`);
+        let addTodoItemCreatePriority = bgModalContentFormPriority.value;
+        const bgModalContentFormSelectProject = document.querySelector(".bg-modal-content-form-select-project");
+        let addTodoItemCreateProjectname = +bgModalContentFormSelectProject.value;
+        const bgModalContentFormInputTextareaNotes = document.querySelector(".bg-modal-content-form-input-textarea-notes");
+        let addTodoItemCreateNotes = bgModalContentFormInputTextareaNotes.value;
+        const bgModalContentFormInputCheckboxFinished = document.querySelector(".bg-modal-content-form-input-checkbox-finished");
+        let addTodoItemCreateFinished = "";
+        if (bgModalContentFormInputCheckboxFinished.checked) {
+          addTodoItemCreateFinished = "yes";
+        } else {
+          addTodoItemCreateFinished = "no";
+        }
+        const bgModalContentFormInputDate = document.querySelector(".bg-modal-content-form-input-date");
+        let addTodoItemCreateDuedateReversed = bgModalContentFormInputDate.value;
+        let addTodoItemCreateDuedate = addTodoItemCreateDuedateReversed.split("-").reverse().join("-");
+        if (addTodoItemCreateDuedate == "") {
+          addTodoItemCreateDuedate = "No due date";
+        };
+
+        // edit todo item and save it to the projectlist if the selected project stays the same else delete the project from the current project and add it to another project
+        if (addTodoItemCreateProjectname == indexOfProject) {
+          editCreateTodoFromProjectTodos(projectlist, indexOfProject, indexOfTodoItem, "title", addTodoItemCreateTitle);
+          editCreateTodoFromProjectTodos(projectlist, indexOfProject, indexOfTodoItem, "description", addTodoItemCreateDescription);
+          editCreateTodoFromProjectTodos(projectlist, indexOfProject, indexOfTodoItem, "priority", addTodoItemCreatePriority);
+          editCreateTodoFromProjectTodos(projectlist, indexOfProject, indexOfTodoItem, "projectName", addTodoItemCreateProjectname);
+          editCreateTodoFromProjectTodos(projectlist, indexOfProject, indexOfTodoItem, "notes", addTodoItemCreateNotes);
+          editCreateTodoFromProjectTodos(projectlist, indexOfProject, indexOfTodoItem, "checklist", addTodoItemCreateFinished);
+          editCreateTodoFromProjectTodos(projectlist, indexOfProject, indexOfTodoItem, "dueDate", addTodoItemCreateDuedate);
+        } else {
+          deleteCreateTodoFromProjectTodos (projectlist, indexOfProject, indexOfTodoItem);
+          addCreateTodoToProjectTodos(
+            projectlist, 
+            addTodoItemCreateProjectname, 
+            createTodo(
+              addTodoItemCreateTitle,
+              addTodoItemCreateDescription,
+              addTodoItemCreatePriority,
+              addTodoItemCreateProjectname,
+              addTodoItemCreateNotes,
+              addTodoItemCreateFinished,
+              addTodoItemCreateDuedate,        
+            )
+          );
+        }
+        
+        // display the submit button for the form again when closing
+        bgModalContentFormInputSubmitSubmit.setAttribute("style", "display: flex");
+        bgModalContentFormInputSubmitSaveChanges.setAttribute("style", "display: none");
+
+        // close the bg modal form
+        closeCreateTodoItemFormDefault();
+
+        // render the projects with the new edited todo item
+        renderProjectsTodos(projectlist);
+
+        // prevent that this event will be added multiple times to bgModalContentFormInputSubmitSaveChanges button
+        bgModalContentFormInputSubmitSaveChanges.removeEventListener("click", editTheTodoItemChanges);
+      }); 
+    });
+  });
+};
+
 
 /*
 
@@ -472,5 +636,6 @@ export {
   addProjectGridItemTodoPriorityBgColor, 
   deleteProjectButton, 
   deleteTodoItemFromProjectButton, 
-  editProjectGridItemTitleButton
+  editProjectGridItemTitleButton,
+  editProjectGridItemTodoButton, 
 };
