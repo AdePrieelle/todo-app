@@ -496,6 +496,9 @@ body {
 .bg-modal .bg-modal-content .bg-modal-content-form .bg-modal-content-form-fieldset .bg-modal-content-form-input-wrapper-submit .bg-modal-content-form-input-submit:hover {
   background-color: #15a1cf;
 }
+.bg-modal .bg-modal-content .bg-modal-content-form .bg-modal-content-form-fieldset .bg-modal-content-form-input-wrapper-submit .bg-modal-content-form-input-submit-save-changes {
+  display: none;
+}
 .bg-modal .bg-modal-content .bg-modal-content-form .bg-modal-content-form-fieldset-priority {
   display: flex;
 }
