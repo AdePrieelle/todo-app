@@ -491,21 +491,48 @@ const editProjectGridItemTodoButton = (projectlist) => {
       let bgModalContentFormPriority = document.querySelector(`input[name = "bg-modal-content-form-priority"]:checked`);
       bgModalContentFormPriority.value = projectlist[indexOfProject].todos[indexOfTodoItem]["priority"];
       let bgModalContentFormInputRadioLow = document.querySelector(".bg-modal-content-form-input-radio-low");
+      let bgModalContentFormInputRadioMedium = document.querySelector(".bg-modal-content-form-input-radio-medium");
+      let bgModalContentFormInputRadioHigh = document.querySelector(".bg-modal-content-form-input-radio-high");
+      let bgModalContentFormInputRadioUrgent = document.querySelector(".bg-modal-content-form-input-radio-urgent");
       if (bgModalContentFormPriority.value == "low") {
         bgModalContentFormInputRadioLow.checked = true;
+        bgModalContentFormInputRadioMedium.checked = false;
+        bgModalContentFormInputRadioHigh.checked = false;
+        bgModalContentFormInputRadioUrgent.checked = false;
       }
-      let bgModalContentFormInputRadioMedium = document.querySelector(".bg-modal-content-form-input-radio-medium");
       if (bgModalContentFormPriority.value == "medium") {
+        bgModalContentFormInputRadioLow.checked = false;
         bgModalContentFormInputRadioMedium.checked = true;
+        bgModalContentFormInputRadioHigh.checked = false;
+        bgModalContentFormInputRadioUrgent.checked = false;
       }
-      let bgModalContentFormInputRadioHigh = document.querySelector(".bg-modal-content-form-input-radio-high");
       if (bgModalContentFormPriority.value == "high") {
+        bgModalContentFormInputRadioLow.checked = false;
+        bgModalContentFormInputRadioMedium.checked = false;
         bgModalContentFormInputRadioHigh.checked = true;
+        bgModalContentFormInputRadioUrgent.checked = false;
       }
-      let bgModalContentFormInputRadioUrgent = document.querySelector(".bg-modal-content-form-input-radio-urgent");
       if (bgModalContentFormPriority.value == "urgent") {
+        bgModalContentFormInputRadioLow.checked = false;
+        bgModalContentFormInputRadioMedium.checked = false;
+        bgModalContentFormInputRadioHigh.checked = false;
         bgModalContentFormInputRadioUrgent.checked = true;
       }
+
+      // Change priority value to radio button value
+      let bgModalContentFormPriorityValueEditedLoad = bgModalContentFormPriority.value;
+      bgModalContentFormInputRadioLow.addEventListener("click", function() {
+        bgModalContentFormPriorityValueEditedLoad = "low";
+      });
+      bgModalContentFormInputRadioMedium.addEventListener("click", function() {
+        bgModalContentFormPriorityValueEditedLoad = "medium";
+      });
+      bgModalContentFormInputRadioHigh.addEventListener("click", function() {
+        bgModalContentFormPriorityValueEditedLoad = "high";
+      });
+      bgModalContentFormInputRadioUrgent.addEventListener("click", function() {
+        bgModalContentFormPriorityValueEditedLoad = "urgent";
+      });
 
       // display notes value of todo item in form
       let bgModalContentFormInputTextareaNotes = document.querySelector(".bg-modal-content-form-input-textarea-notes");
@@ -537,15 +564,13 @@ const editProjectGridItemTodoButton = (projectlist) => {
         // get inputs values
         const bgModalContentFormInputTextTitle = document.querySelector(".bg-modal-content-form-input-text-title");
         let addTodoItemCreateTitle = bgModalContentFormInputTextTitle.value;
-        console.log(addTodoItemCreateTitle);
         if (addTodoItemCreateTitle == "") {
           alert("Please enter a title");
           return;
         }
         const bgModalContentFormInputTextareaDescription = document.querySelector(".bg-modal-content-form-input-textarea-description");
         let addTodoItemCreateDescription = bgModalContentFormInputTextareaDescription.value;
-        const bgModalContentFormPriority = document.querySelector(`input[name = "bg-modal-content-form-priority"]:checked`);
-        let addTodoItemCreatePriority = bgModalContentFormPriority.value;
+        let addTodoItemCreatePriority = bgModalContentFormPriorityValueEditedLoad;
         const bgModalContentFormSelectProject = document.querySelector(".bg-modal-content-form-select-project");
         let addTodoItemCreateProjectname = +bgModalContentFormSelectProject.value;
         const bgModalContentFormInputTextareaNotes = document.querySelector(".bg-modal-content-form-input-textarea-notes");

@@ -237,6 +237,10 @@ functionality to add:
 - fix duedate render
   done
 
+- fix priority on edit and add new todo item
+  (cant edit priority value to medium and also cant set new todo item to medium when edited before)
+  done
+
 - add function to save localStorage
 
 - clear up index.js
