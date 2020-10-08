@@ -10,24 +10,18 @@ html {
 }
 
 body {
-	// background-color: #3a86ff;
 	background-image: url("../images/img11.jpg");
-	// background-image: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) ), url("../images/img3.jpg");
 	background-size: 100% auto;
 	height: 100%;
 	background-repeat: no-repeat;
 	background-position: left top;
 	background-size: cover;
 	background-attachment: fixed;
-
 	font-family: 'Roboto', sans-serif;
 	color: #073B4C;
-	// background: linear-gradient(to top right, white, rgb(78, 190, 255))
 }
 
 .main {
-	// background-color: white;
-	// max-width: 400px;
 	max-width: 300px;
 	@media screen and (min-width: 380px) {
 		max-width: 340px;
@@ -42,18 +36,12 @@ body {
 		max-width: 600px;
 	};
 	margin: 20px auto 40px auto;
-	// border: 2px solid red;
-	// background-color: #3a86ff;
-	// background-color: white;
 	border-radius: 20px;
-	// padding: 10px 20px;
 }
 
 .header {
 	margin-top: 40px;
 	text-align: center;
-	// color: white;
-	// color: black;
 	font-size: 2.5rem;
 }
 
@@ -62,13 +50,11 @@ body {
 	justify-content: center;
 	align-items: center;
 	margin-top: 40px;
-	// margin-right: 104px;
 	.add-project-add-todo-item-form {
 		fieldset:not(:first-child) {
 			margin-top: 20px;
 		}
 		.add-project-add-todo-item-form-label {
-			// color: white;
 			color: black;
 		}
 		.add-project-add-todo-item-form-input-wrapper-add-project-add-todo-item-button-wrapper {
@@ -77,40 +63,17 @@ body {
 			margin-top: 10px;
 			.add-project-add-todo-item-form-input-wrapper {
 				.add-project-add-todo-item-form-input {
-					// width: 200px;
-					// margin-right: .5rem;
-
-					// New style
 					border: none;
 					height: 30px;
 					padding: 10px;
 					border-radius: 4px;
-					// border-radius: 4px 0 0 4px;
 					box-shadow: 0 0px 5px #d8ddec;
 				}
 			}
 			.add-project-add-todo-item-button {
-				// width: 30px;
-				// height: 30px;
-				// border-radius: 4px;
-				// // border-radius: 0 4px 4px 0;
-				// background-color: $project-todo-item-add-color;
 				margin-left: .5rem;
-				// // font-size: .5rem;
-				// display: flex;
-				// justify-content: center;
-				// align-items: center;
 				.add-project-add-todo-item-button-icon {
-					// color: #3a86ff;
-					// color: rgb(3, 156, 245);
-					// color: rgb(46, 154, 255);
 					color: $project-todo-item-add-color;
-					// color: white;
-
-
-
-					// color: white;
-					// background-color: #3a86ff;
 					font-size: 30px;
 					cursor: pointer;
 				}
@@ -128,32 +91,7 @@ body {
 	grid-gap: 20px;
 	margin-top: 50px;
 	.projects-grid-item {
-		// display: flex;
-		// flex-direction: column;
-		// justify-content: space-between;
-
-		// NEW STYLE
-		// background-color: white;
-		// border: 1px solid black;
-		// background-color: rgb(191, 239, 255, .5);
-
 		background-color: $project-color;
-
-		// background-image: url("../images/img11.jpg");
-		// background-size: 100% auto;
-		// height: 100%;
-		// background-repeat: no-repeat;
-		// background-position: left top;
-		// background-size: cover;
-
-		// background-attachment: fixed;
-
-
-		// background-color: rgba(35, 79, 90, 0.204);
-
-		// background-color: rgb(48, 147, 240);
-
-
 		border-radius: 10px;
 		padding: 20px;
 		.project-grid-item-title-add-todo-item-wrapper {
@@ -166,13 +104,6 @@ body {
 				};
 				font-size: 1.5rem;
 				font-weight: 500;
-				// max-width: 200px;
-				// @media screen and (min-width: 480px) {
-				// 	max-width: 300px;
-				// }
-				// @media screen and (min-width: 600px) {
-				// 	max-width: 400px;
-				// }
 				overflow-wrap: break-word;
 				word-wrap: break-word;
 				word-break: break-word;
@@ -181,17 +112,6 @@ body {
 				-ms-hyphens: auto;
 				-moz-hyphens: auto;
 				-webkit-hyphens: auto;
-
-				// overflow-wrap: break-word;
-				// hyphens: auto;
-
-				// text-overflow: ellipsis;
-				// overflow: hidden;
-
-				// word-wrap: break-word;
-				// hyphens: auto;
-				// word-break: break-all;
-
 				cursor: pointer;
 				.project-grid-item-title-form {
 					display: flex;
@@ -249,27 +169,20 @@ body {
 					margin-bottom: 0;
 				};
 				.project-grid-item-add-todo-item {
-					// font-size: 1.5rem;
-					// background-color: rgb(3, 156, 245);
 					background-color: $project-todo-item-add-color;
-
 					color: white;
 					display: flex;
 					justify-content: center;
 					align-items: center;
 				}
 				.project-grid-item-update-project-title {
-					// background-color: rgb(0, 219, 201);
 					background-color: $blue;
-
 					color: white;
 					display: flex;
 					justify-content: center;
 					align-items: center;
 				}
 				.project-grid-item-delete-project {
-					// font-size: 1.5rem;
-					// margin-left: 10px;
 					background-color: $red;
 					color: white;
 					display: flex;
@@ -286,27 +199,9 @@ body {
 				justify-content: space-between;
 				margin-top: 10px;
 				padding: 10px;
-
-				// NEW STYLE
 				background-color: $todo-item-color;
-
-				// background-image: url("../images/img11.jpg");
-				// background-size: 100% auto;
-				// height: 100%;
-				// background-repeat: no-repeat;
-				// background-position: left top;
-				// background-size: cover;
-
-				// background-attachment: fixed;
-
-				// border: 1px solid grey;
 				border-radius: 4px;
-
 				.project-grid-item-todo-properties-wrapper {
-					// max-width: 200px;
-					// @media screen and (min-width: 768px) {
-					// 	max-width: 380px;
-					// }
 					overflow-wrap: break-word;
 					word-wrap: break-word;
 					word-break: break-word;
@@ -359,7 +254,6 @@ body {
 						.project-grid-item-todo-expand {
 							margin-left: .5rem;
 							font-size: 1rem;
-							// color: rgb(0, 140, 255);
 							color: $expand-icon-color;
 							cursor: pointer;
 							.project-grid-item-todo-expand-down {
@@ -377,11 +271,6 @@ body {
 					@media screen and (min-width: 768px) {
 						flex-direction: row;
 					};
-					// background-color: rgba(0, 0, 0, 0.295);
-					// padding: 4px;
-					// flex-direction: column;
-					// background-color: rgb(255, 0, 0);
-					// padding: 6px;
 					> * {
 						margin-bottom: 8px;
 						@media screen and (min-width: 768px) {
@@ -403,36 +292,24 @@ body {
 					}
 					.project-grid-item-todo-buttons-checklist {
 						background-color: $checklist-button-color;
-						// background-color: rgb(0, 219, 201);
-
-
 						color: white;
-						// padding: 5px;
 						display: flex;
 						justify-content: center;
 						align-items: center;
-						// margin-left: 20px;
 					}
 					.project-grid-item-todo-buttons-update {
-						// background-color: rgb(0, 219, 201);
 						background-color: $blue;
-
 						color: white;
-						// padding: 5px;
 						display: flex;
 						justify-content: center;
 						align-items: center;
-						// margin-left: 20px;
 					}
 					.project-grid-item-todo-buttons-delete {
 						background-color: $red;
 						color: white;
-						// width: 30px;
-						// height: 30px;
 						display: flex;
 						justify-content: center;
 						align-items: center;
-						// margin-left: 20px;
 					}
 				}
 			}
@@ -444,8 +321,6 @@ body {
 				color: $color-add-todo-item-button;
 				border: none;
 				cursor: pointer;
-				// background-color: rgb(40, 194, 2);
-
 			}
 		}
 	}
@@ -458,7 +333,6 @@ body {
 	right: 0;
 	bottom: 0;
 	display: none;
-	// display: flex;
 	justify-content: center;
 	align-items: center;
 	background: rgba(0,0,0,0.7);
@@ -473,12 +347,8 @@ body {
 		@media screen and (min-width: 480px) {
 			min-width: 360px;
 		};
-		// width: 380px;
 		border-radius: 5px;
-		// background-color: #cadce2;
-		// background-color: #f2f2f2;
 		background-color: #d7f4ff;
-
 		overflow-y: auto;
 		.bg-modal-content-close {
 			position: absolute;
@@ -503,12 +373,6 @@ body {
 					margin-bottom: .3rem;
 				}
 				.bg-modal-content-form-input-wrapper {
-					// display: flex;
-					// align-items: center;
-					// justify-content: space-between;
-					// width: 100%;
-					// margin-top: 10px;
-					// margin-bottom: 10px;
 					.bg-modal-content-form-input-text {
 						width: 100%;
 						padding-left: .5rem;
@@ -518,10 +382,6 @@ body {
 						padding: .5rem;
 						width: 100%;
 						height: 90px;
-						// margin-top: 10px;
-						// margin-bottom: 10px;
-						// border-radius: 4px;
-						// border: none;
 					}
 					.bg-modal-content-form-select-project {
 						max-width: 130px;
@@ -529,9 +389,7 @@ body {
 							max-width: 180px;
 						};
 						.bg-modal-content-form-select-project-optgroup {
-							// max-width: 50px;
 							.bg-modal-content-form-select-project-optgroup-option {
-								// max-width: 50px;
 							}
 						}
 					}
@@ -561,10 +419,8 @@ body {
 						}
 					}
 					.bg-modal-content-form-input-submit-submit {
-						// display: none;
 					}
 					.bg-modal-content-form-input-submit-save-changes {
-						// display: flex;
 						display: none;
 					}
 				}
@@ -577,7 +433,6 @@ body {
 			}
 			.bg-modal-content-form-fieldset-select-project {
 				display: flex;
-				// align-items: center;
 				.bg-modal-content-form-label-select-project {
 					margin-right: 20px;
 				}
@@ -589,33 +444,9 @@ body {
 					margin-right: 10px;
 				}
 			}	
-
 		}
 	}
 }
-
-
-
-// Alternative adding project buttons
-
-// .add-project-add-todo-item-buttons-wrapper {
-// 	display: flex;
-// 	justify-content: center;
-// 	margin-top: 60px;
-// 	> * {
-// 		padding: 12px;
-// 		background-color: $project-todo-item-add-color;
-// 		color: white;
-// 		border-radius: 4px;
-// 		min-width: 130px;
-// 		text-align: center;
-// 	}
-// 	.project-todo-item-add-button:not(:first-child) {
-// 		margin-left: 20px;
-// 	}
-// }
-
-
 
 /*
 Start watching for compiling scss to css

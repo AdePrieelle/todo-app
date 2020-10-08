@@ -2,141 +2,58 @@ import {createTodo} from "./createtodo.js";
 import {
   createProject, 
   addCreateTodoToProjectTodos, 
-  deleteCreateTodoFromProjectTodos, 
-  editCreateTodoFromProjectTodos, 
   addProjectToProjectList, 
-  deleteProjectFromProjectList, 
-  editProjectFromProjectList, 
 } from "./createproject.js";
 import {renderProjectsTodos} from "./renderprojectstodos.js";
 import {
-  maximizeTodoItem, 
-  minimizeTodoItem, 
-  collapseGridItemTodoTitle, 
-  collapseGridItemTodo, 
-  maximizeGridItemTodo, 
-  minimizeGridItemTodo,
   addProjectToProjectListButton,
-  clearInputsForm,
   displayCreateTodoItemFormInputButton,
-  displayCreateTodoItemFormAddTodoItemButton,
-  displayCreateTodoItemFormProjectGridItemAddTodoItem,
   closeCreateTodoItemForm,
   copyTodoItemNameToBgModalFormTitle,
-  renderBgModalContentFormInputSelectProjectOptgroup,
   addTodoItemToProject, 
-  updateChecklistStatusButton, 
 } from "./eventController.js";
 
-// create a todo item object
-const testTodoItem = createTodo(
-  'testTitle', 'testDescription', 'low', 'project1', 'testNotes', 'yes', '10-12-2020'
-);
-
-const testTodoItem2 = createTodo(
-  'testTitle2', 'testDescription2', 'urgent', 'project2', 'testNotes2', 'unchecked', '11-12-2020'
-);
-
-// old
-console.log(testTodoItem);
-
-// Implement this setup from pseudocode below to store all projects
-let allprojects = [ 
-  {projectTitle: "project1", todos: [{title: "testTitle1", description: "testDescription1"}, {title: "testTitle2", description: "testDescription2"}]},
-  {projectTitle: "project2", todos: [{title: "testTitle3", description: "testDescription3"}, {title: "testTitle4", description: "testDescription4"}]},
-];
-
-console.log("allprojects below");
-console.log(allprojects);
-console.log("allprojects above");
-
-allprojects[0].todos.push({title: "testTitlepushed", description: "testdescriptionpushed"});
-console.log(allprojects);
-
-
-console.log("allprojects changed above");
-
-let allprojectsNew = [];
-let testProjectNew = createProject("testProjectName");
-allprojectsNew.push(testProjectNew);
-console.log(testProjectNew);
-console.log("testcreateproject above");
-console.log(allprojectsNew);
-console.log("allprojetsNew above");
-allprojectsNew[0].todos.push(testTodoItem);
-console.log(allprojectsNew);
-console.log("addedtodos allprojectsNew above");
-addCreateTodoToProjectTodos(allprojectsNew, 0, createTodo(
-  'testTitle3', 'testDescription3', 'medium', 'project1', 'testNotes3', 'yes', '19-12-2020'
+// use localStorage.clear() to reset the library
+// localStorage.clear();
+// projectlist that stores all projects, default projectlist if localStorage is not set
+let projectlist = [];
+addProjectToProjectList(projectlist, createProject("Groceries"));
+addCreateTodoToProjectTodos(projectlist, 0, createTodo(
+  'Buy milk', 'Buy 2 bottles of milk', 'medium', 0, 'Get 1.5L bottles', 'no', '16-12-2020'
 ));
-console.log(allprojectsNew);
-console.log("addCreateTodoToProjectTodos above")
-addCreateTodoToProjectTodos(allprojectsNew, 0, createTodo(
-  'testTitle3ToDeleteAbove', 'testDescription3ToDelete', 'high', 'project1', 'testNotes3', 'no', '20-12-2020'
+addCreateTodoToProjectTodos(projectlist, 0, createTodo(
+  'Buy bread', 'Buy a full bread', 'high', 0, 'Get brown bread', 'no', '15-12-2020'
 ));
-addCreateTodoToProjectTodos(allprojectsNew, 0, createTodo(
-  'testTitle3ToDeleteItem', 'testDescription3', 'urgent', 'project1', 'testNotes3', 'no', '21-12-2020'
-));
-addCreateTodoToProjectTodos(allprojectsNew, 0, createTodo(
-  'testTitle3ToDeleteBelow', 'testDescription3', 'urgent', 'project1', 'testNotes3', 'yes', '14-12-2020'
-));
-console.log(allprojectsNew);
-console.log("Add 3 more addCreateTodoToProjectTodos above to allprojectsNew");
-deleteCreateTodoFromProjectTodos(allprojectsNew, 0, 3);
-console.log(allprojectsNew);
-console.log("deleteCreateTodoFromProjectTodos above");
-editCreateTodoFromProjectTodos(allprojectsNew, 0, 1, "title", "testTitleEdited");
-console.log(allprojectsNew);
-console.log("editCreateTodoFromProjectTodos above");
-addProjectToProjectList(allprojectsNew, createProject("test1 addProjectToProjectList"));
-addProjectToProjectList(allprojectsNew, createProject("test2 addProjectToProjectList"));
-addProjectToProjectList(allprojectsNew, createProject("test3 addProjectToProjectList"));
-console.log(allprojectsNew);
-console.log("addProjectToProjectList above");
-deleteProjectFromProjectList(allprojectsNew, 2);
-console.log(allprojectsNew);
-console.log("deleteProjectFromProjectList above");
-editProjectFromProjectList(allprojectsNew, 1, "projectTitle", "test1 addProjectToProjectListtttttttttttttttttttttttt edited");
-console.log(allprojectsNew);
-console.log("editProjectFromProjectList above");
-editCreateTodoFromProjectTodos(allprojectsNew, 0, 1, "checklist", "no");
-console.log(allprojectsNew);
-console.log("change checklist finished status above with editCreateTodoFromProjectTodos")
 
+// Add localStorage to save projects and todo items locally
+// Testing whether storage has been populated
+if(!localStorage.getItem('projectlist')) {
+  console.log("no local storage");
+  populateStorage();
+} else {
+  setStyles();
+}
 
-// add projects to render
-addCreateTodoToProjectTodos(allprojectsNew, 1, createTodo(
-  'testTitle3ToDeleteBelowwwwwwwwwwwwwwwwwwwwwwww', 'testDescription3', 'medium', 'project1', 'testNotes3', 'yes', '12-12-2020'
-));
-addCreateTodoToProjectTodos(allprojectsNew, 1, createTodo(
-  'testTitle3ToDeleteBelow', 'testDescription3', 'high', 'project1', 'testNotes3', 'no', '28-12-2020'
-));
+// Setting values in storage
+function populateStorage() {
+  localStorage.setItem('projectlist', JSON.stringify(projectlist));
+  setStyles();
+}
+
+// Getting values from storage
+function setStyles() {
+  projectlist = JSON.parse(localStorage.getItem('projectlist'));
+}
 
 // renderProjectsTodos(allprojectsNew);
-renderProjectsTodos(allprojectsNew);
-
-// maximize TodoItem and minimize TodoItem (with arrow down and up buttons)
-maximizeTodoItem();
-minimizeTodoItem();
-
-// new old
-// maximizeGridItemTodo();
-// minimizeGridItemTodo();
-
-// new (with maximize and minimize on the title click);
-// collapseGridItemTodoTitle();
-// new (with maximize and minimize on the gridItemTodo area)
-// collapseGridItemTodo();
+renderProjectsTodos(projectlist);
 
 // Project Name button to add project to projectList
-addProjectToProjectListButton(allprojectsNew);
+addProjectToProjectListButton(projectlist);
 // collapseGridItemTodo();
 
 // display bg-modal form on input button click
-displayCreateTodoItemFormInputButton(allprojectsNew);
-
-// display bg-modal form on add todo item button
-// displayCreateTodoItemFormAddTodoItemButton(allprojectsNew);
+displayCreateTodoItemFormInputButton(projectlist);
 
 // close bg-modal form on close button click
 closeCreateTodoItemForm();
@@ -144,154 +61,17 @@ closeCreateTodoItemForm();
 // copy todoItemInputValue to bgModal title
 copyTodoItemNameToBgModalFormTitle();
 
-// render projects to bgModalContentFormInputSelectProjectOptgroup
-// renderBgModalContentFormInputSelectProjectOptgroup(allprojectsNew);
-
 // add todoItem to Project
-addTodoItemToProject(allprojectsNew);
-
-// // add change checklist value on cheklist button click
-// updateChecklistStatusButton(allprojectsNew);
-
-
-
-
+addTodoItemToProject(projectlist);
 
 /*
-functionality to add:
+Array to store all projects and their todo's in
 
-- add function to add createtodo to createproject (based on index? or projecttitle?)
-  done
-- add function to delete createtodo from createproject (based on index? or projecttitle?)
-  done
-- add function to edit createtodo from createproject (based on index? or projecttitle?)
-  done
-
-- add function to add project to allprojectslist
-  done
-- add function to delete project and todos from allprojectslist
-  done
-- add function to edit project (projectTitle) from allprojectslist
-  done
-
-- add function to set createtodo status to finished or unfinished
-  done with editCreateTodoFromProjectTodos already
-
-- add function to render projects and todo items (add data-attribute = i from loop for updating or deleting projects or todos)
-  done
-
-- add minimize and expand functionality on button arrows up and down click to display none properties
-  done (but deleted the double down and up buttons and added the event to the grid todo item title area);
-  done (but deleted the double down and up buttons and added the event to the grid todo item area);
-
-- add function to add project on button
-  done
-
-- add function to clear input fields homepage
-  done
-
-- add function to display modal form on button
-  done
-
-- add function to render the projects from the projectlist to the modal form select option tag
-  done
-  
-- add css media queries for responsive mobile design
-  done
-
-- add function to decide which project the select option tag will use to add the projects inputs to 
-  (use select option value as indexOfProject?)
-  done
-
-- add function to addCreateTodoToProjectTodos from inputs on submit button
-  done
-
-- add function to clear input fields modal form
-  done
-
-- add function to select project name in bg modal form when clicking on add todo item within a project item
-  (add data-attribute? to project grid item and select the project in the form based on the data attribute when rendering)
-  done
-
-- add function to button to change checklist property value
-  done
-
-- add colour change of project-grid-item-todo background based on priority value
-  done
-
-- add function to delete projects
-  done
-
-- add function to delete todo items
-  done
-
-- add function to update projects
-  done
-
-- add function to update todo items
-  done
-
-- add function to save todo item to other project
-  done
-
-- fix duedate render
-  done
-
-- fix priority on edit and add new todo item
-  (cant edit priority value to medium and also cant set new todo item to medium when edited before)
-  done
-
-- add function to save localStorage
-
-- clear up index.js
-
-aaand add functionality for updating and deleting projects and todos
-
+  let projectlist = [ 
+    {projectTitle: "project1", todos: [{title: "testTitle1", description: "testDescription1", priority: "low", projectName: 0, notes: "notes example", checklist: "yes", dueDate: "11/12/2020"}, {title: "testTitle2", description: "testDescription2", priority: "medium", projectName: 0, notes: "notes example", checklist: "yes", dueDate: "11/12/2020"}]},
+    {projectTitle: "project2", todos: [{title: "testTitle3", description: "testDescription3", priority: "high", projectName: 1, notes: "notes example", checklist: "yes", dueDate: "11/12/2020"}, {title: "testTitle4", description: "testDescription4", priority: "low", projectName: 1, notes: "notes example", checklist: "yes", dueDate: "11/12/2020"}]},
+  ];
 */
-
-// pseudo code
-/*
-createtodo with or without projectname?
-createproject?
-
-
-- createproject with projectname and projecttodos as properties
-
-- when createTodo add the todolist to the projects projecttodos property
-
-- store all projects in an array
-
-allprojects = [ 
-  {projectTitle: project1, todos: [{testTitle1, testDescription1}, {testTitle2, testDescription2}]},
-  {projectTitle: project2, todos: [{testTitle3, testDescription3}, {testTitle4, testDescription4}]},
-];
-
-or 
-
-the projects = [[{project1todo1}, {project1tod2}], [{project2todo1}, {project2todo2}]]
-
-how to change project???
-
-
-
-old:
-
-a project should contain all todos and be able to add a new todo to a project.todos property
-
-// old
-the projects = [[{project1todo1}, {project1tod2}], [{project2todo1}, {project2todo2}]]
-
-when adding a new project: push to projects array.
-when adding a new todo in a project: push to project[indexOfProject]
-
-when adding a new todo to a project
-
-end pseudocode
-
-*/
-
-// used to check for variables in the console (put in global scope for testing)
-// window.hitest = hitest;
 
 /* 
 npx webpack --watch
@@ -374,5 +154,4 @@ sass --watch main.scss:main.css
     and manipulating dates and times.
 
     8.1   Add date-fns format to dueDate property.
-
 */

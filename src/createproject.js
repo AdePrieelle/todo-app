@@ -1,53 +1,36 @@
-import { renderProjectsTodos } from "./renderprojectstodos";
-import { clearInputsForm } from "./eventController";
-
-// contains all functionality (Create, Read, Update, Remove) for Project list items
-
-// Create 
+// Contains all functionality (Create, Read, Update, Remove) for Project list items
 
 // Create Project
-// new
 const createProject = (projectTitle) => {
-  
-  // test
-  // let projectTodoList = [];
-  // projectTodoList.push(todos);
-
   return { 
     projectTitle,
     todos: [],
-    // todos,
-
-
-    // test
-    // projectTodoList,
   };
 };
 
-const addCreateTodoToProjectTodos = (allprojects, indexOfProject, todoItem) => {
-  allprojects[indexOfProject].todos.push(todoItem);
+const addCreateTodoToProjectTodos = (projectlist, indexOfProject, todoItem) => {
+  projectlist[indexOfProject].todos.push(todoItem);
 }
 
-const deleteCreateTodoFromProjectTodos = (allprojects, indexOfProject, indexOfTodoItem) => {
-  allprojects[indexOfProject].todos.splice(indexOfTodoItem, 1);
+const deleteCreateTodoFromProjectTodos = (projectlist, indexOfProject, indexOfTodoItem) => {
+  projectlist[indexOfProject].todos.splice(indexOfTodoItem, 1);
 }
 
-const editCreateTodoFromProjectTodos = (allprojects, indexOfProject, indexOfTodoItem, todoItemKey, todoItemNewValue) => {
-  allprojects[indexOfProject].todos[indexOfTodoItem][todoItemKey] = todoItemNewValue;
+const editCreateTodoFromProjectTodos = (projectlist, indexOfProject, indexOfTodoItem, todoItemKey, todoItemNewValue) => {
+  projectlist[indexOfProject].todos[indexOfTodoItem][todoItemKey] = todoItemNewValue;
 };
 
-const addProjectToProjectList = (projectList, project) => {
-  projectList.push(project);
+const addProjectToProjectList = (projectlist, project) => {
+  projectlist.push(project);
 }
 
-const deleteProjectFromProjectList = (projectList, indexOfProject) => {
-  projectList.splice(indexOfProject, 1);
+const deleteProjectFromProjectList = (projectlist, indexOfProject) => {
+  projectlist.splice(indexOfProject, 1);
 }
 
-const editProjectFromProjectList = (projectList, indexOfProject, projectItemKey, projectItemNewValue) => {
-  projectList[indexOfProject][projectItemKey] = projectItemNewValue;
+const editProjectFromProjectList = (projectlist, indexOfProject, projectItemKey, projectItemNewValue) => {
+  projectlist[indexOfProject][projectItemKey] = projectItemNewValue;
 }
-
 
 export {
   createProject, 
@@ -59,76 +42,11 @@ export {
   editProjectFromProjectList, 
 };
 
-// allprojects = [ 
-//   {projectTitle: project1, todos: [{testTitle1, testDescription1}, {testTitle2, testDescription2}]},
-//   {projectTitle: project2, todos: [{testTitle3, testDescription3}, {testTitle4, testDescription4}]},
-// ];
-
-
-
-
-// old
-// const createProject = (projectTitle, todos) => {
-  
-//   // test
-//   let projectTodoList = [];
-//   projectTodoList.push(todos);
-
-//   return { 
-//     projectTitle,
-//     todos,
-
-//     // test
-//     projectTodoList,
-//   };
-// };
-
-// export {createProject};
-
-
-
-
-
-// const createProjectList = (() => {
-//   let projectList = [];
-
-//   return projectList;
-// });
-
-// const createProjectListAll = (() => {
-//   let projectListAll = [];
-
-//   return projectListAll;
-// });
-
-// export {
-//   createProjectList,
-//   createProjectListAll,
-// };
-
 /*
+Array to store all projects and their todo's in
 
-// new
-a project should contain all todos and be able to add a new todo to a project.todos property
-
-// old
-the projects = [[{project1todo1}, {project1tod2}], [{project2todo1}, {project2todo2}]]
-
-when adding a new project: push to projects array.
-when adding a new todo in a project: push to project[indexOfProject]
-
-when adding a new todo to a project
-
+  let projectlist = [ 
+    {projectTitle: "project1", todos: [{title: "testTitle1", description: "testDescription1", priority: "low", projectName: 0, notes: "notes example", checklist: "yes", dueDate: "11/12/2020"}, {title: "testTitle2", description: "testDescription2", priority: "medium", projectName: 0, notes: "notes example", checklist: "yes", dueDate: "11/12/2020"}]},
+    {projectTitle: "project2", todos: [{title: "testTitle3", description: "testDescription3", priority: "high", projectName: 1, notes: "notes example", checklist: "yes", dueDate: "11/12/2020"}, {title: "testTitle4", description: "testDescription4", priority: "low", projectName: 1, notes: "notes example", checklist: "yes", dueDate: "11/12/2020"}]},
+  ];
 */
-
-
-// contains all functionality (Create, Read, Update, Remove) for Project lists
-
-// Create project
-// const createProject = (name) => {
-//   return { 
-//     name,
-//   };
-// };
-
-// export {createProject};

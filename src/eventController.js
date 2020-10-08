@@ -10,113 +10,8 @@ import {
 } from "./createproject.js";
 import {renderProjectsTodos} from "./renderprojectstodos.js";
 
-// Written for expand buttons
-
-const maximizeTodoItem = () => {
-  const projectGridItemTodoExpandDown = document.querySelectorAll(".project-grid-item-todo-expand-down");
-  const projectGridItemTodoExpandUp = document.querySelector(".project-grid-item-todo-expand-up");
-
-  /*
-  options.forEach((option) => {
-
-      option.addEventListener("click", function() {
-
-        const computerNumber = Math.floor(Math.random() * 3);
-        const computerChoice = computerOptions[computerNumber];        
-
-        compareHands(this.textContent, computerChoice);
-
-      });
-    }); 
-  */
-
-  projectGridItemTodoExpandDown.forEach((expandDownButton) => {
-    expandDownButton.addEventListener("click", function(e) {
-    expandDownButton.setAttribute("style", "display: none");
-
-    // show expandUpButton
-    e.target.nextSibling.setAttribute("style", "display: block");
-
-    // show todoItem details
-    let propertiesNodes = e.target.parentNode.parentNode.parentNode.childNodes;
-    propertiesNodes.forEach((childnode) => {
-      childnode.setAttribute("style", "display: block");
-    })
-    propertiesNodes[5].setAttribute("style", "display: flex");
-    // console.log(propertiesNodes);
-
-    // let propertiesNodes = e.target.parentNode.parentNode.parentNode.childNodes[].setAttribute("style", "display: block");
-
-    // projectGridItemTodoExpandUp.setAttribute("style", "display: block");
-   });
-  });
-
-  // projectGridItemTodoExpandDown.addEventListener("click", function() {
-  //   projectGridItemTodoExpandDown.setAttribute("style", "display: none");
-  //   projectGridItemTodoExpandUp.setAttribute("style", "display: block");
-
-  // });
-
-
-  
-};
-
-const minimizeTodoItem = () => {
-  const projectGridItemTodoExpandDown = document.querySelectorAll(".project-grid-item-todo-expand-down");
-  const projectGridItemTodoExpandUp = document.querySelectorAll(".project-grid-item-todo-expand-up");
-
-  projectGridItemTodoExpandUp.forEach((expandUpButton) => {
-    expandUpButton.addEventListener("click", function(e) {
-      expandUpButton.setAttribute("style", "display: none");
-
-      // show expand down button
-      e.target.previousSibling.setAttribute("style", "display: block");
-
-      // hide todoItem details
-      let propertiesNodes = e.target.parentNode.parentNode.parentNode.childNodes;
-      propertiesNodes.forEach((childnode) => {
-        childnode.setAttribute("style", "display: none");
-      })
-      propertiesNodes[0].setAttribute("style", "display: block");
-      propertiesNodes[5].setAttribute("style", "display: flex");
-
-    });
-  });
-  // projectGridItemTodoExpandUp.addEventListener("click", function() {
-  //   projectGridItemTodoExpandUp.setAttribute("style", "display: none");
-  //   projectGridItemTodoExpandDown.setAttribute("style", "display: block");
-
-  // });
-
-};
-
-const collapseGridItemTodoTitle = () => {
-
-  const projectGridItemTodoTitle = document.querySelectorAll(".project-grid-item-todo-title");
-  projectGridItemTodoTitle.forEach((gridItemTodoTitle) => {
-    gridItemTodoTitle.addEventListener("click", function() {
-      let propertiesNodes = gridItemTodoTitle.parentNode.childNodes;
-      propertiesNodes.forEach((property) => {
-        // if minimized
-        if (!property.classList.contains("maximized-grid-todo-item")) {
-          property.classList += " maximized-grid-todo-item";
-          property.setAttribute("style", "display: block");
-        }
-        // if maximized
-        else {
-          property.classList.remove("maximized-grid-todo-item");
-          property.setAttribute("style", "display: none");
-          propertiesNodes[0].setAttribute("style", "display: block");
-          propertiesNodes[5].setAttribute("style", "display: block");
-        }
-      });
-    });
-  });
-
-};
-
+// Maximize and minimize the project-grid-item-todo-properties when clicked on a project-grid-item-todo
 const collapseGridItemTodo = () => {
-
   const projectGridItemTodo = document.querySelectorAll(".project-grid-item-todo");
   projectGridItemTodo.forEach((gridItemTodo) => {
     gridItemTodo.addEventListener("click", function(e) {
@@ -137,7 +32,6 @@ const collapseGridItemTodo = () => {
       });
     });
   });
-
 };
 
 const clearInputsForm = (formClassToClear) => {
@@ -163,6 +57,7 @@ const addProjectToProjectListButton = (projectList) => {
     }
     addProjectToProjectList(projectList, createProject(addProjectFormInputValue));
     clearInputsForm(".add-project-add-todo-item-form-form");
+    // populateStorage();
     renderProjectsTodos(projectList);
   });
 }
@@ -257,7 +152,6 @@ const closeCreateTodoItemForm = () => {
 const closeCreateTodoItemFormDefault = () => {
     const bgModal = document.querySelector(".bg-modal");
     bgModal.setAttribute("style", "display: none");
-    // clear inputs from the todo item form
     clearInputsForm(".bg-modal-content-form");
 }
 
@@ -268,6 +162,7 @@ const copyTodoItemNameToBgModalFormTitle = () => {
     let addTodoItemFormInputTitle = addTodoItemFormInput.value;
     const bgModalContentFormInputText = document.querySelector(".bg-modal-content-form-input-text");
     bgModalContentFormInputText.value = addTodoItemFormInputTitle;
+    clearInputsForm(".add-project-add-todo-item-form-form");
   });
 };
 
@@ -330,6 +225,7 @@ const addTodoItemToProject = (projectlist) => {
       )
     );
     closeCreateTodoItemFormDefault();
+    // populateStorage();
     renderProjectsTodos(projectlist);
   });
 }
@@ -347,6 +243,7 @@ const updateChecklistStatusButton = (projectlist) => {
         newChecklistvalue = "yes";
       }
       editCreateTodoFromProjectTodos(projectlist, indexOfProject, indexOfProjectTodoItem, "checklist", newChecklistvalue);
+      // populateStorage();
       renderProjectsTodos(projectlist);
     });
   });
@@ -364,7 +261,6 @@ const addChecklistFinishedLineThrough = (projectlist) => {
         ) {
           todoproperties.style.textDecoration = "line-through";
           todoproperties.style.color = "rgba(140, 140, 140)";
-          // todoproperties.nextSibling.childNodes[0].style.backgroundColor = "#49de7b";
           todoproperties.parentNode.style.opacity = ".6";
         };
       });
@@ -404,6 +300,7 @@ const deleteProjectButton = (projectlist) => {
       if (confirmToDeleteProject) {
         let indexOfProject = +deleteTheProjectButton.parentNode.parentNode.parentNode.getAttribute("data-project-index");
         deleteProjectFromProjectList(projectlist, indexOfProject);
+        // populateStorage();
         renderProjectsTodos(projectlist);
       };
     });
@@ -419,6 +316,7 @@ const deleteTodoItemFromProjectButton = (projectlist) => {
         let indexOfProject = +deleteTheTodoItem.parentNode.parentNode.parentNode.parentNode.getAttribute("data-project-index");
         let indexOfTodoItem = +deleteTheTodoItem.parentNode.parentNode.getAttribute("data-project-todo-item-index");
         deleteCreateTodoFromProjectTodos(projectlist, indexOfProject, indexOfTodoItem);
+        // populateStorage();
         renderProjectsTodos(projectlist);
       };
     });
@@ -458,6 +356,7 @@ const editProjectGridItemTitleButton = (projectlist) => {
       // add eventlistener to save the project-grid-item-title from the input and edit the project-grid-item-title and render it
       projectGridItemTitleFormSaveEditedProjectTitleButton.addEventListener("click", function() {
         editProjectFromProjectList(projectlist, indexOfProject, "projectTitle", projectGridItemTitleFormInput.value);
+        // populateStorage();
         renderProjectsTodos(projectlist);
       });
     });
@@ -474,7 +373,6 @@ const editProjectGridItemTodoButton = (projectlist) => {
       const bgModal = document.querySelector(".bg-modal");
       bgModal.setAttribute("style", "display: flex");
       renderBgModalContentFormInputSelectProjectOptgroup(projectlist);
-      // selectProjectOptgroupOptionOnFormAddTodoItemButton(addTodoItemButton);
       selectProjectOptgroupOptionOnFormProjectGridItemAddTodoItemEdit(editProjectItemTodoButton);
 
       // copy current todo item properties value to input fields
@@ -623,6 +521,7 @@ const editProjectGridItemTodoButton = (projectlist) => {
         closeCreateTodoItemFormDefault();
 
         // render the projects with the new edited todo item
+        // populateStorage();
         renderProjectsTodos(projectlist);
 
         // prevent that this event will be added multiple times to bgModalContentFormInputSubmitSaveChanges button
@@ -632,20 +531,7 @@ const editProjectGridItemTodoButton = (projectlist) => {
   });
 };
 
-
-/*
-
-  let allprojects = [ 
-    {projectTitle: "project1", todos: [{title: "testTitle1", description: "testDescription1", priority: "normal", projectName: "project1", notes: "notes example", checklist: "yes", dueDate: "11/12/2020"}, {title: "testTitle2", description: "testDescription2", priority: "normal", projectName: "project1", notes: "notes example", checklist: "yes", dueDate: "11/12/2020"}]},
-    {projectTitle: "project2", todos: [{title: "testTitle3", description: "testDescription3", priority: "normal", projectName: "project1", notes: "notes example", checklist: "yes", dueDate: "11/12/2020"}, {title: "testTitle4", description: "testDescription4", priority: "normal", projectName: "project1", notes: "notes example", checklist: "yes", dueDate: "11/12/2020"}]},
-  ];
-
-*/
-
 export { 
-  maximizeTodoItem,
-  minimizeTodoItem,
-  collapseGridItemTodoTitle,
   collapseGridItemTodo,
   addProjectToProjectListButton,
   clearInputsForm, 
@@ -664,3 +550,12 @@ export {
   editProjectGridItemTitleButton,
   editProjectGridItemTodoButton, 
 };
+
+/*
+Array to store all projects and their todo's in
+
+  let projectlist = [ 
+    {projectTitle: "project1", todos: [{title: "testTitle1", description: "testDescription1", priority: "low", projectName: 0, notes: "notes example", checklist: "yes", dueDate: "11/12/2020"}, {title: "testTitle2", description: "testDescription2", priority: "medium", projectName: 0, notes: "notes example", checklist: "yes", dueDate: "11/12/2020"}]},
+    {projectTitle: "project2", todos: [{title: "testTitle3", description: "testDescription3", priority: "high", projectName: 1, notes: "notes example", checklist: "yes", dueDate: "11/12/2020"}, {title: "testTitle4", description: "testDescription4", priority: "low", projectName: 1, notes: "notes example", checklist: "yes", dueDate: "11/12/2020"}]},
+  ];
+*/

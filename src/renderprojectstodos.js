@@ -234,18 +234,26 @@ const renderProjectsTodos = ((projectlist) => {
   // add function to edit the project-grid-item-todo-properties when clicking on the project-grid-item-todo-buttons-update button
   editProjectGridItemTodoButton(projectlist);
 
+  // set the localStorage projectlist to the updated projeclist array
+  localStorage.setItem('projectlist', JSON.stringify(projectlist));
+  let projectListLocalStorage = JSON.parse(localStorage.getItem('projectlist'));
+  projectlist = projectListLocalStorage;
+
 
 });
 
 export {renderProjectsTodos};
 
 /*
-  let allprojects = [ 
-    {projectTitle: "project1", todos: [{title: "testTitle1", description: "testDescription1", priority: "normal", projectName: "project1", notes: "notes example", checklist: "yes", dueDate: "11/12/2020"}, {title: "testTitle2", description: "testDescription2", priority: "normal", projectName: "project1", notes: "notes example", checklist: "yes", dueDate: "11/12/2020"}]},
-    {projectTitle: "project2", todos: [{title: "testTitle3", description: "testDescription3", priority: "normal", projectName: "project1", notes: "notes example", checklist: "yes", dueDate: "11/12/2020"}, {title: "testTitle4", description: "testDescription4", priority: "normal", projectName: "project1", notes: "notes example", checklist: "yes", dueDate: "11/12/2020"}]},
+Array to store all projects and their todo's in
+
+  let projectlist = [ 
+    {projectTitle: "project1", todos: [{title: "testTitle1", description: "testDescription1", priority: "low", projectName: 0, notes: "notes example", checklist: "yes", dueDate: "11/12/2020"}, {title: "testTitle2", description: "testDescription2", priority: "medium", projectName: 0, notes: "notes example", checklist: "yes", dueDate: "11/12/2020"}]},
+    {projectTitle: "project2", todos: [{title: "testTitle3", description: "testDescription3", priority: "high", projectName: 1, notes: "notes example", checklist: "yes", dueDate: "11/12/2020"}, {title: "testTitle4", description: "testDescription4", priority: "low", projectName: 1, notes: "notes example", checklist: "yes", dueDate: "11/12/2020"}]},
   ];
 */
 
+// projects-grid html code
 /*
   <div class="projects-grid">
     <div class="projects-grid-item">
@@ -325,20 +333,4 @@ export {renderProjectsTodos};
     </div>
         
   </div>
-*/
-
-/*
-  // main-wrapper-contact
-  let mainWrapperContact = document.createElement("div");
-  mainWrapperContact.classList = "main-wrapper-contact";
-  content.appendChild(mainWrapperContact);
-
-
-  // main-contact-location-address-street
-  let mainContactLocationAddressStreet = document.createElement("div");
-  mainContactLocationAddressStreet.classList = "main-contact-location-address-street";
-  mainContactLocationAddress.appendChild(mainContactLocationAddressStreet);
-
-  let mainContactLocationAdressStreetText = document.createTextNode("Test Street 11");
-  mainContactLocationAddressStreet.appendChild(mainContactLocationAdressStreetText);
 */
