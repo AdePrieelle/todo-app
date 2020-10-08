@@ -3,8 +3,7 @@
 
 html {
 	box-sizing: border-box;
-	height: 100vh;
-	overflow: hidden;
+	min-height: 100vh;
 }
 
 *, *:before, *:after {
@@ -12,11 +11,9 @@ html {
 }
 
 body {
-	background-image: url("../images/img11.jpg");
+	background-image: url("../images/img1.jpg");
 	background-size: 100% auto;
-	height: 100vh;
-	overflow-y: scroll;
-  -webkit-overflow-scrolling: touch;
+	min-height: 100vh;
 	background-repeat: no-repeat;
 	background-position: left top;
 	background-size: cover;
