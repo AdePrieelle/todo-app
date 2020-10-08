@@ -62,9 +62,9 @@ html {
 }
 
 body {
+  min-height: 100vh;
   background-image: url("../images/img1.jpg");
   background-size: 100% auto;
-  min-height: 100vh;
   background-repeat: no-repeat;
   background-position: left top;
   background-size: cover;
