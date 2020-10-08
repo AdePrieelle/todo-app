@@ -54,7 +54,8 @@ table {
 
 html {
   box-sizing: border-box;
-  min-height: 100vh;
+  height: 100vh;
+  position: fixed;
 }
 
 *, *:before, *:after {
@@ -64,7 +65,8 @@ html {
 body {
   background-image: url("../images/img11.jpg");
   background-size: 100% auto;
-  min-height: 100vh;
+  height: 100vh;
+  position: fixed;
   background-repeat: no-repeat;
   background-position: left top;
   background-size: cover;
