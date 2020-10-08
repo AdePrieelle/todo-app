@@ -4,7 +4,7 @@
 html {
 	box-sizing: border-box;
 	height: 100vh;
-	position: fixed;
+	overflow: hidden;
 }
 
 *, *:before, *:after {
@@ -15,7 +15,8 @@ body {
 	background-image: url("../images/img11.jpg");
 	background-size: 100% auto;
 	height: 100vh;
-	position: fixed;
+	overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
 	background-repeat: no-repeat;
 	background-position: left top;
 	background-size: cover;
