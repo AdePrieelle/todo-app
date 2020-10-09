@@ -13,12 +13,6 @@ import {
   addTodoItemToProject, 
 } from "./eventController.js";
 
-// fix bug for mobile scrolling white bar at the bottom of 60px
-function resizeBackground() {
-  document.body.scrollHeight = document.body.scrollHeight + 60 + 'px';
-}
-resizeBackground();
-
 // use localStorage.clear() to reset the library
 // localStorage.clear();
 // projectlist that stores all projects, default projectlist if localStorage is not set
